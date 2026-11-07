@@ -6,6 +6,7 @@ import "@/app/globals.css";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
+import { withBasePath } from "@/lib/base-path";
 import { content } from "@/lib/content";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { site, siteUrl } from "@/lib/site";
@@ -35,11 +36,11 @@ export const metadata: Metadata = {
   authors: [{ name: site.legalName }],
   creator: site.legalName,
   publisher: site.legalName,
-  manifest: "/manifest.webmanifest",
+  manifest: withBasePath("/manifest.webmanifest"),
   formatDetection: { telephone: false, address: false, email: false },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    icon: [{ url: withBasePath("/icon.png"), type: "image/png", sizes: "512x512" }],
+    apple: [{ url: withBasePath("/apple-icon.png"), sizes: "180x180" }],
   },
 };
 

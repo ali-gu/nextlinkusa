@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+import { BASE_PATH } from "./src/lib/base-path";
+
 /**
  * Static export for GitHub Pages: every route is written to `out/` as HTML and
  * served straight from the CDN. There is no Node runtime, which is why the
@@ -18,6 +20,12 @@ import type { NextConfig } from "next";
  */
 const nextConfig: NextConfig = {
   output: "export",
+
+  // Derived from NEXT_PUBLIC_SITE_URL: "/nextlinkusa" on a GitHub Pages
+  // project site, empty once the custom domain is serving from its root.
+  basePath: BASE_PATH,
+  assetPrefix: BASE_PATH || undefined,
+
   reactStrictMode: true,
   poweredByHeader: false,
 

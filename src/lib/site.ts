@@ -6,12 +6,12 @@
  * launch — see README, "Before you go live".
  */
 
+import { SITE_URL, withBasePath } from "@/lib/base-path";
+
 const env = (key: string, fallback = "") => process.env[key]?.trim() || fallback;
 
-export const siteUrl = env(
-  "NEXT_PUBLIC_SITE_URL",
-  "https://www.nextlinkusa.com",
-).replace(/\/$/, "");
+/** Full public URL, subpath included. See src/lib/base-path.ts. */
+export const siteUrl = SITE_URL;
 
 export const site = {
   name: "NextLink USA",
@@ -100,6 +100,9 @@ export const catalog = {
     return Boolean(site.catalogUrl);
   },
   get href() {
-    return site.catalogUrl || mailtoLink("Product catalogue request");
+    // A configured catalogue is a file under public/, so it needs the prefix.
+    return site.catalogUrl
+      ? withBasePath(site.catalogUrl)
+      : mailtoLink("Product catalogue request");
   },
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
 import manifest from "@/lib/image-manifest.json";
 
 /**
@@ -26,8 +27,8 @@ export default function imageLoader({
 
   // Anything without a pre-built ladder (an OEM partner logo dropped in later,
   // say) is served as-is rather than pointing at a file that does not exist.
-  if (!widths?.length) return src;
+  if (!widths?.length) return withBasePath(src);
 
   const chosen = widths.find((candidate) => candidate >= width) ?? widths.at(-1)!;
-  return src.replace(/\.(jpe?g|png)$/i, `-${chosen}.webp`);
+  return withBasePath(src.replace(/\.(jpe?g|png)$/i, `-${chosen}.webp`));
 }

@@ -23,55 +23,57 @@ npm run assets     # re-derive every image from assets/source/
 `.github/workflows/deploy.yml` builds and publishes on every push to `main`.
 It type-checks and lints first, so a broken build never reaches production.
 
-**One-time setup:**
+Pages is already enabled with **Source: GitHub Actions**. The site is live at
+**https://ali-gu.github.io/nextlinkusa/**.
 
-1. **Repository → Settings → Pages → Build and deployment → Source:
-   "GitHub Actions".** Not "Deploy from a branch".
-2. **Point the DNS at GitHub.** For `www.nextlinkusa.com`, one record is enough:
+### Where the site lives
+
+`NEXT_PUBLIC_SITE_URL` is the single knob, and it carries the subpath:
+
+| Value | Serves at | `basePath` |
+| --- | --- | --- |
+| `https://ali-gu.github.io/nextlinkusa` *(current default)* | GitHub project site | `/nextlinkusa` |
+| `https://www.nextlinkusa.com` | custom domain root | *(none)* |
+
+`src/lib/base-path.ts` splits that URL into an origin and a base path, and
+feeds both `next.config.ts` and the application. Canonical tags, the sitemap,
+the web manifest, the image loader and every asset URL follow from it, so
+moving the site is a one-value change.
+
+### Cutting over to www.nextlinkusa.com
+
+1. Change `DEFAULT_SITE_URL` in `src/lib/base-path.ts` to
+   `https://www.nextlinkusa.com` (or set `NEXT_PUBLIC_SITE_URL` in the
+   workflow's `env:` block).
+2. Add the DNS record at the registrar:
 
    | Type | Name | Value |
    | --- | --- | --- |
    | CNAME | `www` | `ali-gu.github.io` |
 
-   To make the bare `nextlinkusa.com` work too, add GitHub's apex records
-   (confirm the current values in [GitHub's docs](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site) — they do change):
+   For the bare `nextlinkusa.com` as well, add GitHub's apex records (confirm
+   current values in [GitHub's docs](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site) — they change):
 
    | Type | Name | Value |
    | --- | --- | --- |
    | A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
    | AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
 
-3. **Set the custom domain** to `www.nextlinkusa.com`, in Settings → Pages or
-   with:
+3. Set the domain on the repository — Settings → Pages → Custom domain, or:
 
    ```bash
    gh api -X PUT repos/ali-gu/nextlinkusa/pages -f cname=www.nextlinkusa.com
    ```
 
-   Then tick **Enforce HTTPS** once the certificate is issued (up to an hour).
+4. Push. Tick **Enforce HTTPS** once the certificate is issued (up to an hour).
 
-> **The `public/CNAME` file does not configure the domain here.** When Pages
-> publishes from a GitHub Actions artifact rather than from a branch, the CNAME
-> file is served as a plain static file and ignored. The domain has to be set
-> on the repository, as in step 3. The file is kept because it documents the
-> intended domain and would take effect if the project ever moved to
-> branch-based publishing.
-
-This matters because the site is built with **no `basePath`**: every asset and
-link is absolute from the domain root. That is correct at
-`www.nextlinkusa.com`, but at `ali-gu.github.io/nextlinkusa/` the CSS, JS,
-images and internal links all resolve one level too high and 404. Serving from
-the subpath instead needs `basePath: "/nextlinkusa"` and a matching
-`assetPrefix` in `next.config.ts`.
+> **`public/CNAME` does not configure the domain.** When Pages publishes from
+> a GitHub Actions artifact rather than from a branch, that file is served as
+> an ordinary static file and ignored — the domain has to be set on the
+> repository, as in step 3. The file is kept because it records the intended
+> domain and would take effect under branch-based publishing.
 
 `public/.nojekyll` stops GitHub from hiding the `_next` directory.
-
-### Changing the domain
-
-`NEXT_PUBLIC_SITE_URL` drives canonical tags, Open Graph URLs and the sitemap.
-Change it together with `public/CNAME` and the Pages setting. To move to a
-subpath such as `ali-gu.github.io/nextlinkusa`, also add `basePath` and
-`assetPrefix` to `next.config.ts` and delete `public/CNAME`.
 
 ---
 

@@ -1,12 +1,15 @@
 {
-  "name": "nextlink",
+  "name": "nextlink-usa-site",
   "version": "0.1.0",
   "private": true,
+  "description": "Marketing site for NextLink USA \u2014 power and safety communication equipment supplied to Saudi Arabia.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "preview": "npx --yes serve out -l 3000",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "assets": "node scripts/build-assets.mjs"
   },
   "dependencies": {
     "next": "16.4.5",
@@ -20,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.5",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

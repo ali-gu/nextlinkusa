@@ -1,0 +1,18 @@
+import type { MetadataRoute } from "next";
+
+import { staticRoutes } from "@/lib/catalog";
+import { absoluteUrl } from "@/lib/seo";
+
+/** Required by `output: "export"`: metadata routes must opt in to static. */
+export const dynamic = "force-static";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+
+  return staticRoutes.map((route) => ({
+    url: absoluteUrl(route.path),
+    lastModified,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
+}

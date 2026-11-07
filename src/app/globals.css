@@ -1,26 +1,227 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* --------------------------------------------------------------- tokens -- */
+
+@theme {
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Primary — sampled from the NextLink wordmark. */
+  --color-navy-50: #eef5fd;
+  --color-navy-100: #dcebfa;
+  --color-navy-200: #b9d6f4;
+  --color-navy-300: #8bb9e9;
+  --color-navy-400: #5694d8;
+  --color-navy-500: #3374c2;
+  --color-navy-600: #2359a3;
+  --color-navy-700: #1d4784;
+  --color-navy-800: #1c3d6d;
+  --color-navy-900: #12315a;
+  --color-navy-950: #061a33;
+
+  /* Accent — the orbital glow in the mark. */
+  --color-azure-50: #ecfaff;
+  --color-azure-100: #d4f2ff;
+  --color-azure-200: #b0e8ff;
+  --color-azure-300: #78dbff;
+  --color-azure-400: #38c6f8;
+  --color-azure-500: #12a3e8;
+  --color-azure-600: #0682c5;
+  --color-azure-700: #0a689f;
+  --color-azure-800: #115783;
+  --color-azure-900: #12486d;
+  --color-azure-950: #0a2e49;
+
+  /* The "USA" red. */
+  --color-flag-50: #fef2f3;
+  --color-flag-100: #fde3e5;
+  --color-flag-200: #fccbd0;
+  --color-flag-300: #f9a7af;
+  --color-flag-400: #f47484;
+  --color-flag-500: #ea4458;
+  --color-flag-600: #d6243c;
+  --color-flag-700: #c8102e;
+  --color-flag-800: #a40f28;
+  --color-flag-900: #7f1a29;
+  --color-flag-950: #460911;
+
+  --color-ink: #0b1b2b;
+
+  /* Fluid type — no media queries needed between 360px and 1280px. */
+  --text-display: clamp(2.25rem, 1.45rem + 3.4vw, 4rem);
+  --text-display--line-height: 1.06;
+  --text-display--letter-spacing: -0.028em;
+
+  --text-h1: clamp(2rem, 1.42rem + 2.5vw, 3.25rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.024em;
+
+  --text-h2: clamp(1.625rem, 1.3rem + 1.4vw, 2.375rem);
+  --text-h2--line-height: 1.16;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-h3: clamp(1.25rem, 1.12rem + 0.56vw, 1.5rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.012em;
+
+  --text-lead: clamp(1.0625rem, 0.99rem + 0.34vw, 1.25rem);
+  --text-lead--line-height: 1.6;
+
+  --shadow-card: 0 1px 2px rgb(6 26 51 / 0.04), 0 8px 24px -12px rgb(6 26 51 / 0.14);
+  --shadow-card-hover: 0 2px 4px rgb(6 26 51 / 0.05), 0 20px 40px -16px rgb(6 26 51 / 0.22);
+  --shadow-float: 0 24px 60px -24px rgb(6 26 51 / 0.42);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ----------------------------------------------------------------- base -- */
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: light;
+    /* Sticky header height — anchors and scroll-margin read from this. */
+    --header-h: 4rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --header-h: 4.75rem;
+    }
+  }
+
+  * {
+    min-width: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    text-wrap: balance;
+  }
+
+  :where(p, li) {
+    text-wrap: pretty;
+  }
+
+  .numeric {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  :where(:target) {
+    scroll-margin-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-azure-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-azure-200);
+    color: var(--color-navy-950);
+  }
+
+  /* Native disclosure widgets power every accordion, so no JS ships for them. */
+  summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ----------------------------------------------------------- components -- */
+
+@layer components {
+  /* Dotted world-map texture lifted from the company-profile cover. */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      currentColor 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Navy → azure wash used behind every dark section. */
+  .bg-brand-deep {
+    background-color: var(--color-navy-950);
+    background-image:
+      radial-gradient(
+        90ch 60ch at 82% -12%,
+        color-mix(in oklab, var(--color-azure-500) 34%, transparent),
+        transparent 62%
+      ),
+      radial-gradient(
+        70ch 50ch at 8% 108%,
+        color-mix(in oklab, var(--color-navy-600) 58%, transparent),
+        transparent 60%
+      );
+  }
+
+  /* Three-stop rule that echoes the mark: azure, navy, flag red. */
+  .rule-brand {
+    block-size: 3px;
+    inline-size: 3.5rem;
+    border-radius: 999px;
+    background: linear-gradient(
+      to right,
+      var(--color-azure-500) 0%,
+      var(--color-azure-500) 45%,
+      var(--color-navy-600) 45%,
+      var(--color-navy-600) 78%,
+      var(--color-flag-700) 78%
+    );
+  }
+
+
+}
+
+/* ------------------------------------------------------------ utilities -- */
+
+@layer utilities {
+  .text-pretty {
+    text-wrap: pretty;
+  }
 }

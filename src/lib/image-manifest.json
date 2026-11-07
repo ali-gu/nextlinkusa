@@ -1,0 +1,64 @@
+{
+  "/brand/nextlink-logo.png": [
+    128,
+    192,
+    256,
+    384,
+    640,
+    754
+  ],
+  "/images/hero-collage.jpg": [
+    128,
+    192,
+    256,
+    384,
+    640,
+    960,
+    1280,
+    1296
+  ],
+  "/images/riyadh-skyline.jpg": [
+    128,
+    192,
+    256,
+    384,
+    640,
+    780
+  ],
+  "/images/telecom-tower.jpg": [
+    128,
+    192,
+    256,
+    384,
+    640,
+    840
+  ],
+  "/images/fiber-optics.jpg": [
+    128,
+    192,
+    256,
+    384,
+    640,
+    930
+  ],
+  "/images/offshore-cable-ship.jpg": [
+    128,
+    192,
+    256,
+    384,
+    640,
+    960,
+    990
+  ],
+  "/images/skyline-wide.jpg": [
+    128,
+    192,
+    256,
+    384,
+    640,
+    960,
+    1280,
+    1600,
+    1728
+  ]
+}

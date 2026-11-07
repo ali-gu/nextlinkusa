@@ -41,12 +41,30 @@ It type-checks and lints first, so a broken build never reaches production.
    | A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
    | AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
 
-3. **Settings → Pages → Custom domain:** `www.nextlinkusa.com`, then tick
-   **Enforce HTTPS** once the certificate has been issued (can take an hour).
+3. **Set the custom domain** to `www.nextlinkusa.com`, in Settings → Pages or
+   with:
 
-`public/CNAME` already holds the domain and is copied into the build, so the
-custom domain survives every redeploy. `public/.nojekyll` stops GitHub from
-hiding the `_next` directory.
+   ```bash
+   gh api -X PUT repos/ali-gu/nextlinkusa/pages -f cname=www.nextlinkusa.com
+   ```
+
+   Then tick **Enforce HTTPS** once the certificate is issued (up to an hour).
+
+> **The `public/CNAME` file does not configure the domain here.** When Pages
+> publishes from a GitHub Actions artifact rather than from a branch, the CNAME
+> file is served as a plain static file and ignored. The domain has to be set
+> on the repository, as in step 3. The file is kept because it documents the
+> intended domain and would take effect if the project ever moved to
+> branch-based publishing.
+
+This matters because the site is built with **no `basePath`**: every asset and
+link is absolute from the domain root. That is correct at
+`www.nextlinkusa.com`, but at `ali-gu.github.io/nextlinkusa/` the CSS, JS,
+images and internal links all resolve one level too high and 404. Serving from
+the subpath instead needs `basePath: "/nextlinkusa"` and a matching
+`assetPrefix` in `next.config.ts`.
+
+`public/.nojekyll` stops GitHub from hiding the `_next` directory.
 
 ### Changing the domain
 

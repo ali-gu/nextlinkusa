@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/primitives";
 import { content as t } from "@/lib/content";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
-import { mailtoLink, site, whatsappLink } from "@/lib/site";
+import { mailtoLink, site } from "@/lib/site";
 
 const q = t.quote;
 
@@ -50,7 +50,7 @@ export default function QuotePage() {
       <Section tone="tint">
         <Container width="wide">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:items-start lg:gap-14">
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div>
               <Card className="flex flex-col p-7">
                 <IconTile name="mail" />
                 <h2 className="text-h3 mt-5 font-semibold text-navy-950">
@@ -76,29 +76,6 @@ export default function QuotePage() {
                 </p>
               </Card>
 
-              <Card className="flex flex-col p-7">
-                <IconTile name="whatsapp" />
-                <h2 className="text-h3 mt-5 font-semibold text-navy-950">
-                  {q.channels.whatsapp.title}
-                </h2>
-                <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-navy-800/85">
-                  {q.channels.whatsapp.body}
-                </p>
-                <ButtonLink
-                  href={whatsappLink(q.channels.whatsapp.prefill)}
-                  variant="secondary"
-                  size="lg"
-                  icon="whatsapp"
-                  iconPosition="start"
-                  external
-                  className="mt-6"
-                >
-                  {q.channels.whatsapp.cta}
-                </ButtonLink>
-                <p className="mt-3 text-xs leading-relaxed text-navy-600">
-                  {q.channels.whatsapp.note}
-                </p>
-              </Card>
             </div>
 
             <aside className="space-y-6">
@@ -147,16 +124,6 @@ export default function QuotePage() {
           <div className="mt-12 flex flex-wrap items-center gap-4 border-t border-navy-100 pt-10">
             <ButtonLink href={emailHref} size="lg" icon="mail" iconPosition="start">
               {q.channels.email.cta}
-            </ButtonLink>
-            <ButtonLink
-              href={whatsappLink(q.channels.whatsapp.prefill)}
-              variant="secondary"
-              size="lg"
-              icon="whatsapp"
-              iconPosition="start"
-              external
-            >
-              {q.channels.whatsapp.cta}
             </ButtonLink>
             <p className="flex items-start gap-2 text-xs leading-relaxed text-navy-600 sm:max-w-sm">
               <Icon name="shieldCheck" className="mt-[0.2em] shrink-0 text-sm" />

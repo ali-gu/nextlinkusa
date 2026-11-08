@@ -6,14 +6,14 @@ export const quote = {
   },
   eyebrow: "Request a quote",
   title: "Send us the specification. We will send back a sized offer.",
-  lede: "No form to wrestle with. Email the documents you already have, or send a photo of a nameplate on WhatsApp — both reach a technical contact, not a shared inbox.",
+  lede: "No form to wrestle with. Email the documents you already have — a specification, a single-line diagram, a load schedule — and they reach a technical contact directly.",
 
   channels: {
     email: {
       title: "Email the request",
-      body: "Best for anything with an attachment: a specification, a single-line diagram, a load schedule or a battery data sheet.",
+      body: "Send a specification, a single-line diagram, a load schedule or a battery data sheet — or simply describe the load you need to hold up. A technical contact is assigned the same working day.",
       cta: "Open a pre-filled email",
-      note: "Opens your mail client with a short template already filled in. Attach what you have and send.",
+      note: "Opens your mail client with a template already filled in. Add your details, attach what you have, and send.",
       subject: "Quotation request",
       /** Pre-filled body. Keep the blank lines — they give people room to type. */
       template: `Please quote the following.
@@ -21,7 +21,7 @@ export const quote = {
 COMPANY
   Company:
   Contact name:
-  Phone / WhatsApp:
+  Phone:
   Country:
 
 PROJECT
@@ -45,14 +45,6 @@ COMMERCIAL
 
 Attachments: specification / single-line diagram / load schedule
 `,
-    },
-    whatsapp: {
-      title: "Message on WhatsApp",
-      body: "Best for a quick question, a photograph of an existing charger nameplate, or a site query while you are standing in front of the equipment.",
-      cta: "Open WhatsApp",
-      note: "Answered in working hours, in English or Arabic.",
-      prefill:
-        "Hello NextLink USA — I would like to request a quotation. My project is:",
     },
   },
 

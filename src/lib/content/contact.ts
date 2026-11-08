@@ -2,28 +2,17 @@ export const contact = {
   meta: {
     title: "Contact NextLink USA",
     description:
-      "Reach NextLink USA by email or WhatsApp for DC power systems, battery chargers, paging and mass notification equipment supplied to Saudi Arabia. Enquiries answered in English or Arabic.",
+      "Reach NextLink USA by email for DC power systems, battery chargers, paging and mass notification equipment. Enquiries answered by a technical contact, not a shared inbox.",
   },
   eyebrow: "Contact",
   title: "Talk to someone who can read your single-line",
-  lede: "Enquiries go straight to a technical contact, not to a shared inbox that routes them later. Write in English or Arabic, whichever is easier.",
+  lede: "Email reaches a technical contact directly, not a shared inbox that routes it on later. Write in English or Arabic, whichever is easier.",
 
   channels: {
     title: "How to reach us",
     email: {
       label: "Email",
       note: "Best for specifications, drawings and anything with an attachment.",
-    },
-    whatsapp: {
-      label: "WhatsApp",
-      note: "Best for a quick question, a photo of a nameplate, or a site query.",
-      cta: "Open WhatsApp",
-      prefill:
-        "Hello NextLink USA — I would like to ask about your power and notification equipment.",
-    },
-    phone: {
-      label: "Telephone",
-      note: "United States line. For a call in Saudi hours, message us first and we will arrange a time.",
     },
     quote: {
       label: "Request a quote",

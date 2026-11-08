@@ -5,15 +5,7 @@ import { Icon } from "@/components/ui/icon";
 import { Container } from "@/components/ui/primitives";
 import { industryList, productList } from "@/lib/catalog";
 import { content } from "@/lib/content";
-import {
-  catalog,
-  formatPhone,
-  hasAddress,
-  mailtoLink,
-  site,
-  telLink,
-  whatsappLink,
-} from "@/lib/site";
+import { catalog, hasAddress, mailtoLink, site } from "@/lib/site";
 
 export function SiteFooter() {
   const { footer, nav, actions } = content.common;
@@ -54,26 +46,6 @@ export function SiteFooter() {
                 >
                   <Icon name="mail" className="text-base text-azure-600" />
                   {site.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={whatsappLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 rounded-sm font-medium text-navy-800 underline-offset-4 hover:text-navy-950 hover:underline"
-                >
-                  <Icon name="whatsapp" className="text-base text-[#25D366]" />
-                  <span>{actions.whatsapp}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={telLink()}
-                  className="inline-flex items-center gap-2.5 rounded-sm font-medium text-navy-800 underline-offset-4 hover:text-navy-950 hover:underline"
-                >
-                  <Icon name="phone" className="text-base text-azure-600" />
-                  <span className="numeric">{formatPhone()}</span>
                 </a>
               </li>
             </ul>

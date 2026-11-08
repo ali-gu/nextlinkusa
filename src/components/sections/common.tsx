@@ -11,7 +11,7 @@ import {
   Section,
 } from "@/components/ui/primitives";
 import { content } from "@/lib/content";
-import { site, whatsappLink } from "@/lib/site";
+import { mailtoLink, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------- page hero -- */
@@ -204,12 +204,11 @@ export function CtaBand() {
               {ctaBand.primary}
             </ButtonLink>
             <ButtonLink
-              href={whatsappLink()}
+              href={mailtoLink()}
               variant="onDarkGhost"
               size="lg"
-              icon="whatsapp"
+              icon="mail"
               iconPosition="start"
-              external
             >
               {ctaBand.secondary}
             </ButtonLink>

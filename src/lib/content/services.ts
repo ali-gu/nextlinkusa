@@ -73,7 +73,7 @@ export const services = {
         "Named technical contact reachable in your working hours",
         "Warranty administration handled with the manufacturer on your behalf",
         "Return material authorisation and replacement logistics",
-        "Fault diagnosis by phone, email or WhatsApp, in English or Arabic",
+        "Fault diagnosis by email, with a documented record of what was changed",
         "Firmware and configuration updates with a documented change record",
         "Operator and maintenance technician training, on site or remote",
         "As-built documentation kept current through modifications and extensions",

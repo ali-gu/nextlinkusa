@@ -107,7 +107,6 @@ export function organizationSchema() {
     slogan: site.tagline,
     foundingDate: String(site.foundedYear),
     email: site.email,
-    telephone: site.phone,
     address: {
       "@type": "PostalAddress",
       ...(hasPostal
@@ -133,7 +132,6 @@ export function organizationSchema() {
         "@type": "ContactPoint",
         contactType: "sales",
         email: site.email,
-        telephone: site.phone,
         availableLanguage: ["en", "ar"],
         areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "US"],
       },

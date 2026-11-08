@@ -44,9 +44,7 @@ export const common = {
     downloadCatalog: "Download Product Catalog",
     requestCatalog: "Request the Product Catalog",
     downloadPrequal: "Prequalification pack available on request",
-    whatsapp: "Chat on WhatsApp",
     email: "Email us",
-    call: "Call us",
     learnMore: "Learn more",
     backHome: "Back to home",
     openMenu: "Open menu",
@@ -77,7 +75,7 @@ export const common = {
     title: "Send us a single-line diagram or a specification clause.",
     body: "We will come back with a sized technical offer, a compliance statement and a delivered price — usually within two business days.",
     primary: "Request a Quote",
-    secondary: "Chat on WhatsApp",
+    secondary: "Email us",
   },
 
   footer: {

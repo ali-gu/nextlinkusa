@@ -14,14 +14,7 @@ import {
 } from "@/components/ui/primitives";
 import { content as t } from "@/lib/content";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
-import {
-  formatPhone,
-  hasAddress,
-  mailtoLink,
-  site,
-  telLink,
-  whatsappLink,
-} from "@/lib/site";
+import { hasAddress, mailtoLink, site } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
     path: "/contact",
@@ -44,8 +37,6 @@ export default function ContactPage() {
     note: string;
     value: string;
     href: string;
-    external?: boolean;
-    ltr?: boolean;
   }> = [
     {
       icon: "mail",
@@ -53,23 +44,6 @@ export default function ContactPage() {
       note: c.channels.email.note,
       value: site.email,
       href: mailtoLink(),
-      ltr: true,
-    },
-    {
-      icon: "whatsapp",
-      label: c.channels.whatsapp.label,
-      note: c.channels.whatsapp.note,
-      value: c.channels.whatsapp.cta,
-      href: whatsappLink(c.channels.whatsapp.prefill),
-      external: true,
-    },
-    {
-      icon: "phone",
-      label: c.channels.phone.label,
-      note: c.channels.phone.note,
-      value: formatPhone(),
-      href: telLink(),
-      ltr: true,
     },
     {
       icon: "quote",
@@ -94,7 +68,7 @@ export default function ContactPage() {
       <Section tone="plain">
         <Container width="wide">
           <h2 className="sr-only">{c.channels.title}</h2>
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid max-w-3xl gap-5 sm:grid-cols-2">
             {channels.map((channel) => (
               <li key={channel.label} className="flex">
                 <Card interactive className="flex w-full flex-col p-6">
@@ -107,14 +81,9 @@ export default function ContactPage() {
                   </p>
                   <a
                     href={channel.href}
-                    {...(channel.external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
                     className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold break-words text-navy-700 before:absolute before:inset-0 before:content-['']"
                   >
-                    <span dir={channel.ltr ? "ltr" : undefined} className={channel.ltr ? "numeric" : undefined}>
-                      {channel.value}
-                    </span>
+                    <span>{channel.value}</span>
                     <Icon name="arrowRight" className="shrink-0 text-base" />
                   </a>
                 </Card>
@@ -177,16 +146,6 @@ export default function ContactPage() {
               <div className="mt-10 flex flex-wrap gap-3">
                 <ButtonLink href="/quote" size="lg" icon="arrowRight">
                   {c.brief.cta}
-                </ButtonLink>
-                <ButtonLink
-                  href={whatsappLink(c.channels.whatsapp.prefill)}
-                  variant="secondary"
-                  size="lg"
-                  icon="whatsapp"
-                  iconPosition="start"
-                  external
-                >
-                  {t.common.actions.whatsapp}
                 </ButtonLink>
               </div>
             </div>

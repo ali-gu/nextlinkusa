@@ -20,11 +20,7 @@ export const site = {
   tagline: "Connect · Innovate · Empower",
   url: siteUrl,
 
-  email: env("NEXT_PUBLIC_CONTACT_EMAIL", "tariq.mehmood@nextlinkusa.com"),
-
-  phone: env("NEXT_PUBLIC_PHONE", "+16783920406"),
-  /** Defaults to the main line; override only if WhatsApp is a different number. */
-  whatsapp: env("NEXT_PUBLIC_WHATSAPP", env("NEXT_PUBLIC_PHONE", "+16783920406")),
+  email: env("NEXT_PUBLIC_CONTACT_EMAIL", "contact@nextlinkusa.com"),
 
   /**
    * Left empty until the registered office is confirmed: the footer and the
@@ -62,18 +58,6 @@ export const site = {
 
 export const hasAddress = Boolean(site.address.street && site.address.locality);
 
-/** Digits only — what wa.me expects. */
-export const whatsappDigits = site.whatsapp.replace(/\D/g, "");
-
-export function whatsappLink(message?: string) {
-  const base = `https://wa.me/${whatsappDigits}`;
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
-}
-
-export function telLink() {
-  return `tel:${site.phone.replace(/[^\d+]/g, "")}`;
-}
-
 export function mailtoLink(subject?: string, body?: string) {
   const params = new URLSearchParams();
   if (subject) params.set("subject", subject);
@@ -82,14 +66,6 @@ export function mailtoLink(subject?: string, body?: string) {
   return `mailto:${site.email}${query ? `?${query}` : ""}`;
 }
 
-/** Prints +16783920406 as +1 678 392 0406. */
-export function formatPhone(value: string = site.phone) {
-  const digits = value.replace(/\D/g, "");
-  if (digits.length === 11 && digits.startsWith("1")) {
-    return `+1 ${digits.slice(1, 4)} ${digits.slice(4, 7)} ${digits.slice(7)}`;
-  }
-  return value;
-}
 
 /**
  * Resolves the "product catalog" call to action: a real download once a file

@@ -12,7 +12,7 @@
  * free of path aliases and of any Node-only API.
  */
 
-const DEFAULT_SITE_URL = "https://ali-gu.github.io/nextlinkusa";
+const DEFAULT_SITE_URL = "https://www.nextlinkusa.com";
 
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL

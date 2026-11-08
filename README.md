@@ -23,8 +23,9 @@ npm run assets     # re-derive every image from assets/source/
 `.github/workflows/deploy.yml` builds and publishes on every push to `main`.
 It type-checks and lints first, so a broken build never reaches production.
 
-Pages is already enabled with **Source: GitHub Actions**. The site is live at
-**https://ali-gu.github.io/nextlinkusa/**.
+Pages is enabled with **Source: GitHub Actions** and the custom domain is set
+to `www.nextlinkusa.com`. DNS lives at Squarespace: apex A/AAAA records point
+at GitHub, `www` is a CNAME to `ali-gu.github.io`.
 
 ### Where the site lives
 
@@ -32,40 +33,21 @@ Pages is already enabled with **Source: GitHub Actions**. The site is live at
 
 | Value | Serves at | `basePath` |
 | --- | --- | --- |
-| `https://ali-gu.github.io/nextlinkusa` *(current default)* | GitHub project site | `/nextlinkusa` |
-| `https://www.nextlinkusa.com` | custom domain root | *(none)* |
+| `https://www.nextlinkusa.com` *(current default)* | custom domain root | *(none)* |
+| `https://ali-gu.github.io/nextlinkusa` | GitHub project site | `/nextlinkusa` |
 
 `src/lib/base-path.ts` splits that URL into an origin and a base path, and
 feeds both `next.config.ts` and the application. Canonical tags, the sitemap,
 the web manifest, the image loader and every asset URL follow from it, so
 moving the site is a one-value change.
 
-### Cutting over to www.nextlinkusa.com
+### Moving back to the project-site URL
 
-1. Change `DEFAULT_SITE_URL` in `src/lib/base-path.ts` to
-   `https://www.nextlinkusa.com` (or set `NEXT_PUBLIC_SITE_URL` in the
-   workflow's `env:` block).
-2. Add the DNS record at the registrar:
-
-   | Type | Name | Value |
-   | --- | --- | --- |
-   | CNAME | `www` | `ali-gu.github.io` |
-
-   For the bare `nextlinkusa.com` as well, add GitHub's apex records (confirm
-   current values in [GitHub's docs](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site) — they change):
-
-   | Type | Name | Value |
-   | --- | --- | --- |
-   | A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
-   | AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
-
-3. Set the domain on the repository — Settings → Pages → Custom domain, or:
-
-   ```bash
-   gh api -X PUT repos/ali-gu/nextlinkusa/pages -f cname=www.nextlinkusa.com
-   ```
-
-4. Push. Tick **Enforce HTTPS** once the certificate is issued (up to an hour).
+Only useful for testing without the domain. Set `DEFAULT_SITE_URL` in
+`src/lib/base-path.ts` (or `NEXT_PUBLIC_SITE_URL`) to
+`https://ali-gu.github.io/nextlinkusa` and clear the custom domain with
+`gh api -X DELETE repos/ali-gu/nextlinkusa/pages` followed by a fresh
+`POST`. Everything else follows from that one value.
 
 > **`public/CNAME` does not configure the domain.** When Pages publishes from
 > a GitHub Actions artifact rather than from a branch, that file is served as

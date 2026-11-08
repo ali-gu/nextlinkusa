@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Icon } from "@/components/ui/icon";
 import { Container } from "@/components/ui/primitives";
-import { industryList, productList } from "@/lib/catalog";
+import { industryList, serviceList } from "@/lib/catalog";
 import { content } from "@/lib/content";
 import { catalog, hasAddress, mailtoLink, site } from "@/lib/site";
 
@@ -12,10 +12,9 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   const companyLinks = [
-    { key: "services", href: "/services" },
-    { key: "resources", href: "/resources" },
     { key: "about", href: "/about" },
     { key: "contact", href: "/contact" },
+    { key: "quote", href: "/quote" },
   ] as const;
 
   return (
@@ -52,13 +51,10 @@ export function SiteFooter() {
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            <FooterColumn title={footer.columns.products}>
-              {productList.map((product) => (
-                <FooterLink
-                  key={product.slug}
-                  href={`/products/${product.slug}`}
-                >
-                  {nav[product.slug]}
+            <FooterColumn title={footer.columns.services}>
+              {serviceList.map((service) => (
+                <FooterLink key={service.slug} href={`/services/${service.slug}`}>
+                  {nav[service.slug]}
                 </FooterLink>
               ))}
             </FooterColumn>
@@ -152,7 +148,6 @@ export function SiteFooter() {
                 © {year} {site.legalName}. {footer.rights}
               </p>
               <p>{footer.builtNote}</p>
-              <p>{footer.responseNote}</p>
             </div>
           </div>
         </div>

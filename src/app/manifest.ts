@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { withBasePath } from "@/lib/base-path";
+import { content } from "@/lib/content";
 import { site } from "@/lib/site";
 
 /** Required by `output: "export"`: metadata routes must opt in to static. */
@@ -8,10 +9,9 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${site.name} — power & safety communication equipment`,
+    name: `${site.name} — telecom & critical infrastructure`,
     short_name: site.name,
-    description:
-      "American-made DC power systems, battery chargers, paging and mass notification equipment supplied to Saudi Arabia.",
+    description: content.common.meta.defaultDescription,
     start_url: withBasePath("/"),
     display: "standalone",
     background_color: "#ffffff",

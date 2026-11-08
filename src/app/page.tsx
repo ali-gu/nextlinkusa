@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import { CatalogButton } from "@/components/catalog-button";
-import { IndustryGrid, ProductGrid } from "@/components/sections/cards";
+import { IndustryGrid, ServiceGrid } from "@/components/sections/cards";
 import { CtaBand, TrustStrip } from "@/components/sections/common";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Accordion, StepList } from "@/components/ui/blocks";
@@ -19,7 +19,7 @@ import {
   Section,
   SectionHeading,
 } from "@/components/ui/primitives";
-import { industryList, productList } from "@/lib/catalog";
+import { industryList, serviceList } from "@/lib/catalog";
 import { content as t } from "@/lib/content";
 import { buildMetadata, faqSchema, itemListSchema } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -33,8 +33,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 /** Icons are layout, not copy, so they stay next to the markup. */
-const PILLAR_ICONS = ["substation", "paging", "spares"] as const;
-const COMPLIANCE_ICONS = ["shieldCheck", "document", "alert", "truck"] as const;
+const PILLAR_ICONS = ["install", "gauge", "maintenance"] as const;
+const ASSURANCE_ICONS = ["document", "layers", "shieldCheck", "users"] as const;
 
 export default function HomePage() {
   return (
@@ -51,9 +51,7 @@ export default function HomePage() {
             <div className="max-w-2xl">
               <Eyebrow tone="dark">{home.hero.eyebrow}</Eyebrow>
 
-              <h1 className="text-display mt-5 font-bold text-white">
-                {home.hero.title}
-              </h1>
+              <h1 className="text-display mt-5 font-bold text-white">{home.hero.title}</h1>
 
               <BrandRule className="mt-7" />
 
@@ -140,21 +138,21 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* -------------------------------------------------------- products */}
+      {/* -------------------------------------------------------- services */}
       <Section tone="tint">
         <Container width="wide">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
-              eyebrow={home.products.eyebrow}
-              title={home.products.title}
-              body={home.products.body}
+              eyebrow={home.services.eyebrow}
+              title={home.services.title}
+              body={home.services.body}
             />
-            <ButtonLink href="/products" variant="secondary" icon="arrowRight">
-              {home.products.cta}
+            <ButtonLink href="/services" variant="secondary" icon="arrowRight">
+              {home.services.cta}
             </ButtonLink>
           </div>
 
-          <ProductGrid className="mt-14" />
+          <ServiceGrid featured className="mt-14" />
         </Container>
       </Section>
 
@@ -180,9 +178,7 @@ export default function HomePage() {
               {home.why.items.map((item) => (
                 <li key={item.id}>
                   <IconTile name={item.icon} />
-                  <h3 className="text-h3 mt-5 font-semibold text-navy-950">
-                    {item.title}
-                  </h3>
+                  <h3 className="text-h3 mt-5 font-semibold text-navy-950">{item.title}</h3>
                   <p className="mt-3 text-[0.95rem] leading-relaxed text-navy-800/85">
                     {item.body}
                   </p>
@@ -223,7 +219,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* ------------------------------------------------------ compliance */}
+      {/* ------------------------------------------------------- assurance */}
       <Section tone="ink" className="relative isolate overflow-hidden">
         <span
           aria-hidden="true"
@@ -234,24 +230,24 @@ export default function HomePage() {
             <div>
               <SectionHeading
                 tone="dark"
-                eyebrow={home.compliance.eyebrow}
-                title={home.compliance.title}
-                body={home.compliance.body}
+                eyebrow={home.assurance.eyebrow}
+                title={home.assurance.title}
+                body={home.assurance.body}
               />
               <ButtonLink
-                href="/resources"
+                href="/services"
                 variant="onDarkGhost"
                 icon="arrowRight"
                 className="mt-8"
               >
-                {home.compliance.cta}
+                {home.services.cta}
               </ButtonLink>
             </div>
 
             <ul className="grid gap-x-10 gap-y-9 sm:grid-cols-2">
-              {home.compliance.items.map((item, index) => (
+              {home.assurance.items.map((item, index) => (
                 <li key={item.id}>
-                  <IconTile tone="dark" name={COMPLIANCE_ICONS[index] ?? "shieldCheck"} />
+                  <IconTile tone="dark" name={ASSURANCE_ICONS[index] ?? "shieldCheck"} />
                   <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
                   <p className="mt-2 text-[0.95rem] leading-relaxed text-navy-100/80">
                     {item.body}
@@ -266,17 +262,8 @@ export default function HomePage() {
       {/* ------------------------------------------------------------- faq */}
       <Section tone="plain">
         <Container width="narrow">
-          <SectionHeading
-            eyebrow={home.faq.eyebrow}
-            title={home.faq.title}
-            align="center"
-          />
-          <Accordion
-            items={home.faq.items}
-            name="home-faq"
-            defaultOpenFirst
-            className="mt-12"
-          />
+          <SectionHeading eyebrow={home.faq.eyebrow} title={home.faq.title} align="center" />
+          <Accordion items={home.faq.items} name="home-faq" defaultOpenFirst className="mt-12" />
         </Container>
       </Section>
 
@@ -286,10 +273,10 @@ export default function HomePage() {
         data={[
           faqSchema(home.faq.items),
           itemListSchema({
-            name: common.labels.products,
-            items: productList.map((product) => ({
-              name: t.products.items[product.slug].name,
-              url: `/products/${product.slug}`,
+            name: common.labels.services,
+            items: serviceList.map((service) => ({
+              name: t.services.items[service.slug].name,
+              url: `/services/${service.slug}`,
             })),
           }),
           itemListSchema({

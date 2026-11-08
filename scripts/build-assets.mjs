@@ -192,10 +192,10 @@ async function buildSocial() {
   <text class="tag" x="74" y="142">CONNECT · INNOVATE · EMPOWER</text>
 
   <rect x="72" y="196" width="58" height="4" fill="#1AA7EC"/>
-  <text class="kick" x="72" y="252">DC POWER · PAGING · MASS NOTIFICATION</text>
-  <text class="head" x="72" y="326">American-made power and</text>
-  <text class="head" x="72" y="388">safety communication equipment</text>
-  <text class="sub" x="72" y="444">Delivered to Saudi Arabia, with local technical support.</text>
+  <text class="kick" x="72" y="252">TELECOM · NETWORKS · CRITICAL INFRASTRUCTURE</text>
+  <text class="head" x="72" y="326">American engineering for telecom</text>
+  <text class="head" x="72" y="388">and critical infrastructure</text>
+  <text class="sub" x="72" y="444">Design, installation, commissioning and support across the Gulf.</text>
 </svg>`);
 
   await sharp(backdrop)

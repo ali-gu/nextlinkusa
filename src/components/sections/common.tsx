@@ -124,10 +124,10 @@ export function TrustStrip() {
   const { trust } = content.common;
   const markers: Array<{ icon: IconName; label: string }> = [
     { icon: "government", label: trust.usCompany },
-    { icon: "truck", label: trust.directOem },
-    { icon: "shieldCheck", label: trust.saberReady },
-    { icon: "plug", label: trust.voltage },
-    { icon: "language", label: trust.bilingual },
+    { icon: "shieldCheck", label: trust.standards },
+    { icon: "network", label: trust.singlePoint },
+    { icon: "alert", label: trust.hazardous },
+    { icon: "support", label: trust.support },
   ];
 
   return (

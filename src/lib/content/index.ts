@@ -3,9 +3,7 @@ import { common } from "./common";
 import { contact } from "./contact";
 import { home } from "./home";
 import { industries } from "./industries";
-import { products } from "./products";
 import { quote } from "./quote";
-import { resources } from "./resources";
 import { services } from "./services";
 
 /**
@@ -15,10 +13,8 @@ import { services } from "./services";
 export const content = {
   common,
   home,
-  products,
-  industries,
   services,
-  resources,
+  industries,
   about,
   contact,
   quote,

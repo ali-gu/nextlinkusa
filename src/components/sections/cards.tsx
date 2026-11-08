@@ -2,49 +2,56 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Icon } from "@/components/ui/icon";
-import { Badge, Card, IconTile } from "@/components/ui/primitives";
-import { industryList, productList } from "@/lib/catalog";
+import { Card, IconTile } from "@/components/ui/primitives";
+import { industryList, serviceList } from "@/lib/catalog";
 import { content } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
-/* ------------------------------------------------------------- products -- */
+/* -------------------------------------------------------------- services -- */
 
-export function ProductGrid({ className }: { className?: string }) {
+export function ServiceGrid({
+  className,
+  featured,
+}: {
+  className?: string;
+  /** Gives the first three cards imagery; the rest stay compact. */
+  featured?: boolean;
+}) {
   const t = content;
+
   return (
     <ul className={cn("grid gap-6 md:grid-cols-2 lg:grid-cols-3", className)}>
-      {productList.map((product) => {
-        const copy = t.products.items[product.slug];
-        const href = `/products/${product.slug}`;
+      {serviceList.map((service, index) => {
+        const copy = t.services.items[service.slug];
+        const href = `/services/${service.slug}`;
+        const withImage = Boolean(featured) && index < 3;
 
         return (
-          <li key={product.slug} className="flex">
+          <li key={service.slug} className="flex">
             <Card interactive as="article" className="flex w-full flex-col overflow-hidden">
-              <div className="relative aspect-16/9 overflow-hidden bg-navy-100">
-                <Image
-                  src={product.image}
-                  alt={copy.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 384px, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-navy-950/65 via-navy-950/10 to-transparent"
-                />
-                <IconTile
-                  name={product.icon}
-                  tone="dark"
-                  className="absolute bottom-3 start-3 backdrop-blur-sm"
-                />
-              </div>
+              {withImage ? (
+                <div className="relative aspect-16/9 overflow-hidden bg-navy-100">
+                  <Image
+                    src={service.image}
+                    alt={copy.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 384px, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-navy-950/65 via-navy-950/10 to-transparent"
+                  />
+                  <IconTile
+                    name={service.icon}
+                    tone="dark"
+                    className="absolute bottom-3 start-3 backdrop-blur-sm"
+                  />
+                </div>
+              ) : null}
 
               <div className="flex flex-1 flex-col p-6">
-                {product.status === "expanding" ? (
-                  <Badge tone="warn" className="mb-3 self-start">
-                    {t.common.labels.statusExpanding}
-                  </Badge>
-                ) : null}
+                {!withImage ? <IconTile name={service.icon} className="mb-4" /> : null}
 
                 <h3 className="text-h3 font-semibold text-navy-950">
                   <Link href={href} className="before:absolute before:inset-0 before:content-['']">
@@ -79,6 +86,7 @@ export function IndustryGrid({
   compact?: boolean;
 }) {
   const t = content;
+
   return (
     <ul
       className={cn(
@@ -142,7 +150,11 @@ export function FeatureGrid({
   tone = "light",
   className,
 }: {
-  items: ReadonlyArray<{ title: string; body: string; icon?: React.ComponentProps<typeof IconTile>["name"] }>;
+  items: ReadonlyArray<{
+    title: string;
+    body: string;
+    icon?: React.ComponentProps<typeof IconTile>["name"];
+  }>;
   columns?: 2 | 3 | 4;
   tone?: "light" | "dark";
   className?: string;

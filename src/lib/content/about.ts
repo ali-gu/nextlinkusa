@@ -1,19 +1,19 @@
 export const about = {
   meta: {
-    title: "About NextLink USA — a US supplier of power and safety equipment",
+    title: "About NextLink USA — a US telecom and infrastructure engineering company",
     description:
-      "NextLink USA is a United States company supplying American-made DC power systems, battery chargers, paging and mass notification equipment to Saudi Arabia, with OEM partnerships and bilingual technical support.",
+      "NextLink USA is a United States engineering company delivering telecom and critical infrastructure across the Gulf: survey, design, installation, commissioning and long-term support.",
   },
   eyebrow: "About us",
-  title: "A United States company, built around one trade lane",
-  lede: "We supply American-made power and safety communication equipment into Saudi Arabia. That narrow focus is deliberate — it is what lets us know both the manufacturer's engineering department and the conformity route into the Kingdom well enough to be useful on both ends.",
+  title: "A United States engineering company, working where the networks are",
+  lede: "We design, build, commission and support telecom and critical infrastructure. American engineering practice, applied on site, by people who are still reachable a year after handover.",
 
   story: {
     title: "Why this company exists",
     paragraphs: [
-      "There is no shortage of excellent industrial equipment built in the United States, and no shortage of demand for it in Saudi Arabia. What sits between the two is a documentation problem: a manufacturer who has never heard of SABER, a consultant working to a specification written around IEC references, and an importer who needs a certificate in the right name before a container will move.",
-      "NextLink USA exists to close that gap. We represent US manufacturers directly, quote in the standards the specification is written in, arrange the conformity registration before shipment, and stay on the account after commissioning — because the second order usually depends on how the first one was supported.",
-      "The alternative, in practice, is a chain of re-exporters: each adding margin, none holding the manufacturer's warranty, and all of them unreachable when a rectifier module fails in year three. A short supply chain is not a marketing position. It is the reason the spares arrive.",
+      "Most critical infrastructure projects do not fail on equipment. They fail at the seams — between the radio contractor and the network contractor, between the design that was approved and the one that got installed, between the day the warranty starts and the day anyone tests the batteries again.",
+      "NextLink USA was set up to hold those seams. We take radio, networks, telephony, DC power and fiber under one contract, work to named standards rather than custom and practice, and measure what we built so there is a record to hold us to. When something goes wrong at three in the morning, the engineer who answers has the design and the commissioning results in front of them.",
+      "That is a less exciting proposition than most contractors lead with. It is also, in our experience, the entire difference between a system that is handed over and a system that still works in year five.",
     ],
   },
 
@@ -21,65 +21,73 @@ export const about = {
     title: "What we do, and what we do not",
     doTitle: "What we do",
     does: [
-      "Represent US manufacturers of DC power and safety communication equipment",
-      "Size systems and issue compliance statements against your specification",
-      "Arrange SABER conformity registration and full export documentation",
-      "Supply on any Incoterm from EXW to DDP",
-      "Supervise installation, commissioning and site acceptance testing",
-      "Hold maintenance contracts and recommended spares agreements",
-      "Work in English and Arabic, in writing and in person",
+      "Survey and measure before designing anything",
+      "Design to a named standard and say which one",
+      "Install and commission with qualified, hazardous-area competent technicians",
+      "Test to a written procedure and hand over the results",
+      "Hold maintenance contracts with defined response times",
+      "Stay reachable, with the project records still on the account",
     ],
     dontTitle: "What we do not do",
     donts: [
-      "Sell equipment we have not been authorised by the manufacturer to sell",
-      "Mark a specification fully compliant when it is not",
-      "Quote a lead time before the manufacturer has confirmed it",
-      "Substitute a component after an approved submittal without raising it",
-      "Act as a pass-through for a supplier we cannot reach ourselves",
+      "Price a scope we have not surveyed and call it fixed",
+      "Write a specification around one product and present it as an open assessment",
+      "Mark a client specification fully compliant when it is not",
+      "Leave the interfaces between trades for someone else to discover",
+      "Disappear once the warranty period ends",
     ],
   },
 
   partners: {
-    title: "OEM partners",
-    body: "We are appointed by United States manufacturers to represent their equipment in the Kingdom. Partner marks are published here as each distribution agreement is signed, and the current manufacturer list — with the authorisation letters — is included in the prequalification pack.",
+    title: "Technology partners",
+    body: "We are vendor-independent by design: the right platform depends on the requirement, the existing estate and what your team can support. Where we hold manufacturer accreditations and training certifications, they are published here and included in the prequalification pack.",
     pendingNote:
-      "Agreements in progress are not listed, because naming a manufacturer before the appointment is signed is exactly the kind of claim that makes a prequalification file worthless.",
+      "Accreditations in progress are not listed, because naming a manufacturer before the certification is held is exactly the kind of claim that makes a prequalification file worthless.",
     cta: "Request the prequalification pack",
   },
 
   certifications: {
-    title: "Registrations and certifications",
-    body: "Two kinds of certification matter on a project: ours as a supplier, and the manufacturer's on the product. Both are issued with the submittal.",
+    title: "Credentials",
+    body: "Two kinds of credential matter on a project: the company's, and the individual qualifications of the people who turn up. Both are issued with the prequalification pack.",
     groups: [
       {
         title: "NextLink USA",
         items: [
-          "United States limited liability company, registered and in good standing",
+          "United States company, registered and in good standing",
           "Employer Identification Number and D-U-N-S registration",
-          "Export documentation prepared in accordance with US Export Administration Regulations",
+          "Professional indemnity and public liability insurance",
           "Prequalification pack maintained current for tender submission",
         ],
       },
       {
-        title: "Manufacturer and product",
+        title: "People on site",
         items: [
-          "ISO 9001 quality management certification held by the manufacturers we represent",
-          "UL listings and type-test certificates issued against the supplied models",
-          "ATEX and IECEx certificates for hazardous-area field devices",
-          "SASO technical regulation conformity, registered on SABER before shipment",
+          "Hazardous-area competence for installation and inspection to IEC 60079-14",
+          "Manufacturer training certifications for the platforms we commission",
+          "Fiber splicing and OTDR certification",
+          "Working-at-height, confined-space and offshore survival where the work requires it",
         ],
       },
     ],
-    note: "Certificates are supplied against the actual models and serial numbers on your order, not as a generic company brochure.",
+    note: "Qualifications are evidenced for the named personnel who will attend your site, not as a generic company claim.",
   },
 
   coverage: {
     title: "Where we work",
-    body: "Our focus is the Kingdom of Saudi Arabia — utilities and substations, oil and gas, data centers, healthcare, education and government. We also quote into the wider GCC where the conformity route is comparable.",
+    body: "A United States company delivering across the Gulf — Saudi Arabia, the UAE, Qatar, Kuwait, Bahrain and Oman — in utilities, oil and gas, data centers, healthcare, education and government.",
     points: [
-      { title: "United States", body: "Manufacturer relationships, order placement, export documentation and freight." },
-      { title: "Saudi Arabia", body: "Technical support, conformity registration, commissioning supervision and after-sales." },
-      { title: "Languages", body: "All correspondence, submittals and manuals in English or Arabic." },
+      {
+        title: "United States",
+        body: "Engineering, design authority, manufacturer relationships and commercial contracting.",
+      },
+      {
+        title: "Gulf region",
+        body: "Survey, installation, commissioning supervision, maintenance and support on site.",
+      },
+      {
+        title: "Offshore",
+        body: "Platforms, FPSOs and marine terminals, subject to operator certification and survival requirements.",
+      },
     ],
   },
 };

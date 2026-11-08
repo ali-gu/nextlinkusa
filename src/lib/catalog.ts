@@ -6,44 +6,64 @@ import type { IconName } from "@/components/ui/icon";
  * the two ever drift apart.
  */
 
-export const productSlugs = [
-  "dc-power-battery-chargers",
-  "paging-mass-notification",
-  "ups-power-quality",
+/** The seven capabilities from the company profile, in presentation order. */
+export const serviceSlugs = [
+  "telecom-services",
+  "mission-critical-communication",
+  "networks",
+  "ip-telephony",
+  "dc-chargers",
+  "fiber-optics",
+  "submarine-fiber-networks",
 ] as const;
 
-export type ProductSlug = (typeof productSlugs)[number];
+export type ServiceSlug = (typeof serviceSlugs)[number];
 
-export type ProductMeta = {
-  slug: ProductSlug;
+export type ServiceMeta = {
+  slug: ServiceSlug;
   icon: IconName;
   image: string;
-  /** "expanding" lines are quoted on request while the range is being signed. */
-  status: "available" | "expanding";
 };
 
-export const products: Record<ProductSlug, ProductMeta> = {
-  "dc-power-battery-chargers": {
-    slug: "dc-power-battery-chargers",
+export const services: Record<ServiceSlug, ServiceMeta> = {
+  "telecom-services": {
+    slug: "telecom-services",
+    icon: "telecom",
+    image: "/images/telecom-tower.jpg",
+  },
+  "mission-critical-communication": {
+    slug: "mission-critical-communication",
+    icon: "paging",
+    image: "/images/skyline-wide.jpg",
+  },
+  networks: {
+    slug: "networks",
+    icon: "network",
+    image: "/images/fiber-optics.jpg",
+  },
+  "ip-telephony": {
+    slug: "ip-telephony",
+    icon: "phone",
+    image: "/images/riyadh-skyline.jpg",
+  },
+  "dc-chargers": {
+    slug: "dc-chargers",
     icon: "dcPower",
     image: "/images/telecom-tower.jpg",
-    status: "available",
   },
-  "paging-mass-notification": {
-    slug: "paging-mass-notification",
-    icon: "paging",
+  "fiber-optics": {
+    slug: "fiber-optics",
+    icon: "fiber",
     image: "/images/fiber-optics.jpg",
-    status: "available",
   },
-  "ups-power-quality": {
-    slug: "ups-power-quality",
-    icon: "ups",
-    image: "/images/riyadh-skyline.jpg",
-    status: "expanding",
+  "submarine-fiber-networks": {
+    slug: "submarine-fiber-networks",
+    icon: "submarine",
+    image: "/images/offshore-cable-ship.jpg",
   },
 };
 
-export const productList = productSlugs.map((slug) => products[slug]);
+export const serviceList = serviceSlugs.map((slug) => services[slug]);
 
 export const industrySlugs = [
   "utilities-and-substations",
@@ -91,40 +111,39 @@ export const industries: Record<IndustrySlug, IndustryMeta> = {
 
 export const industryList = industrySlugs.map((slug) => industries[slug]);
 
-export const serviceIds = [
-  "sales",
-  "installation",
+/** Delivery stages offered against every service line. */
+export const deliveryIds = [
+  "design",
+  "install",
   "maintenance",
   "spares",
-  "after-sales",
+  "support",
 ] as const;
 
-export type ServiceId = (typeof serviceIds)[number];
+export type DeliveryId = (typeof deliveryIds)[number];
 
-export const serviceIcons: Record<ServiceId, IconName> = {
-  sales: "quote",
-  installation: "install",
+export const deliveryIcons: Record<DeliveryId, IconName> = {
+  design: "quote",
+  install: "install",
   maintenance: "maintenance",
   spares: "spares",
-  "after-sales": "support",
+  support: "support",
 };
 
 /* ------------------------------------------------------------ navigation -- */
 
-/** Every key the dictionaries must provide under `common.nav`. */
+/** Every key the content must provide under `common.nav`. */
 export type NavKey =
-  | "products"
-  | "industries"
   | "services"
-  | "resources"
+  | "industries"
   | "about"
   | "contact"
   | "quote"
-  | ProductSlug
+  | ServiceSlug
   | IndustrySlug;
 
 /** The subset that also needs a one-line summary in the flyout. */
-export type NavChildKey = ProductSlug | IndustrySlug;
+export type NavChildKey = ServiceSlug | IndustrySlug;
 
 export type NavItem = {
   key: NavKey;
@@ -134,12 +153,12 @@ export type NavItem = {
 
 export const primaryNav: NavItem[] = [
   {
-    key: "products",
-    href: "/products",
-    children: productList.map((product) => ({
-      key: product.slug,
-      href: `/products/${product.slug}`,
-      icon: product.icon,
+    key: "services",
+    href: "/services",
+    children: serviceList.map((service) => ({
+      key: service.slug,
+      href: `/services/${service.slug}`,
+      icon: service.icon,
     })),
   },
   {
@@ -151,18 +170,16 @@ export const primaryNav: NavItem[] = [
       icon: industry.icon,
     })),
   },
-  { key: "services", href: "/services" },
-  { key: "resources", href: "/resources" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ];
 
-/** Every page that should appear in the sitemap, newest-changing first. */
+/** Every page that should appear in the sitemap. */
 export const staticRoutes = [
   { path: "/", priority: 1.0, changeFrequency: "monthly" as const },
-  { path: "/products", priority: 0.9, changeFrequency: "monthly" as const },
-  ...productSlugs.map((slug) => ({
-    path: `/products/${slug}`,
+  { path: "/services", priority: 0.9, changeFrequency: "monthly" as const },
+  ...serviceSlugs.map((slug) => ({
+    path: `/services/${slug}`,
     priority: 0.8,
     changeFrequency: "monthly" as const,
   })),
@@ -172,8 +189,6 @@ export const staticRoutes = [
     priority: 0.7,
     changeFrequency: "monthly" as const,
   })),
-  { path: "/services", priority: 0.8, changeFrequency: "monthly" as const },
-  { path: "/resources", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "yearly" as const },
   { path: "/quote", priority: 0.9, changeFrequency: "yearly" as const },
   { path: "/contact", priority: 0.7, changeFrequency: "yearly" as const },

@@ -4,181 +4,179 @@ type WhyItem = { id: string; icon: IconName; title: string; body: string };
 
 export const home = {
   meta: {
-    title: "American-made power & safety communication equipment for Saudi Arabia",
+    title: "American engineering for telecom and critical infrastructure",
     description:
-      "Utility-grade DC chargers, paging and mass notification systems from US manufacturers, supplied to Saudi Arabia in 230/400 V 60 Hz variants with SABER-ready documentation and bilingual support.",
+      "NextLink USA designs, installs, commissions and supports telecom and critical infrastructure across the Gulf: networks, mission-critical communications, DC power, fiber optics and off-shore submarine fiber.",
   },
 
   hero: {
-    eyebrow: "US manufacturer supply · Kingdom of Saudi Arabia",
-    title: "American-made power and safety communication equipment, delivered to Saudi Arabia.",
+    eyebrow: "United States engineering · Gulf delivery",
+    title: "American engineering for telecom and critical infrastructure.",
     subtitle:
-      "Utility-grade DC chargers, paging, and notification systems, backed by US manufacturers and local support.",
+      "Networks, mission-critical communications, DC power and submarine fiber — designed, installed, commissioned and supported by one accountable contractor.",
     primary: "Request a Quote",
-    secondary: "Download Product Catalog",
     imageAlt:
-      "Riyadh skyline, a telecommunications tower and fibre-optic strands, representing critical infrastructure served by NextLink USA",
+      "City skyline, a telecommunications tower and fibre-optic strands, representing the critical infrastructure NextLink USA builds and supports",
     highlights: [
-      { value: "230/400 V", label: "60 Hz variants built for Saudi distribution" },
-      { value: "2 days", label: "Typical turnaround on a technical quote" },
-      { value: "EN / AR", label: "Submittals and support in both languages" },
+      { value: "7", label: "Service lines under one contract" },
+      { value: "2 days", label: "Typical turnaround on a scoped proposal" },
+      { value: "24/7", label: "Support options after handover" },
     ],
   },
 
   pillars: {
     eyebrow: "Where we work",
-    title: "Three ways customers use us",
-    body: "Most projects start in one of these three places, then grow into the others as the asset moves from construction into operation.",
+    title: "Three ways clients bring us in",
+    body: "Most engagements start at one of these three points, then widen as the asset moves from construction into operation.",
     items: [
       {
-        id: "utilities",
-        title: "Utilities and substations",
-        body: "Station battery chargers, DC distribution and monitoring for protection, control and SCADA — sized to IEEE 485 and supplied with the calculations your consultant needs for approval.",
+        id: "build",
+        title: "Build it",
+        body: "A greenfield network, a new control room, a substation DC system or a fiber route. We survey, design to the applicable standard, install and hand over a commissioned system with the test records to prove it.",
         bullets: [
-          "24, 48, 110, 125 and 220 VDC systems",
-          "Switchmode N+1 and SCR topologies",
-          "Earth-fault detection and battery monitoring",
-        ],
-        href: "/industries/utilities-and-substations",
-        cta: "Substation DC systems",
-      },
-      {
-        id: "public-safety",
-        title: "Buildings and public safety",
-        body: "Paging, talk-back and mass notification that stays intelligible in plant noise and in an evacuation — from an IP zone controller down to the Ex-rated horn on the pipe rack.",
-        bullets: [
-          "IP/SIP and 70 V / 100 V line systems",
-          "Class I Div 1/2 and ATEX/IECEx field devices",
-          "NFPA 72 ECS and voice-evacuation architectures",
-        ],
-        href: "/products/paging-mass-notification",
-        cta: "Paging and notification",
-      },
-      {
-        id: "support",
-        title: "Spares and support",
-        body: "The part of the deal most suppliers forget. Recommended spares holdings, battery replacement programmes and a named technical contact who answers in your time zone.",
-        bullets: [
-          "Recommended spares lists priced at order stage",
-          "Preventive maintenance to IEEE 450 / 1188",
-          "Warranty administration and RMA handling",
+          "Site survey and detailed design",
+          "Installation and supervised commissioning",
+          "Site acceptance testing against a written procedure",
         ],
         href: "/services",
-        cta: "Services and support",
+        cta: "Service lines",
+      },
+      {
+        id: "fix",
+        title: "Fix it",
+        body: "Coverage that was never right, intelligibility that fails a drill, a DC bus with an earth fault nobody can find, a fiber route that keeps taking hits. We measure first and tell you what the data says.",
+        bullets: [
+          "Measured surveys rather than assumptions",
+          "Root-cause findings, written down",
+          "Remediation priced against what we found",
+        ],
+        href: "/services/networks",
+        cta: "Diagnostics and remediation",
+      },
+      {
+        id: "keep",
+        title: "Keep it running",
+        body: "The part most contractors lose interest in. Preventive schedules built on the standards that govern the equipment, a spares holding sized on travel time, and an engineer who already knows your site.",
+        bullets: [
+          "Preventive maintenance to IEEE 450 and 1188",
+          "Critical spares sized on response time",
+          "A named technical contact, not a ticket queue",
+        ],
+        href: "/services",
+        cta: "Maintenance and support",
       },
     ],
   },
 
-  products: {
-    eyebrow: "Product range",
-    title: "Equipment that has to work when everything else has stopped",
-    body: "We represent US manufacturers whose equipment sits behind the protection relay, the evacuation speaker and the control room — the things that matter most on the worst day.",
-    cta: "View all products",
+  services: {
+    eyebrow: "Service lines",
+    title: "Seven capabilities, one contractor",
+    body: "Most of our work spans two or three of these at once — a control room needs radio, networks and DC power before it needs anything else. Holding them under one contract is what keeps the interfaces from becoming someone else's problem.",
+    cta: "All services",
   },
 
   why: {
     eyebrow: "Why NextLink USA",
-    title: "A short supply chain, and engineers on both ends of it",
-    items: ([
+    title: "American engineering practice, applied on site",
+    items: [
       {
-        id: "direct",
-        icon: "truck",
-        title: "Direct from US manufacturers",
-        body: "No re-export middlemen stacking margin on a factory price. You buy at the manufacturer's commercial terms, the warranty stays with the OEM, and the serial numbers trace back to the plant that built them.",
+        id: "standards",
+        icon: "shieldCheck",
+        title: "We work to a named standard",
+        body: "IEEE 485 for battery sizing, IEC 60268-16 for intelligibility, TIA-568 for cabling, NFPA 72 for emergency communications. Every proposal states which standard governs which part of the work, so there is something to hold us to at handover.",
       },
       {
-        id: "saudi-spec",
-        icon: "plug",
-        title: "Built for Saudi networks",
-        body: "230/400 V, 60 Hz input variants as standard, 50 °C ambient ratings, and enclosure options rated for coastal and desert installations. We confirm the derating in writing before you order, not after.",
-      },
-      {
-        id: "fast-quotes",
+        id: "measure",
         icon: "gauge",
-        title: "Fast technical quotes",
-        body: "Send a single-line diagram, a battery data sheet or a spec clause. You get back a sized offer with the IEEE 485 calculation, a clause-by-clause compliance statement and a delivered price — usually inside two business days.",
+        title: "We measure before we quote",
+        body: "Coverage modelled against real ambient noise. Harmonics sized from a logged spectrum rather than a nameplate. OTDR traces before and after. A proposal built on a guess costs more than the survey would have.",
       },
       {
-        id: "bilingual",
-        icon: "language",
-        title: "English and Arabic support",
-        body: "Submittals, O&M manuals and correspondence in either language. Your consultant reviews in English, your operator reads the panel label in Arabic, and nobody is waiting on a translation.",
+        id: "single",
+        icon: "network",
+        title: "One accountable contractor",
+        body: "Radio, network, telephony and DC power usually arrive as four subcontractors and four sets of excuses. Under one contract the interfaces are ours to solve, and there is one number to call when something does not work.",
       },
-    ] satisfies WhyItem[]),
+      {
+        id: "after",
+        icon: "support",
+        title: "We stay after handover",
+        body: "Project records live with the account, so the engineer who answers already has the design, the commissioning results and the as-builts in front of them. Maintenance and spares are agreed before the warranty starts, not after it lapses.",
+      },
+    ] satisfies WhyItem[],
   },
 
   industries: {
     eyebrow: "Industries",
     title: "Specified by consultants, operated by maintenance teams",
-    body: "The same equipment is read very differently by the engineer writing the specification and the technician replacing a fuse at 2 a.m. We write for both.",
+    body: "The same system is read very differently by the engineer writing the specification and the technician diagnosing it at 2 a.m. We design for both.",
     cta: "All industries",
   },
 
   process: {
     eyebrow: "How we work",
-    title: "From enquiry to commissioned asset",
-    body: "Six steps, with a named owner at each one. Nothing moves to the next step until the documentation for the current one is signed off.",
+    title: "From first call to a system you can hand over",
+    body: "Six stages, each with a named owner. Nothing moves on until the documentation for the current stage is signed off.",
     steps: [
       {
         id: "enquiry",
         title: "Enquiry",
-        body: "You send a specification, a single-line, or simply the load you need to hold up. A technical contact is assigned the same day.",
+        body: "You send a scope, a drawing, or simply describe the problem. A technical contact is assigned the same working day.",
       },
       {
-        id: "sizing",
-        title: "Technical sizing",
-        body: "We size the charger and battery to IEEE 485, confirm ambient derating, and flag anything in the specification the standard range cannot meet.",
+        id: "survey",
+        title: "Survey and design",
+        body: "We measure what is actually there — noise levels, existing cabling, DC loads, RF conditions — and design against the standard your specification names.",
       },
       {
-        id: "quotation",
-        title: "Quotation and submittals",
-        body: "A priced offer with GA drawings, schematics, a clause-by-clause compliance statement and the Incoterm you asked for.",
+        id: "proposal",
+        title: "Proposal",
+        body: "A priced scope with drawings, the calculations behind it, the standards it is built to, and an honest list of what sits outside the price.",
       },
       {
-        id: "order",
-        title: "Order and conformity",
-        body: "Purchase order placed with the OEM, SABER product and shipment certificates arranged, export documentation and certificate of origin prepared.",
+        id: "mobilise",
+        title: "Mobilisation",
+        body: "Method statements, risk assessments, permits to work and site inductions in place before anyone picks up a tool.",
       },
       {
-        id: "delivery",
-        title: "Delivery",
-        body: "Export packing suited to sea or air freight, consolidated where it saves money, delivered on the Incoterm agreed — EXW through DDP.",
+        id: "install",
+        title: "Installation and commissioning",
+        body: "Installed by qualified technicians, commissioned to a written procedure, and tested in front of you with the results recorded.",
       },
       {
-        id: "commissioning",
-        title: "Commissioning and after-sales",
-        body: "Commissioning supervision, site acceptance testing, operator training, and a spares holding agreed before the warranty starts.",
+        id: "support",
+        title: "Handover and support",
+        body: "As-built drawings, test records, operator training, and a maintenance and spares agreement that starts the day the warranty does.",
       },
     ],
   },
 
-  compliance: {
-    eyebrow: "Conformity",
-    title: "Documentation that clears customs and passes review",
-    body: "Equipment that cannot be registered on SABER does not reach site, and equipment without a compliance statement does not pass consultant review. Both are handled before the order is placed, not after the container lands.",
+  assurance: {
+    eyebrow: "Assurance",
+    title: "What a competent handover actually contains",
+    body: "A system is not finished when it powers up. These are the documents that let an operator run it, a maintainer fix it, and an auditor accept it — and they are part of the scope, not an extra.",
     items: [
       {
-        id: "saber",
-        title: "SABER registration",
-        body: "Product Certificate of Conformity and Shipment Certificate of Conformity arranged through an accredited conformity body for every regulated line item.",
+        id: "records",
+        title: "Test and commissioning records",
+        body: "Every circuit, zone and feeder tested against a written procedure, countersigned on site, with the measured values rather than a tick.",
       },
       {
-        id: "standards",
-        title: "IEC, IEEE and NFPA alignment",
-        body: "Equipment supplied against IEC 61439, IEC 62040, IEEE 485, IEEE 946, NFPA 72 and UL listings, with the certificates attached to the submittal.",
+        id: "asbuilt",
+        title: "As-built documentation",
+        body: "Drawings that match what was installed, cable schedules, point lists and configuration backups — updated through variations, not frozen at design.",
       },
       {
         id: "hazardous",
-        title: "Hazardous area certification",
-        body: "ATEX, IECEx and NEC Class I Division 1/2 certified field devices for plant, terminal and offshore installations, with certificate numbers quoted on the datasheet.",
+        title: "Hazardous-area compliance",
+        body: "Where the work enters a classified area, installation and inspection to IEC 60079-14 by competent personnel, with the certification recorded per device.",
       },
       {
-        id: "export",
-        title: "Export and customs documentation",
-        body: "Commercial invoice, packing list, certificate of origin and, where required, legalisation — prepared to match the letter of credit or the purchase order exactly.",
+        id: "training",
+        title: "Operator and maintainer training",
+        body: "Delivered on the installed system, not a slide deck: routine checks, alarm interpretation, first-line fault finding and when to call us.",
       },
     ],
-    cta: "Compliance notes and spec text",
   },
 
   faq: {
@@ -186,28 +184,28 @@ export const home = {
     title: "Before you send an enquiry",
     items: [
       {
-        q: "Is your equipment certified for the Saudi market?",
-        a: "Regulated products are registered on SABER before shipment. We arrange the Product Certificate of Conformity against the applicable SASO technical regulation and the Shipment Certificate of Conformity for each consignment, through an accredited conformity assessment body. Certificates are issued in the importer's name, so your customs broker has what they need at the port.",
+        q: "Are you a contractor or a consultant?",
+        a: "Both, depending on what the project needs. We will take a scope from design through installation and commissioning, or we will do the survey and design and hand it to whichever contractor is already on site. Where we design something we will also tell you what it would cost to build, so the two are never confused.",
       },
       {
-        q: "Are your products available in 230/400 V at 60 Hz?",
-        a: "Yes. Saudi Arabia runs at 60 Hz and is standardising on 230/400 V distribution, so we quote that input as the default rather than as a special. DC output voltages of 24, 48, 110, 125 and 220 V are all standard, and 50 Hz variants remain available where a site still needs them.",
+        q: "Do you supply the equipment as well?",
+        a: "We specify and procure what the design needs, and we are not tied to a single manufacturer. Where you have a framework agreement or a preferred vendor, we will work inside it. What we will not do is write a specification around a product and then present it as an open assessment.",
       },
       {
-        q: "What do you need in order to quote a DC system?",
-        a: "At minimum: nominal DC bus voltage, the continuous and momentary loads, the autonomy you need, and the battery chemistry if it is already fixed. A single-line diagram and the project specification let us go further and return a full IEEE 485 sizing calculation with the offer. If you only have a spec clause, send that — we will tell you what is missing.",
+        q: "What does a proposal actually contain?",
+        a: "A scope of work, the calculations behind it, the standards each part is built to, the drawings we would issue, a programme, and a clear list of exclusions. The exclusions are the useful part — a proposal with none has usually not been read properly.",
       },
       {
-        q: "Do you handle shipping and customs into Saudi Arabia?",
-        a: "We quote on any Incoterm from EXW through DDP. Most customers take CIF Dammam or Jeddah and clear with their own broker; others prefer DDP to site. Export packing, certificate of origin, commercial invoice and the SABER shipment certificate are prepared to match the purchase order and, where applicable, the letter of credit.",
+        q: "Can you work to our own engineering standards?",
+        a: "Yes, and we prefer to. Major operators in the region work to their own engineering standards and material specifications on top of the international codes. Send them with the enquiry and we will return a compliance statement marking each clause complied, complied with comment, or not complied.",
       },
       {
-        q: "Can you provide specification text for consultants?",
-        a: "Yes. We publish editable specification text in CSI MasterFormat structure for DC power equipment and for public address and mass notification systems, written to be manufacturer-neutral so it survives a tender review. It is free to use and does not oblige you to buy from us.",
+        q: "Do you work in hazardous areas?",
+        a: "Yes. Installation and inspection to IEC 60079-14 by competent personnel, with protection concept, gas group, temperature class and certificate number recorded per device. Tell us the area classification with the enquiry and the proposal will reflect it rather than caveat it.",
       },
       {
-        q: "Do you support Arabic-language documentation?",
-        a: "Submittals, operation and maintenance manuals and correspondence are available in Arabic and English. Panel labelling, mimic diagrams and operator training can be delivered in Arabic where the project requires it.",
+        q: "What happens after handover?",
+        a: "Whatever you want to happen. Some clients take the test records and run it themselves; most take a maintenance agreement with a defined response time and a spares holding sized on how far the site is from anyone who can help. Both are priced before handover, not after something fails.",
       },
     ],
   },

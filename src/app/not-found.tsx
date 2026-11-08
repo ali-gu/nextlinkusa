@@ -18,8 +18,8 @@ export default function NotFound() {
           <ButtonLink href="/" icon="arrowRight">
             {actions.backHome}
           </ButtonLink>
-          <ButtonLink href="/products" variant="secondary">
-            {nav.products}
+          <ButtonLink href="/services" variant="secondary">
+            {nav.services}
           </ButtonLink>
           <ButtonLink href="/contact" variant="secondary">
             {nav.contact}

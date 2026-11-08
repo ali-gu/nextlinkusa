@@ -132,24 +132,26 @@ export function organizationSchema() {
         "@type": "ContactPoint",
         contactType: "sales",
         email: site.email,
-        availableLanguage: ["en", "ar"],
+        availableLanguage: ["en"],
         areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "US"],
       },
       {
         "@type": "ContactPoint",
         contactType: "technical support",
         email: site.email,
-        availableLanguage: ["en", "ar"],
+        availableLanguage: ["en"],
       },
     ],
     knowsAbout: [
-      "Substation DC power systems",
-      "Stationary battery chargers",
-      "IEEE 485 battery sizing",
-      "Mass notification systems",
+      "Telecom infrastructure engineering",
+      "Mission-critical communications",
       "Public address and general alarm",
-      "Hazardous area certified equipment",
-      "SABER and SASO conformity",
+      "Industrial and enterprise networks",
+      "IP telephony and unified communications",
+      "Substation DC power and IEEE 485 battery sizing",
+      "Fiber optic design, splicing and testing",
+      "Submarine fiber and offshore connectivity",
+      "Hazardous area installation to IEC 60079-14",
     ],
     ...(site.social.linkedin ? { sameAs: [site.social.linkedin] } : {}),
   };
@@ -192,45 +194,32 @@ export function faqSchema(items: ReadonlyArray<{ q: string; a: string }>) {
   };
 }
 
-/**
- * Deliberately emitted without `offers`: these pages describe equipment
- * families quoted to specification, and inventing a price to satisfy a rich
- * result would be worse than forgoing the rich result.
- */
-export function productSchema({
+/** A single service line. */
+export function serviceSchema({
   name,
   description,
-  image,
   url,
-  category,
-  specs,
 }: {
   name: string;
   description: string;
-  image: string;
   url: string;
-  category: string;
-  specs?: ReadonlyArray<{ label: string; value: string }>;
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     name,
     description,
-    image: absoluteUrl(image),
     url: absoluteUrl(url),
-    category,
-    brand: { "@type": "Brand", name: site.name },
-    manufacturer: { "@id": ORG_ID },
-    ...(specs?.length
-      ? {
-          additionalProperty: specs.map((spec) => ({
-            "@type": "PropertyValue",
-            name: spec.label,
-            value: spec.value,
-          })),
-        }
-      : {}),
+    serviceType: name,
+    provider: { "@id": ORG_ID },
+    areaServed: [
+      { "@type": "Country", name: "Saudi Arabia" },
+      { "@type": "Country", name: "United Arab Emirates" },
+      { "@type": "Country", name: "Qatar" },
+      { "@type": "Country", name: "Kuwait" },
+      { "@type": "Country", name: "Bahrain" },
+      { "@type": "Country", name: "Oman" },
+    ],
   };
 }
 
@@ -254,7 +243,6 @@ export function serviceCatalogSchema({
         name: service.name,
         description: service.description,
         provider: { "@id": ORG_ID },
-        areaServed: { "@type": "Country", name: "Saudi Arabia" },
       },
     })),
   };

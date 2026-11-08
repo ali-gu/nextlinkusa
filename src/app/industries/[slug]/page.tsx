@@ -18,7 +18,7 @@ import {
   industries,
   industrySlugs,
   type IndustrySlug,
-  products,
+  services,
 } from "@/lib/catalog";
 import { content as t } from "@/lib/content";
 import { breadcrumbSchema, buildMetadata, faqSchema } from "@/lib/seo";
@@ -101,11 +101,11 @@ export default async function IndustryPage({ params }: PageProps) {
         <Container width="wide">
           <SectionHeading
             eyebrow={t.common.labels.capabilities}
-            title={t.common.labels.relatedProducts}
+            title={t.common.labels.relatedServices}
           />
 
           <ul className="mt-12 grid gap-6 lg:grid-cols-3">
-            {copy.supply.map((item) => (
+            {copy.work.map((item) => (
               <li key={item.title} className="flex">
                 <Card interactive as="article" className="flex w-full flex-col p-7">
                   <h3 className="text-h3 font-semibold text-navy-950">{item.title}</h3>
@@ -136,24 +136,24 @@ export default async function IndustryPage({ params }: PageProps) {
 
           <div className="mt-16 border-t border-navy-100 pt-12">
             <h2 className="text-h3 font-semibold text-navy-950">
-              {t.common.labels.relatedProducts}
+              {t.common.labels.relatedServices}
             </h2>
             <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {copy.relatedProducts.map((productSlug) => (
-                <li key={productSlug} className="flex">
+              {copy.relatedServices.map((serviceSlug) => (
+                <li key={serviceSlug} className="flex">
                   <Card interactive className="flex w-full gap-4 p-5">
-                    <IconTile name={products[productSlug].icon} size="sm" />
+                    <IconTile name={services[serviceSlug].icon} size="sm" />
                     <div className="min-w-0">
                       <h3 className="text-base font-semibold text-navy-950">
                         <Link
-                          href={`/products/${productSlug}`}
+                          href={`/services/${serviceSlug}`}
                           className="before:absolute before:inset-0 before:content-['']"
                         >
-                          {t.products.items[productSlug].name}
+                          {t.services.items[serviceSlug].name}
                         </Link>
                       </h3>
                       <p className="mt-1.5 text-sm leading-relaxed text-navy-800/85">
-                        {t.common.navSummary[productSlug]}
+                        {t.common.navSummary[serviceSlug]}
                       </p>
                     </div>
                   </Card>

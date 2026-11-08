@@ -5,9 +5,7 @@ import { notFound } from "next/navigation";
 import { CtaBand, PageHero } from "@/components/sections/common";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Accordion, SpecTable, StandardsList } from "@/components/ui/blocks";
-import { Icon } from "@/components/ui/icon";
 import {
-  Badge,
   Card,
   CheckList,
   Container,
@@ -17,54 +15,53 @@ import {
 } from "@/components/ui/primitives";
 import {
   industries,
-  type ProductSlug,
-  productSlugs,
-  products,
+  type ServiceSlug,
+  serviceSlugs,
+  services,
 } from "@/lib/catalog";
 import { content as t } from "@/lib/content";
 import {
   breadcrumbSchema,
   buildMetadata,
   faqSchema,
-  productSchema,
+  serviceSchema,
 } from "@/lib/seo";
 
-type PageProps = { params: Promise<{ slug: ProductSlug }> };
+type PageProps = { params: Promise<{ slug: ServiceSlug }> };
 
 export function generateStaticParams() {
-  return productSlugs.map((slug) => ({ slug }));
+  return serviceSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  if (!productSlugs.includes(slug)) return {};
+  if (!serviceSlugs.includes(slug)) return {};
 
-  const copy = t.products.items[slug];
+  const copy = t.services.items[slug];
 
   return buildMetadata({
-    path: `/products/${slug}`,
+    path: `/services/${slug}`,
     title: copy.meta.title,
     description: copy.meta.description,
   });
 }
 
-export default async function ProductPage({ params }: PageProps) {
+export default async function ServicePage({ params }: PageProps) {
   const { slug } = await params;
-  if (!productSlugs.includes(slug)) notFound();
+  if (!serviceSlugs.includes(slug)) notFound();
 
-  const meta = products[slug];
-  const copy = t.products.items[slug];
-  const expanding = "status" in copy ? copy.status : undefined;
-  const specGroups: ReadonlyArray<{
+  const meta = services[slug];
+  const copy = t.services.items[slug];
+  const scopeGroups: ReadonlyArray<{
     title: string;
     rows: ReadonlyArray<{ label: string; value: string }>;
-  }> = copy.specGroups;
-  const split = Math.ceil(specGroups.length / 2);
+  }> = copy.scopeGroups;
+  const split = Math.ceil(scopeGroups.length / 2);
 
   const crumbs = [
     { label: t.common.labels.home, href: "/" },
-    { label: t.common.nav.products, href: "/products" },
-    { label: copy.name, href: `/products/${slug}` },
+    { label: t.common.nav.services, href: "/services" },
+    { label: copy.name, href: `/services/${slug}` },
   ];
 
   return (
@@ -77,14 +74,7 @@ export default async function ProductPage({ params }: PageProps) {
         crumbLabel={t.common.labels.breadcrumb}
         image={meta.image}
         imageAlt={copy.imageAlt}
-      >
-        {expanding ? (
-          <Badge tone="onDark" className="mt-7">
-            <Icon name="clock" className="text-sm" />
-            {expanding.label}
-          </Badge>
-        ) : null}
-      </PageHero>
+      />
 
       {/* ---------------------------------------------------- introduction */}
       <Section tone="plain" size="compact">
@@ -92,22 +82,10 @@ export default async function ProductPage({ params }: PageProps) {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,34rem)_1fr] lg:gap-20">
             <div className="space-y-5">
               {copy.intro.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="text-lead leading-relaxed text-navy-800/90"
-                >
+                <p key={paragraph} className="text-lead leading-relaxed text-navy-800/90">
                   {paragraph}
                 </p>
               ))}
-
-              {expanding ? (
-                <Card tone="warn" className="border-s-4 border-s-flag-600 p-5 ring-flag-100">
-                  <p className="text-sm leading-relaxed text-navy-900">
-                    <span className="font-semibold">{expanding.label}. </span>
-                    {expanding.body}
-                  </p>
-                </Card>
-              ) : null}
             </div>
 
             <ul className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
@@ -124,19 +102,19 @@ export default async function ProductPage({ params }: PageProps) {
         </Container>
       </Section>
 
-      {/* ------------------------------------------------------------ specs */}
-      <Section tone="tint" id="specifications">
+      {/* ------------------------------------------------------------ scope */}
+      <Section tone="tint" id="scope">
         <Container width="wide">
           <SectionHeading
             eyebrow={t.common.labels.capabilities}
-            title={t.common.labels.specifications}
+            title={t.common.labels.scope}
           />
           <div className="mt-12 grid gap-14 lg:grid-cols-2 lg:gap-x-16">
-            <SpecTable groups={specGroups.slice(0, split)} />
-            <SpecTable groups={specGroups.slice(split)} />
+            <SpecTable groups={scopeGroups.slice(0, split)} />
+            <SpecTable groups={scopeGroups.slice(split)} />
           </div>
           <p className="mt-10 max-w-3xl text-sm leading-relaxed text-navy-700">
-            {t.products.index.note}
+            {t.services.index.note}
           </p>
         </Container>
       </Section>
@@ -209,12 +187,7 @@ export default async function ProductPage({ params }: PageProps) {
             eyebrow={t.common.labels.faq}
             title={t.home.faq.title}
           />
-          <Accordion
-            items={copy.faq}
-            name={`faq-${slug}`}
-            defaultOpenFirst
-            className="mt-12"
-          />
+          <Accordion items={copy.faq} name={`faq-${slug}`} defaultOpenFirst className="mt-12" />
         </Container>
       </Section>
 
@@ -223,13 +196,10 @@ export default async function ProductPage({ params }: PageProps) {
       <JsonLd
         data={[
           breadcrumbSchema(crumbs),
-          productSchema({
+          serviceSchema({
             name: copy.name,
             description: copy.meta.description,
-            image: meta.image,
-            url: `/products/${slug}`,
-            category: t.common.labels.products,
-            specs: specGroups.flatMap((group) => group.rows).slice(0, 20),
+            url: `/services/${slug}`,
           }),
           faqSchema(copy.faq),
         ]}

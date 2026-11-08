@@ -1,92 +1,92 @@
-import type { ProductSlug } from "@/lib/catalog";
+import type { ServiceSlug } from "@/lib/catalog";
 
 export const industries = {
   index: {
     meta: {
       title: "Industries — utilities, oil & gas, data centers, healthcare, government",
       description:
-        "DC power systems and mass notification equipment supplied to Saudi substations, oil and gas facilities, data centers, hospitals, schools and government buildings.",
+        "Telecom, communications, network and DC power engineering delivered to substations, oil and gas facilities, data centers, hospitals, schools and government buildings.",
     },
     eyebrow: "Industries",
-    title: "The same equipment, read five different ways",
-    lede: "A 125 VDC charger on a transmission substation and a 125 VDC charger in a refinery switchroom are the same product with very different paperwork. These pages set out what changes — the standards, the certification, the environment and the spares strategy.",
+    title: "The same engineering, five different sets of constraints",
+    lede: "A radio system in a refinery and a radio system in a hospital use much the same equipment and almost nothing of the same approach. What changes is the area classification, the maintenance window, the people receiving the message and who has to sign it off.",
   },
 
   items: {
     "utilities-and-substations": {
       name: "Utilities & substations",
       meta: {
-        title: "Substation DC power systems for Saudi utilities",
+        title: "Substation communications and DC power engineering",
         description:
-          "Station battery chargers, DC distribution and monitoring for 13.8 kV to 380 kV substations in Saudi Arabia, sized to IEEE 485 and IEEE 946 with SABER-ready documentation.",
+          "Station DC systems, protection and control communications, IEC 61850 station networks and substation telecom for 13.8 kV to 380 kV installations.",
       },
-      tagline: "The DC bus every protection scheme depends on.",
+      tagline: "Everything the protection scheme quietly depends on.",
       summary:
-        "Station DC systems for distribution and transmission substations — chargers, batteries, distribution and monitoring, sized and documented for utility review.",
+        "Station DC systems, protection and control communications, station bus networks and substation telecom — designed, installed and maintained for distribution and transmission.",
       imageAlt: "Transmission infrastructure against a clear sky",
       intro: [
-        "A substation DC system has one job and no second chance at it: keep the trip coils, protection relays, control scheme and communications alive through an AC failure long enough for the network to be restored. Everything else about the station is negotiable.",
-        "We supply station battery chargers, DC distribution and monitoring for 13.8 kV distribution through to 380 kV transmission, with the calculations and type-test evidence a utility engineering department expects to see before approval.",
+        "A substation has one job it cannot fail at: clear a fault and tell the control centre it did. Everything behind that — the battery, the charger, the station bus, the teleprotection path — exists to make a few milliseconds work reliably for twenty years.",
+        "We build and maintain that supporting infrastructure for 13.8 kV distribution through to 380 kV transmission, and we document it to the standard a utility engineering department expects before it will accept a station.",
       ],
       challenges: [
         {
           title: "Ambient temperature destroys battery life",
-          body: "A lead-acid battery loses roughly half its design life for every 10 °C above 25 °C. Switchroom ambient, not outdoor shade temperature, is what the sizing has to use — and the charger needs temperature compensation wired to a probe on the battery, not a guess in firmware.",
+          body: "A lead-acid battery loses roughly half its design life for every 10 °C above 25 °C. The sizing has to use switchroom ambient, not outdoor shade temperature, and the charger needs temperature compensation wired to a probe on the battery rather than a guess in firmware.",
         },
         {
           title: "Earth faults are found the hard way",
-          body: "An undetected earth fault on a DC bus is benign until the second one arrives and trips a breaker nobody asked to trip. Detection on both polarities is the minimum; branch-circuit location is what lets a technician find it without de-energising the station DC bus.",
+          body: "An undetected earth fault on a DC bus is benign until the second one arrives and trips a breaker nobody asked to trip. Detection on both polarities is the minimum; branch-circuit location is what lets a technician find it without de-energising the station bus.",
         },
         {
           title: "Remote sites are expensive to visit",
-          body: "If a charger fault means a four-hour drive, N+1 modular redundancy and remote alarm reporting pay for themselves on the first avoided call-out. We size the spares holding on travel time, not on list price.",
+          body: "Where a fault means a four-hour drive, N+1 redundancy and genuine remote alarm reporting pay for themselves on the first avoided call-out. We size spares on travel time, not on list price.",
         },
         {
-          title: "The specification outlives the supplier",
-          body: "Stations get extended ten and fifteen years after they are built. Supplying equipment that is documented down to OEM part numbers is what makes a matching extension possible later.",
+          title: "The station outlives everyone who built it",
+          body: "Stations get extended ten and fifteen years later. Work documented down to part numbers, point lists and configuration backups is what makes a matching extension possible instead of a rebuild.",
         },
       ],
-      supply: [
+      work: [
         {
-          title: "Station battery chargers",
-          body: "110, 125 and 220 VDC switchmode and SCR sets with float, boost and commissioning charge, temperature compensation and adjustable current limit. Dual-redundant configurations where the protection scheme demands it.",
-          href: "/products/dc-power-battery-chargers",
+          title: "Station DC systems",
+          body: "Battery and charger sizing to IEEE 485, DC distribution with earth-fault detection on both polarities, installation, commissioning charge and maintenance trended to IEEE 450.",
+          href: "/services/dc-chargers",
         },
         {
-          title: "DC distribution and monitoring",
-          body: "Fused or MCB distribution sections, earth-fault detection on both polarities, DC voltage supervision and alarm annunciation mapped to potential-free contacts, Modbus, DNP3 or IEC 61850.",
-          href: "/products/dc-power-battery-chargers",
+          title: "Station networks and teleprotection",
+          body: "IEC 61850 station and process bus, redundant ring topologies with verified reconvergence, time distribution, and the fiber paths that carry protection signalling between bays and sites.",
+          href: "/services/networks",
         },
         {
-          title: "Control building notification",
-          body: "Paging and talk-back between control room and switchyard, plus evacuation messaging for manned stations and training centres.",
-          href: "/products/paging-mass-notification",
+          title: "Substation telecom and communications",
+          body: "Telecom rooms, microwave and fiber backhaul, control-room to switchyard talk-back and evacuation messaging for manned stations.",
+          href: "/services/telecom-services",
         },
       ],
       notes: {
-        title: "Specification notes",
+        title: "How we work here",
         items: [
-          "Battery sizing to IEEE 485 with the duty cycle shown, including momentary trip and close currents.",
+          "Battery sizing to IEEE 485 showing the duty cycle, including momentary trip and close currents.",
           "System architecture and redundancy to IEEE 946; DC protection coordination to IEEE 1375.",
-          "Seismic qualification to IEEE 693 where the station specification calls for it.",
+          "Station networks to IEC 61850, with failover times measured at commissioning rather than quoted.",
           "Assemblies built and type-tested to IEC 61439-1 and IEC 61439-2.",
-          "Maintenance regime and acceptance testing to IEEE 450, IEEE 1188 or IEEE 1106 by chemistry.",
-          "Regulated items registered on SABER against the applicable SASO technical regulation before shipment.",
+          "Maintenance and acceptance testing to IEEE 450, IEEE 1188 or IEEE 1106 by chemistry.",
+          "Work on live stations under permit, with an agreed isolation and rollback plan.",
         ],
       },
-      relatedProducts: ["dc-power-battery-chargers", "paging-mass-notification"] as ProductSlug[],
+      relatedServices: ["dc-chargers", "networks", "telecom-services", "fiber-optics"] as ServiceSlug[],
       faq: [
         {
-          q: "Can you supply against a utility's own technical specification?",
-          a: "Yes, and we would prefer to. Send the specification and we return a clause-by-clause compliance statement marking each requirement complied, complied with comment, or not complied. The exceptions are the valuable part of that document — a supplier who marks every clause compliant has usually not read it.",
+          q: "Can you work to a utility's own technical specification?",
+          a: "Yes, and we prefer to. Send the specification and we return a clause-by-clause compliance statement marking each requirement complied, complied with comment, or not complied. The exceptions are the valuable part of that document — a contractor who marks every clause compliant has usually not read it.",
         },
         {
-          q: "Do you supply the batteries as well as the charger?",
-          a: "We can quote the complete DC system — charger, battery, stand or cabinet, and distribution — or the charger alone where a battery framework agreement is already in place. Where you supply the battery, we need its discharge characteristics and recommended float and boost voltages to set the charger correctly.",
+          q: "Will you work on an energised station?",
+          a: "Routinely, under permit, with isolation and a written rollback plan agreed before mobilisation. Where a task genuinely cannot be done live, we say so at proposal stage and plan the outage with you rather than discovering it on the night.",
         },
         {
-          q: "Is IEC 61850 integration available?",
-          a: "On selected ranges, yes. For most stations the standard potential-free contacts plus DNP3 or Modbus TCP into the station gateway is what is actually being asked for, and it is simpler to commission. We will confirm which option the quoted model supports before order.",
+          q: "Do you handle IEC 61850 station networks?",
+          a: "Yes — station bus and process bus design, build and commissioning, including redundancy testing by physically pulling links rather than trusting the protocol timer. For many stations what is actually needed is sound DNP3 or Modbus TCP into the gateway, and we will say so if that is the honest answer.",
         },
       ],
     },
@@ -94,77 +94,87 @@ export const industries = {
     "oil-and-gas": {
       name: "Oil & gas",
       meta: {
-        title: "Hazardous-area paging and DC power for Saudi oil & gas facilities",
+        title: "Hazardous-area communications and infrastructure for oil & gas",
         description:
-          "ATEX, IECEx and Class I Division 1/2 certified PA/GA and notification devices, plus DC power for fire and gas, ESD and control systems in upstream, midstream and downstream facilities.",
+          "PA/GA, radio coverage, networks and DC power for upstream, midstream, downstream and offshore facilities, installed to IEC 60079-14 with ATEX and IECEx certified devices.",
       },
       tagline: "Certified for the area classification, built for the corrosion.",
       summary:
-        "Public address and general alarm, talk-back and DC power for plants, terminals, pipelines and offshore installations — with the certification pack to match the hazardous area classification.",
+        "PA/GA, radio coverage, plant networks and DC power for plants, terminals, pipelines and offshore installations — installed and inspected to the hazardous-area codes.",
       imageAlt: "Offshore vessel laying submarine cable at sunset",
       intro: [
-        "In a process facility, the notification system is part of the safety case. It has to be audible over a compressor, certified for the zone it sits in, and survive years of salt, sand and hydrogen sulphide without the enclosure giving up first.",
-        "We supply hazardous-area PA/GA and talk-back equipment and the DC systems behind fire and gas, emergency shutdown and control — with certificate numbers, protection concepts and material specifications quoted per device.",
+        "In a process facility, the communication system is part of the safety case. It has to be audible over a compressor, certified for the zone it sits in, and survive years of salt, sand and hydrogen sulphide without the enclosure giving up first.",
+        "We design, install and maintain hazardous-area communications, plant networks and the DC systems behind fire and gas, emergency shutdown and control — with the certification recorded per device rather than per order.",
       ],
       challenges: [
         {
           title: "Area classification drives everything",
-          body: "A device that is fine in Zone 2 is not acceptable in Zone 1, and a Division 2 listing does not satisfy a Zone 1 requirement. We quote the protection concept, gas group and temperature class per item so the review is a document check, not an argument.",
+          body: "A device that is fine in Zone 2 is not acceptable in Zone 1, and a Division 2 listing does not satisfy a Zone 1 requirement. We record protection concept, gas group and temperature class per item so review is a document check, not an argument.",
         },
         {
           title: "Plant noise defeats ordinary speakers",
-          body: "A compressor house at 100 dBA needs a design that targets intelligibility, not just sound pressure. That means re-entrant horns placed on a modelled layout, and a measured speech transmission index at commissioning.",
+          body: "A compressor house at 100 dBA needs a design that targets intelligibility, not sound pressure. That means re-entrant horns on a modelled layout and a measured speech transmission index at commissioning.",
         },
         {
-          title: "Corrosion is the real service life limit",
-          body: "Coastal and sour-service environments eat painted mild steel. 316 stainless, glass-reinforced polyester and copper-free aluminium are specified per location, not applied uniformly to keep the quotation tidy.",
+          title: "Corrosion is the real service-life limit",
+          body: "Coastal and sour-service environments eat painted mild steel. 316 stainless, glass-reinforced polyester and copper-free aluminium get specified per location rather than applied uniformly to keep a quotation tidy.",
         },
         {
-          title: "Shutdowns are the only maintenance window",
-          body: "If a device can only be replaced during a turnaround, the spares holding has to anticipate it. Recommended holdings are built around the turnaround interval and the certification lead time for replacements.",
+          title: "Turnarounds are the only maintenance window",
+          body: "If a device can only be replaced during a shutdown, the spares holding has to anticipate it — built around the turnaround interval and the certification lead time for replacements.",
         },
       ],
-      supply: [
+      work: [
         {
-          title: "Hazardous-area PA/GA and talk-back",
-          body: "Ex d, Ex e and Ex ia horn loudspeakers, beacons, combination sounder/beacons, weatherproof handsets and noise-cancelling call stations for Zone 1, Zone 2, Division 1 and Division 2.",
-          href: "/products/paging-mass-notification",
+          title: "Hazardous-area PA/GA and radio",
+          body: "Ex d, Ex e and Ex ia loudspeakers, beacons, handsets and call stations for Zone 1, Zone 2, Division 1 and Division 2, with plant-wide radio coverage and control-room dispatch.",
+          href: "/services/mission-critical-communication",
         },
         {
-          title: "Plant-wide notification head-end",
-          body: "Zone controllers, supervised amplifiers with N+1 standby, battery backup and interfaces to fire and gas, ESD and the DCS so a process event can raise the right message in the right area.",
-          href: "/products/paging-mass-notification",
+          title: "Plant networks and OT segmentation",
+          body: "Industrial Ethernet rated for the environment, IEC 62443 zone and conduit segmentation between process and business networks, and the wireless that maintenance teams actually use.",
+          href: "/services/networks",
         },
         {
-          title: "DC systems for safety and control",
-          body: "24, 48 and 125 VDC chargers and distribution for fire and gas panels, emergency shutdown systems, switchgear control and telecom, with earth-fault detection and full alarm mapping.",
-          href: "/products/dc-power-battery-chargers",
+          title: "DC power for safety systems",
+          body: "24, 48 and 125 VDC chargers and distribution for fire and gas panels, emergency shutdown, switchgear control and telecom, with earth-fault detection and full alarm mapping.",
+          href: "/services/dc-chargers",
+        },
+        {
+          title: "Offshore connectivity",
+          body: "Platform and terminal links over submarine fiber, with the resilience design and fallback arrangements a facility that cannot be reached by road actually needs.",
+          href: "/services/submarine-fiber-networks",
         },
       ],
       notes: {
-        title: "Specification notes",
+        title: "How we work here",
         items: [
-          "Field devices certified under the IEC 60079 series for ATEX and IECEx, or listed to the NEC for Class I Division 1 and Division 2.",
-          "Certificate number, protection concept, gas group, temperature class and ingress rating quoted per device on the submittal.",
+          "Field devices certified under IEC 60079 for ATEX and IECEx, or listed to the NEC for Class I Division 1 and 2.",
+          "Installation and inspection to IEC 60079-14 by competent personnel, recorded per device.",
+          "Certificate number, protection concept, gas group, temperature class and ingress rating stated per device type.",
           "Enclosure material selected per location: 316 stainless, GRP or copper-free aluminium.",
           "Speech intelligibility designed and verified to IEC 60268-16 against measured ambient noise.",
-          "Emergency communications architecture to NFPA 72 and UL 2572 where the project references them.",
-          "Operator-facing documentation and panel labelling available in Arabic.",
+          "Permit-to-work, method statements and risk assessments agreed before mobilisation.",
         ],
       },
-      relatedProducts: ["paging-mass-notification", "dc-power-battery-chargers"] as ProductSlug[],
+      relatedServices: [
+        "mission-critical-communication",
+        "networks",
+        "dc-chargers",
+        "submarine-fiber-networks",
+      ] as ServiceSlug[],
       faq: [
         {
-          q: "Can you work to a client's own material and engineering standards?",
-          a: "Yes. Major operators in the Kingdom work to their own engineering standards and material specifications on top of the international codes. Send the applicable documents with the enquiry and we will return a compliance statement against them, flagging anything the standard product range does not meet rather than discovering it at inspection.",
+          q: "Can you work to a client's own engineering standards?",
+          a: "Yes. Major operators in the region work to their own engineering standards and material specifications on top of the international codes. Send the applicable documents with the enquiry and we return a compliance statement against them, flagging anything that cannot be met rather than discovering it at inspection.",
         },
         {
-          q: "What ambient and corrosion ratings do you quote as standard?",
-          a: "−40 °C to +70 °C operation and NEMA 4X / IP66 as the baseline for outdoor field devices, with material selection driven by the location: 316 stainless or GRP for coastal and sour service, copper-free aluminium where weight matters. We state the assumption in the offer so it can be challenged before the order.",
+          q: "What environmental ratings do you work to as standard?",
+          a: "−40 °C to +70 °C operation and NEMA 4X / IP66 as the baseline for outdoor field devices, with material selection driven by location: 316 stainless or GRP for coastal and sour service, copper-free aluminium where weight matters. We state the assumption in the proposal so it can be challenged before the order.",
         },
         {
-          q: "Do you supply for offshore installations?",
-          a: "Yes — platforms, FPSOs and marine terminals. Offshore adds marine certification requirements and, usually, tighter weight and footprint limits, so tell us the installation type with the enquiry and we will confirm what certification the quoted devices carry.",
+          q: "Do you mobilise offshore?",
+          a: "Yes — platforms, FPSOs and marine terminals, subject to the operator's certification, medical and survival requirements for personnel. Tell us the installation type with the enquiry so mobilisation requirements are in the proposal rather than discovered later.",
         },
       ],
     },
@@ -172,73 +182,83 @@ export const industries = {
     "data-centers": {
       name: "Data centers",
       meta: {
-        title: "DC power and notification systems for data centers in Saudi Arabia",
+        title: "Data center cabling, DC power and notification engineering",
         description:
-          "−48 VDC telecom power, 125 VDC switchgear control, and mass notification for evacuation in concurrently maintainable data center facilities.",
+          "Structured fiber and copper to TIA-942, −48 VDC telecom plant, switchgear control DC and evacuation messaging for concurrently maintainable facilities.",
       },
-      tagline: "Power and messaging for a building that never has a maintenance window.",
+      tagline: "Work done on a building that never has a maintenance window.",
       summary:
-        "Telecom DC power, switchgear control DC, and evacuation and mass notification for colocation, hyperscale and enterprise facilities.",
+        "Structured cabling, network build, −48 VDC plant and evacuation messaging for colocation, hyperscale and enterprise facilities — delivered under live load.",
       imageAlt: "Fibre-optic strands carrying light, representing data center network infrastructure",
       intro: [
-        "Data centers are judged on what can be taken out of service without affecting the load. A DC system that cannot be maintained while energised quietly breaks concurrent maintainability, regardless of how the UPS topology is drawn.",
-        "We supply −48 VDC telecom power, 125 VDC switchgear control systems and notification equipment designed around that constraint: modular, hot-swappable, dual-fed and supervised.",
+        "Data centers are judged on what can be taken out of service without affecting the load. A DC system that cannot be maintained while energised quietly breaks concurrent maintainability, however the UPS topology is drawn.",
+        "We build and support the parts around the white space: structured cabling, network infrastructure, telecom DC plant, switchgear control power and the notification systems that have to be intelligible in a hall full of fans.",
       ],
       challenges: [
         {
-          title: "Concurrent maintainability has to reach the DC system",
-          body: "Modular rectifiers that can be replaced live, dual input feeds, and distribution arranged so a branch can be isolated without dropping the bus. The single-line has to survive the same scrutiny as the AC side.",
+          title: "Concurrent maintainability has to reach every system",
+          body: "Modular rectifiers replaceable live, dual feeds, and distribution arranged so a branch can be isolated without dropping the bus. The single-line has to survive the same scrutiny as the AC side.",
         },
         {
-          title: "Growth happens in small steps",
-          body: "Load arrives rack by rack, not hall by hall. Systems are specified with spare rectifier positions and distribution capacity so the next increment is a module, not a replacement cabinet.",
+          title: "Growth arrives rack by rack",
+          body: "Load comes in increments, not halls. Systems get specified with spare rectifier positions, spare fiber strands and distribution headroom so the next step is a module, not a replacement.",
         },
         {
           title: "Evacuation messaging competes with noise",
-          body: "A data hall at 85 dBA with hard surfaces is an intelligibility problem. Speaker density and placement have to be modelled rather than spaced to a rule of thumb.",
+          body: "A data hall at 85 dBA with hard surfaces is an intelligibility problem. Speaker density and placement have to be modelled against operating noise, not an empty commissioning-day hall.",
         },
         {
-          title: "Monitoring must land in the existing DCIM",
-          body: "Another standalone monitoring panel helps nobody. Alarm points are exposed over SNMP and Modbus TCP, with a point list issued before the equipment ships.",
+          title: "Everything must land in the existing platform",
+          body: "Another standalone monitoring panel helps nobody. Alarm points are exposed over SNMP and Modbus TCP with a published point list issued before equipment ships.",
         },
       ],
-      supply: [
+      work: [
         {
-          title: "−48 VDC telecom power systems",
-          body: "Modular rectifier shelves with N+1 redundancy, hot-swap modules, low-voltage disconnect, battery monitoring and SNMP reporting into the building management or DCIM platform.",
-          href: "/products/dc-power-battery-chargers",
+          title: "Structured cabling and fiber",
+          body: "Backbone and horizontal copper and fiber to TIA-568 and TIA-942, MPO trunking, high-density distribution, containment, and certification on every strand and pair.",
+          href: "/services/fiber-optics",
         },
         {
-          title: "125 VDC switchgear control",
-          body: "Station-style chargers and distribution for medium-voltage switchgear control, generator control and protection, with earth-fault detection and dual-feed arrangements.",
-          href: "/products/dc-power-battery-chargers",
+          title: "Network infrastructure",
+          body: "Core, distribution and access build, segmentation, out-of-band management, and failover verified by pulling links rather than reading timers.",
+          href: "/services/networks",
         },
         {
-          title: "Evacuation and mass notification",
-          body: "IP paging and notification over the facility network with PoE amplified speakers, supervised zones, and an interface to the fire alarm and VESDA systems.",
-          href: "/products/paging-mass-notification",
+          title: "DC power plant",
+          body: "−48 VDC modular rectifier plant with hot-swap modules and low-voltage disconnect, plus 125 VDC switchgear and generator control power with dual feeds.",
+          href: "/services/dc-chargers",
+        },
+        {
+          title: "Evacuation and notification",
+          body: "IP notification over the facility network with PoE amplified speakers, supervised zones, and interfaces to the fire alarm and very-early-smoke-detection systems.",
+          href: "/services/mission-critical-communication",
         },
       ],
       notes: {
-        title: "Specification notes",
+        title: "How we work here",
         items: [
-          "DC system architecture and redundancy documented to IEEE 946, sized to IEEE 485.",
+          "DC architecture and redundancy documented to IEEE 946, sized to IEEE 485.",
           "Rectifier modules hot-swappable without interrupting the DC bus.",
-          "Alarm and telemetry points exposed over SNMP v2c/v3 and Modbus TCP, with a published point list.",
+          "Cabling certified to TIA-568 with full test results, every strand and pair.",
+          "Alarm and telemetry exposed over SNMP v2c/v3 and Modbus TCP, with a published point list.",
           "Emergency communications designed to NFPA 72 Chapter 24 and UL 2572 where referenced.",
-          "Intelligibility modelled to IEC 60268-16 against the as-operating noise level, not an empty hall.",
-          "Regulated items registered on SABER before shipment.",
+          "Intelligibility modelled to IEC 60268-16 against as-operating noise, not an empty hall.",
+          "All work on live floors under change control with a written rollback plan.",
         ],
       },
-      relatedProducts: ["dc-power-battery-chargers", "ups-power-quality", "paging-mass-notification"] as ProductSlug[],
+      relatedServices: ["fiber-optics", "networks", "dc-chargers", "mission-critical-communication"] as ServiceSlug[],
       faq: [
         {
-          q: "Can the DC plant be expanded without downtime?",
-          a: "That is the point of specifying modular rectifiers with spare shelf positions. Adding capacity becomes inserting a module rather than taking a bus down. We size the initial frame against your stated growth plan and tell you explicitly where the expansion limit sits.",
+          q: "Can you work on a live floor?",
+          a: "That is most of what we do here. Work proceeds under your change control, with method statements, a rollback plan and agreed abort criteria. Where a task genuinely cannot be done under load we say so at design stage rather than at 2 a.m.",
         },
         {
-          q: "How do alarms reach our monitoring platform?",
-          a: "Over SNMP for trap-based platforms and Modbus TCP for building management systems, with potential-free contacts available for the small number of points that justify a hardwired path. The point list is issued with the submittal so the integration work can start before delivery.",
+          q: "Can the DC plant be expanded without downtime?",
+          a: "That is the point of specifying modular rectifiers with spare shelf positions — adding capacity becomes inserting a module. We size the initial frame against your stated growth plan and tell you explicitly where the expansion limit sits, so it is a decision rather than a surprise.",
+        },
+        {
+          q: "How do alarms reach our DCIM?",
+          a: "SNMP for trap-based platforms and Modbus TCP for building management systems, with potential-free contacts for the few points that justify a hardwired path. The point list is issued before delivery so integration work can start in parallel.",
         },
       ],
     },
@@ -246,73 +266,83 @@ export const industries = {
     "hospitals-and-schools": {
       name: "Hospitals & schools",
       meta: {
-        title: "Voice evacuation and mass notification for hospitals and schools",
+        title: "Voice evacuation and communications for hospitals and schools",
         description:
-          "Intelligible voice evacuation, lockdown and emergency messaging to NFPA 72 and UL 2572 for hospitals, clinics, schools and university campuses in Saudi Arabia.",
+          "Intelligible voice evacuation, lockdown messaging, nurse-call integration, campus networks and essential-system DC power for healthcare and education facilities.",
       },
-      tagline: "Messages that work for people who are not trained for the emergency.",
+      tagline: "Systems for people who are not trained for the emergency.",
       summary:
-        "Voice evacuation, lockdown and day-to-day paging for healthcare and education buildings, plus DC power for essential electrical systems.",
-      imageAlt: "City skyline at dusk, representing the institutional buildings served by notification systems",
+        "Voice evacuation, lockdown messaging, day-to-day paging, campus networks and essential-system DC power for healthcare and education buildings.",
+      imageAlt: "City skyline at dusk, representing the institutional buildings served by these systems",
       intro: [
-        "In a hospital or a school, the people receiving the message are patients, visitors and children. They are not trained, they may not speak the same first language, and some of them cannot move without help. Intelligibility and clear, specific instructions do more than volume ever will.",
-        "We supply voice evacuation and mass notification systems designed for exactly that audience, with bilingual pre-recorded messaging and the coverage modelling to prove they will be understood in a corridor, an atrium or a sports hall.",
+        "In a hospital or a school, the people receiving the message are patients, visitors and children. They are not trained, some cannot move without help, and nobody is going to interpret an ambiguous tone correctly under stress. Intelligibility and specific instructions do more than volume ever will.",
+        "We design and install voice evacuation, lockdown and paging systems for exactly that audience, along with the campus networks and essential-system power behind them.",
       ],
       challenges: [
         {
           title: "Reverberant spaces destroy intelligibility",
-          body: "Atria, corridors and sports halls have long reverberation times, which is where a system passing a sound pressure check still fails a speech transmission index measurement. Density and placement have to be modelled against the real surfaces.",
+          body: "Atria, corridors and sports halls have long reverberation times — where a system that passes a sound-pressure check still fails a speech transmission index measurement. Density and placement have to be modelled against the real surfaces.",
         },
         {
           title: "Not everyone evacuates",
-          body: "Healthcare buildings rely on defend-in-place and horizontal evacuation. The system has to address individual compartments with different instructions at the same time, not broadcast one message to the whole building.",
+          body: "Healthcare buildings rely on defend-in-place and horizontal evacuation. The system has to address individual compartments with different instructions simultaneously, not broadcast one message to the whole building.",
         },
         {
           title: "Lockdown is a different message to evacuation",
-          body: "Schools need a message set that includes lockdown and shelter-in-place, initiated quickly from more than one place, with a defined all-clear.",
+          body: "Schools need a message set covering lockdown and shelter-in-place, initiated quickly from more than one place, with a clearly distinct all-clear.",
         },
         {
-          title: "Two languages, one message",
-          body: "Pre-recorded messaging in Arabic and English, sequenced so neither overlaps the other, and tested with the real staff who will use it.",
+          title: "The system has to work on an ordinary Tuesday",
+          body: "A life-safety system used only in drills is a system nobody trusts. Lesson bells, routine paging and code announcements on the same infrastructure keep it exercised and familiar.",
         },
       ],
-      supply: [
+      work: [
         {
           title: "Voice evacuation and mass notification",
-          body: "Zoned voice alarm with supervised circuits, pre-recorded bilingual message sets, priority handling between fire, lockdown and routine paging, and microphone stations at reception and security.",
-          href: "/products/paging-mass-notification",
+          body: "Zoned voice alarm with supervised circuits, pre-recorded message sets, priority handling between fire, lockdown and routine paging, and microphone stations at reception and security.",
+          href: "/services/mission-critical-communication",
         },
         {
-          title: "Day-to-day paging and bells",
-          body: "Scheduled lesson signals, all-call, zone paging and code announcements using the same infrastructure as the life-safety system, with routine traffic held at the lowest priority.",
-          href: "/products/paging-mass-notification",
+          title: "Campus networks and wireless",
+          body: "Network build across separated buildings with local autonomy, wireless designed from a survey rather than a floor plan, and segmentation between clinical, administrative and guest traffic.",
+          href: "/services/networks",
         },
         {
-          title: "DC power for essential systems",
+          title: "Telephony and nurse call integration",
+          body: "IP telephony with DECT for staff mobility, integration to nurse-call and alarm escalation, and emergency calling handled deliberately rather than by default.",
+          href: "/services/ip-telephony",
+        },
+        {
+          title: "Essential-system DC power",
           body: "Battery chargers and DC distribution supporting switchgear control, generator starting and fire alarm panels on the essential electrical system.",
-          href: "/products/dc-power-battery-chargers",
+          href: "/services/dc-chargers",
         },
       ],
       notes: {
-        title: "Specification notes",
+        title: "How we work here",
         items: [
           "Emergency communications designed to NFPA 72 Chapter 24; mass notification equipment listed to UL 2572.",
           "Loudspeakers and amplifiers listed to UL 1480 and UL 1711, or certified to EN 54-24 and EN 54-16 where the project is written to European standards.",
           "Speech intelligibility target of STI ≥ 0.50 modelled per IEC 60268-16 and verified at commissioning.",
-          "Message sets recorded in Arabic and English, with scripts agreed with the operator before recording.",
           "Zoning aligned to the fire compartmentation strategy, including horizontal evacuation where applicable.",
-          "Final acceptance of the architecture rests with the authority having jurisdiction; assumptions are stated in the submittal.",
+          "Message scripts agreed with the operator and the fire consultant before recording.",
+          "Final acceptance of the architecture rests with the authority having jurisdiction; assumptions are stated in the design.",
+          "Work in occupied clinical areas planned around infection control and departmental access.",
         ],
       },
-      relatedProducts: ["paging-mass-notification", "dc-power-battery-chargers", "ups-power-quality"] as ProductSlug[],
+      relatedServices: ["mission-critical-communication", "networks", "ip-telephony", "dc-chargers"] as ServiceSlug[],
       faq: [
         {
-          q: "Can the same system handle both fire evacuation and routine paging?",
-          a: "Yes, and it usually should — a system used every day is a system known to work. Routine paging runs at the lowest priority and is pre-empted instantly by fire or lockdown messaging. Where the authority having jurisdiction requires physical separation of the life-safety path, we quote that arrangement instead and say why.",
+          q: "Can one system handle fire evacuation and routine paging?",
+          a: "Usually it should — a system used daily is a system known to work. Routine paging runs at the lowest priority and is pre-empted instantly by fire or lockdown messaging. Where the authority having jurisdiction requires physical separation of the life-safety path, we design that arrangement instead and explain why.",
         },
         {
-          q: "How are bilingual messages sequenced?",
-          a: "Arabic and English message pairs play in sequence rather than alternating zones, with the order and the inter-message gap set during commissioning. Scripts are agreed with the operator and the fire consultant before recording, because wording changes after installation are the expensive kind.",
+          q: "Can you work in an occupied hospital?",
+          a: "Yes. Work in clinical areas is planned with the estates and infection control teams, with containment, out-of-hours access and staged isolation agreed before mobilisation. Life-safety systems are never left unsupervised without a documented interim arrangement.",
+        },
+        {
+          q: "How do you prove the system is intelligible?",
+          a: "Modelled to a speech transmission index target at design using the real room surfaces and occupied noise levels, then measured at commissioning at defined positions in each area, with results recorded. The measurement is the deliverable — the model is just how we get there.",
         },
       ],
     },
@@ -320,73 +350,82 @@ export const industries = {
     "government-buildings": {
       name: "Government buildings",
       meta: {
-        title: "Mass notification and standby power for government buildings",
+        title: "Mass notification, secure networks and standby power for government facilities",
         description:
-          "Mass notification, emergency communications and DC standby power for ministries, campuses and secure facilities in Saudi Arabia, with prequalification documentation available.",
+          "Campus-wide mass notification, secure network infrastructure, communications and DC standby power for ministries, administrative campuses and secure facilities.",
       },
-      tagline: "Supplied with the paperwork a public tender actually requires.",
+      tagline: "Delivered with the documentation a public tender actually requires.",
       summary:
-        "Mass notification and emergency communications for ministries, administrative campuses and secure facilities, with DC power for security, control and standby systems.",
+        "Mass notification, secure network infrastructure, communications and DC standby power for ministries, administrative campuses and secure facilities.",
       imageAlt: "Modern city skyline representing government and institutional buildings",
       intro: [
-        "Public-sector projects are won and lost on documentation as much as on product. Conformity certificates, country of origin, authorised distributor letters and a prequalification file that stands up to review are part of the deliverable, not an afterthought.",
-        "We supply mass notification and DC standby systems to ministries, campuses and secure facilities, and we keep the prequalification pack current so it can be issued the day it is asked for.",
+        "Public-sector work is won and lost on documentation as much as on engineering. Prequalification files, method statements, personnel clearances and a handover pack that survives audit are part of the deliverable, not an afterthought.",
+        "We deliver mass notification, network infrastructure and standby power to ministries, campuses and secure facilities, and we keep the prequalification pack current so it can be issued the day it is asked for.",
       ],
       challenges: [
         {
-          title: "Prequalification comes before the product",
-          body: "Entity registration, authorised distributor letters, conformity certificates, past performance and bank details are needed as one coherent file. We maintain it so a request does not become a two-week delay.",
+          title: "Prequalification comes before the engineering",
+          body: "Entity registration, insurance, past performance, personnel qualifications and financial standing are needed as one coherent file. We maintain it so a request does not become a two-week delay.",
         },
         {
-          title: "Country of origin is scrutinised",
-          body: "Equipment is built in the United States and documented with a certificate of origin issued against the actual manufacturing location, traceable to the serial numbers on the shipment.",
-        },
-        {
-          title: "Campuses are many buildings, one message",
-          body: "Site-wide notification across separated buildings needs a networked architecture with local autonomy, so a link failure does not silence a building.",
+          title: "A campus is many buildings and one message",
+          body: "Site-wide notification across separated buildings needs a networked architecture with local autonomy, so a link failure silences nothing.",
         },
         {
           title: "Secure areas restrict connectivity",
-          body: "Where a system cannot reach an external network, monitoring and message distribution are designed to work entirely on the internal network, with no cloud dependency.",
+          body: "Where a system cannot reach an external network, monitoring, message distribution and support are designed to work entirely on the internal network, with no cloud dependency anywhere in the path.",
+        },
+        {
+          title: "Access is the real programme risk",
+          body: "Escorted access, clearance lead times and restricted working hours affect a programme more than the installation itself. We plan around them explicitly rather than discovering them in week two.",
         },
       ],
-      supply: [
+      work: [
         {
           title: "Campus-wide mass notification",
-          body: "Networked zone controllers with local autonomy, indoor and outdoor speakers, visual notification devices, and initiation from security control, reception and mobile devices on the internal network.",
-          href: "/products/paging-mass-notification",
+          body: "Networked zone controllers with local autonomy, indoor and outdoor speakers, visual notification devices, and initiation from security control, reception and internal mobile devices.",
+          href: "/services/mission-critical-communication",
         },
         {
-          title: "DC standby for security and control",
+          title: "Secure network infrastructure",
+          body: "Segmented campus networks with enforced boundaries, out-of-band management, structured cabling certified end to end, and designs that assume no external connectivity where required.",
+          href: "/services/networks",
+        },
+        {
+          title: "Telephony and control room",
+          body: "IP telephony with survivable local call processing, dispatch positions, recording where the operation requires it, and integration to radio and alarm systems.",
+          href: "/services/ip-telephony",
+        },
+        {
+          title: "DC standby power",
           body: "Battery chargers and distribution supporting access control, CCTV head-end, switchgear control and generator starting, with supervised alarms into the building management system.",
-          href: "/products/dc-power-battery-chargers",
-        },
-        {
-          title: "UPS for critical rooms",
-          body: "Online double-conversion UPS for control rooms, communications rooms and security head-end, with maintenance bypass arranged for live servicing.",
-          href: "/products/ups-power-quality",
+          href: "/services/dc-chargers",
         },
       ],
       notes: {
-        title: "Specification notes",
+        title: "How we work here",
         items: [
           "Mass notification equipment listed to UL 2572; emergency communications designed to NFPA 72 Chapter 24.",
-          "Certificate of origin issued against the actual manufacturing location and traceable to shipment serial numbers.",
-          "Authorised distributor letters issued by the manufacturer on request for tender submission.",
-          "SABER Product and Shipment Certificates of Conformity arranged for every regulated line item.",
-          "Prequalification pack issued on request, including entity registration and past performance.",
-          "Systems designed to operate without any external network dependency where the facility requires it.",
+          "Prequalification pack issued on request, including entity registration, insurance and past performance.",
+          "Personnel qualifications and clearances documented ahead of mobilisation.",
+          "Systems designed to operate with no external network dependency where the facility requires it.",
+          "Structured cabling certified to ANSI/TIA-568 with full results handed over.",
+          "Method statements, risk assessments and escorted-access arrangements agreed before work starts.",
         ],
       },
-      relatedProducts: ["paging-mass-notification", "dc-power-battery-chargers", "ups-power-quality"] as ProductSlug[],
+      relatedServices: ["mission-critical-communication", "networks", "ip-telephony", "dc-chargers"] as ServiceSlug[],
       faq: [
         {
           q: "What is in the prequalification pack?",
-          a: "Entity registration and tax identification, manufacturer authorisation letters, product conformity certificates, quality certifications held by the manufacturers we represent, banking details, insurance, and a past-performance summary. It is issued as a single PDF on request — email us or ask through the quote form.",
+          a: "Entity registration and tax identification, insurance certificates, personnel qualifications, quality and safety documentation, banking details and a past-performance summary. It is issued as a single PDF on request — email us and it comes back the same working day.",
         },
         {
-          q: "Can you supply through a local partner?",
-          a: "Yes. Many public-sector contracts are held by a locally registered contractor, and we are comfortable supplying as the equipment vendor behind that contract, including issuing the documentation in the contractor's name where that is what the tender requires.",
+          q: "Can you work as a subcontractor to a local main contractor?",
+          a: "Yes. Many public-sector contracts are held by a locally registered contractor, and we are comfortable delivering the specialist scope behind that contract, including issuing documentation in the main contractor's name where the tender requires it.",
+        },
+        {
+          q: "Can systems run with no internet connection at all?",
+          a: "Yes, and for secure facilities that is usually the requirement. Monitoring, message distribution, configuration management and support are designed to work entirely on the internal network. Where a vendor platform assumes cloud connectivity, we will tell you at design stage rather than after installation.",
         },
       ],
     },

@@ -2,21 +2,21 @@ export const contact = {
   meta: {
     title: "Contact NextLink USA",
     description:
-      "Reach NextLink USA by email for DC power systems, battery chargers, paging and mass notification equipment. Enquiries answered by a technical contact, not a shared inbox.",
+      "Reach NextLink USA by email for telecom, communications, network, DC power and fiber engineering. Enquiries go to a technical contact, not a shared inbox.",
   },
   eyebrow: "Contact",
-  title: "Talk to someone who can read your single-line",
-  lede: "Email reaches a technical contact directly, not a shared inbox that routes it on later. Write in English or Arabic, whichever is easier.",
+  title: "Talk to someone who can read your drawing",
+  lede: "Email reaches a technical contact directly. Send a scope, a single-line, a site photograph, or just describe what is not working.",
 
   channels: {
     title: "How to reach us",
     email: {
       label: "Email",
-      note: "Best for specifications, drawings and anything with an attachment.",
+      note: "Best for scopes, drawings and anything with an attachment.",
     },
     quote: {
       label: "Request a quote",
-      note: "A pre-filled email template and a checklist of what we need to price the job.",
+      note: "A pre-filled email template and a checklist of what lets us price the work.",
       cta: "Request a Quote",
     },
   },
@@ -25,17 +25,17 @@ export const contact = {
     title: "Hours and response times",
     rows: [
       { label: "New enquiry acknowledged", value: "Same working day" },
-      { label: "Technical quotation", value: "Typically 2 working days" },
+      { label: "Technical contact assigned", value: "Same working day" },
+      { label: "Scoped proposal", value: "Typically 2–5 working days after survey" },
       { label: "Support response", value: "Within 4 working hours" },
-      { label: "Working week", value: "Sunday to Thursday for Saudi customers; Monday to Friday US" },
-      { label: "Languages", value: "English and Arabic" },
+      { label: "Working week", value: "Sunday to Thursday in the Gulf; Monday to Friday US" },
     ],
-    note: "Urgent breakdown support is handled outside these hours for customers under a maintenance agreement.",
+    note: "Emergency response outside these hours is available to clients under a maintenance agreement.",
   },
 
   brief: {
     title: "What to include in an enquiry",
-    body: "Send what you have and we will tell you what is missing. The quote page lists exactly what lets us come back with a priced offer rather than a list of questions.",
+    body: "Send what you have and we will tell you what is missing. The quote page lists exactly what lets us come back with a priced scope rather than a list of questions.",
     cta: "See what to include",
   },
 
@@ -44,13 +44,13 @@ export const contact = {
     legalLabel: "Registered entity",
     addressLabel: "Address",
     coverageLabel: "Coverage",
-    coverageValue: "Kingdom of Saudi Arabia and the wider GCC",
+    coverageValue: "United States company, delivering across the Gulf region",
     prequalNote: "Prequalification pack available on request.",
   },
 
   privacy: {
     title: "What we do with your details",
-    body: "Enquiry details are used to prepare and follow up your quotation, and are shared with the relevant manufacturer only where they are needed to price or certify the equipment. We do not sell or rent contact details, and we do not run third-party advertising or analytics trackers on this site.",
+    body: "Enquiry details are used to prepare and follow up your proposal, and are shared with a manufacturer or partner only where that is needed to price or certify the work. We do not sell or rent contact details, and this site runs no third-party advertising or analytics trackers.",
   },
 };
 

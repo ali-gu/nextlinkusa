@@ -1,7 +1,7 @@
 # NextLink USA — marketing site
 
-Static marketing site for NextLink USA: American-made DC power systems, battery
-chargers, paging and mass notification equipment supplied into Saudi Arabia.
+Static marketing site for NextLink USA, a United States engineering company
+delivering telecom and critical infrastructure across the Gulf.
 
 Next.js 16 (App Router, static export) · React 19 · TypeScript · Tailwind CSS v4.
 Deployed to GitHub Pages at **https://www.nextlinkusa.com**.
@@ -69,18 +69,20 @@ is broken right now — but each should be filled in before launch. Put them in
 | --- | --- | --- |
 | **Registered address** | Footer and contact page print "Registered office address available on request." | `NEXT_PUBLIC_ADDR_*` |
 | **Legal entity name** | Footer and schema say `NextLink USA LLC`. | `NEXT_PUBLIC_LEGAL_NAME` |
-| **Product catalogue PDF** | Catalogue buttons read "Request the Product Catalog" and open a pre-addressed email. | Drop the PDF in `public/downloads/` and set `NEXT_PUBLIC_CATALOG_URL` |
-| **OEM partner logos** | The trust strip and About page say partner marks publish once distribution agreements are signed. | Add entries to `site.partners` in `src/lib/site.ts` |
+| **Company profile PDF** | The download buttons read "Request the Company Profile" and open a pre-addressed email. | Drop the PDF in `public/downloads/` and set `NEXT_PUBLIC_CATALOG_URL` |
+| **Technology partner logos** | The trust strip and About page say accreditations publish as each is completed. | Add entries to `site.partners` in `src/lib/site.ts` |
 
 Two further items worth reading before publishing:
 
 - **Service commitments.** `src/lib/content/services.ts` states response times
-  (same-day acknowledgement, quotes in 2–5 working days, support within 4
-  working hours), repeated on the contact and quote pages. These are promises —
-  confirm they are ones the business will keep.
-- **Technical claims.** Product specifications are written as typical values
-  for the standard ranges and the pages say so, but check them against the
-  manufacturers' current datasheets once distribution agreements are signed.
+  (same-day acknowledgement, proposals in 2–5 working days after survey,
+  support within 4 working hours, 24/7 available under contract), repeated on
+  the contact and quote pages. These are promises — confirm they are ones the
+  business will keep.
+- **Capability claims.** The seven service pages describe scope, standards and
+  deliverables in detail. Read them against what the team can actually staff
+  and certify today, particularly hazardous-area competence, offshore
+  mobilisation and submarine fiber.
 
 ### Environment
 
@@ -106,17 +108,18 @@ one means redeploying.
 
 ### How enquiries arrive
 
-GitHub Pages has no server, so there is no form to collect submissions. The
-quote page gives two routes instead:
-
-- **Email** — a `mailto:` with a subject and a structured body template already
-  filled in (company, project, technical and commercial sections). The visitor
-  adds their details, attaches a specification and sends.
-- **WhatsApp** — a `wa.me` link with an opening message pre-filled.
+GitHub Pages has no server, so there is no form to collect submissions. Email
+is the only channel: the quote page opens a `mailto:` with a subject and a
+structured body template already filled in — company, project, scope and site
+conditions — so enquiries arrive usable rather than as "please quote".
 
 The template lives in `src/lib/content/quote.ts` under `channels.email.template`.
 If you later want a real form, the site has to move to a host that can run
 server code (Vercel, Cloudflare Pages) or post to a third-party form backend.
+
+**The domain has no MX records**, so mail to `contact@nextlinkusa.com` will
+bounce until mail hosting is configured. The `v=spf1 -all` TXT record also has
+to go, or outbound mail will be rejected.
 
 ---
 
@@ -127,7 +130,7 @@ assets/source/           Original brand files (logo, company-profile cover)
 scripts/build-assets.mjs Derives every shipped image from those two files
 public/brand/            Logo and icons, plus their WebP ladders (generated)
 public/images/           Photography, social card and WebP ladders (generated)
-public/downloads/        Catalogue PDF goes here
+public/downloads/        Company profile PDF goes here
 public/CNAME             Custom domain for GitHub Pages
 public/.nojekyll         Stops Pages from hiding _next/
 
@@ -142,7 +145,6 @@ src/lib/
   catalog.ts             Slugs, navigation, sitemap routes
   seo.ts                 Metadata and structured-data builders
   site.ts                Company facts — single source of truth
-  spec-text.ts           CSI-format specification text for consultants
   image-loader.ts        Maps next/image requests to pre-built WebP variants
   image-manifest.json    Generated — widths available per image
 ```
@@ -153,12 +155,12 @@ Every user-visible string lives in `src/lib/content/`. Changing text never
 means touching markup. Products and industries are keyed by slug, and the slugs
 come from `src/lib/catalog.ts`, so TypeScript fails the build if the two drift.
 
-### Adding a product or industry
+### Adding a service line or industry
 
-1. Add the slug to `productSlugs` / `industrySlugs` in `src/lib/catalog.ts`,
+1. Add the slug to `serviceSlugs` / `industrySlugs` in `src/lib/catalog.ts`,
    with an icon and an image.
 2. TypeScript will flag the missing entries. Add copy in
-   `src/lib/content/products.ts` (or `industries.ts`) and a nav label plus
+   `src/lib/content/services.ts` (or `industries.ts`) and a nav label plus
    summary in `src/lib/content/common.ts`.
 
 Routing, the sitemap, the navigation flyout, the footer and the structured data
@@ -202,11 +204,8 @@ a source file and commit the result, including `src/lib/image-manifest.json`.
 - **Metadata on every page**: unique title and description, canonical URL
   (trailing-slash form, matching what Pages serves), Open Graph and Twitter
   cards, `robots` directives, `sitemap.xml`, `robots.txt` and a web manifest.
-- **Structured data**: `Organization`, `WebSite`, `BreadcrumbList`, `Product`,
-  `OfferCatalog`, `ItemList`, `CollectionPage` and `FAQPage`. `Product` is
-  emitted without `offers` on purpose — these pages describe equipment families
-  quoted to specification, and inventing a price to qualify for a rich result
-  would be worse than forgoing it.
+- **Structured data**: `Organization`, `WebSite`, `BreadcrumbList`, `Service`,
+  `OfferCatalog`, `ItemList`, `CollectionPage` and `FAQPage`.
 - **Accessibility**: skip link, one `<h1>` per page, visible focus rings,
   `aria-live` status messages, Escape-to-close and scroll-lock on the mobile
   sheet, and `prefers-reduced-motion` respected throughout.

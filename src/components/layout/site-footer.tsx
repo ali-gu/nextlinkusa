@@ -26,10 +26,10 @@ export function SiteFooter() {
               <Image
                 src="/brand/nextlink-logo.png"
                 alt={site.name}
-                width={754}
-                height={256}
-                sizes="170px"
-                className="h-12 w-auto"
+                width={1366}
+                height={674}
+                sizes="130px"
+                className="h-16 w-auto"
               />
             </Link>
 

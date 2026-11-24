@@ -19,11 +19,11 @@ export function SiteHeader() {
             <Image
               src="/brand/nextlink-logo.png"
               alt={site.name}
-              width={754}
-              height={256}
+              width={1366}
+              height={674}
               priority
-              sizes="(min-width: 1024px) 150px, 124px"
-              className="h-10 w-auto lg:h-12"
+              sizes="(min-width: 1024px) 114px, 98px"
+              className="h-12 w-auto lg:h-14"
             />
           </Link>
 

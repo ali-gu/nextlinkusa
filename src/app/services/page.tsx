@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { ServiceGrid } from "@/components/sections/cards";
 import { CtaBand, PageHero } from "@/components/sections/common";
 import { JsonLd } from "@/components/seo/json-ld";
-import { KeyValueTable } from "@/components/ui/blocks";
 import {
   Card,
   CheckList,
@@ -105,7 +104,7 @@ export default function ServicesPage() {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-20">
             <SectionHeading eyebrow={commitments.eyebrow} title={commitments.title} />
             <div>
-              <KeyValueTable rows={commitments.rows} />
+              <CheckList items={commitments.items} />
               <p className="mt-6 text-sm leading-relaxed text-navy-700">
                 {commitments.note}
               </p>

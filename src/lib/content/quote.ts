@@ -56,7 +56,7 @@ Attachments: scope / drawings / specification / photographs
       "A clause-by-clause compliance statement where you have issued a specification",
     ],
     timing:
-      "Usually within two business days. Budgetary numbers faster if that is all you need right now.",
+      "As quickly as the scope allows, with budgetary numbers sooner if that is all you need right now.",
   },
 
   brief: {

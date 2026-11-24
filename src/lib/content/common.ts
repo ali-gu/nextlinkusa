@@ -83,7 +83,7 @@ export const common = {
   ctaBand: {
     eyebrow: "Next step",
     title: "Let’s build a connected tomorrow.",
-    body: "Contact our engineering team to design, upgrade or manage your critical telecom infrastructure. Send a scope, a drawing or just the problem — we usually come back with a priced proposal within two business days.",
+    body: "Contact our engineering team to design, upgrade or manage your critical telecom infrastructure. Send a scope, a drawing or just the problem, and we will come back with an approach and a priced proposal.",
     primary: "Request a Quote",
     secondary: "Email us",
   },
@@ -108,7 +108,6 @@ export const common = {
     usCompany: "US-based engineering company",
     standards: "Work to IEEE, NFPA, TIA and IEC",
     singlePoint: "One accountable contractor",
-    hazardous: "Hazardous-area qualified",
     support: "Support beyond handover",
     partnersTitle: "Technology partners",
     partnersPending:

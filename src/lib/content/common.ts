@@ -12,43 +12,43 @@ export const common = {
     "mission-critical-communication": "Mission-critical communication",
     networks: "Networks",
     "ip-telephony": "IP telephony",
-    "dc-chargers": "DC chargers",
+    "dc-chargers": "DC systems",
     "fiber-optics": "Fiber optics",
-    "submarine-fiber-networks": "Off-shore & submarine fiber",
+    "offshore-communications": "Off-shore comms",
+    "submarine-fiber-networks": "Submarine fiber",
 
-    "utilities-and-substations": "Utilities & substations",
+    "utilities-and-substations": "Power & utilities",
     "oil-and-gas": "Oil & gas",
-    "data-centers": "Data centers",
-    "hospitals-and-schools": "Hospitals & schools",
-    "government-buildings": "Government buildings",
+    "government-buildings": "Government authorities",
+    transportation: "Transportation",
   } satisfies Record<NavKey, string>,
 
   navSummary: {
     "telecom-services":
-      "Site surveys, mast and tower work, transmission, power and grounding, commissioning.",
+      "Full RF deployment, site acquisition and 24/7 NOC operations.",
     "mission-critical-communication":
-      "Land mobile radio, PA/GA, voice evacuation and dispatch, including hazardous areas.",
+      "Zero-downtime TETRA and P25 secure voice and data systems.",
     networks:
-      "Routing, switching, segmentation and industrial Ethernet for IT and OT alike.",
+      "Scalable LAN/WAN, SD-WAN, DWDM transport and zero-trust cybersecurity.",
     "ip-telephony":
-      "SIP and unified communications, contact centre, DECT and paging integration.",
+      "Enterprise cloud VoIP, UCaaS and SIP trunking migration.",
     "dc-chargers":
-      "Substation battery chargers and DC distribution, sized to IEEE 485 and maintained.",
+      "Industrial AC/DC rectifiers, chargers and EMS battery backup.",
     "fiber-optics":
-      "Outside and inside plant design, splicing, OTDR testing, DWDM and restoration.",
+      "FTTx deployments, precision splicing and OTDR testing.",
+    "offshore-communications":
+      "ATEX-certified maritime VSAT, LTE and rig safety PAGA.",
     "submarine-fiber-networks":
-      "Platform and terminal connectivity, landing stations and subsea route support.",
+      "Subsea cable landing stations, PFE and seabed surveying.",
 
     "utilities-and-substations":
-      "Protection, control and SCADA communications for 13.8 kV to 380 kV substations.",
+      "Protection, control, SCADA communications and DC power for grids and substations.",
     "oil-and-gas":
       "Hazardous-area communications and DC power for plants, terminals and offshore.",
-    "data-centers":
-      "Structured cabling, −48 VDC plant and evacuation messaging under live load.",
-    "hospitals-and-schools":
-      "Voice evacuation, lockdown messaging and nurse-call integration.",
     "government-buildings":
-      "Mass notification, secure networks and standby power for ministries and campuses.",
+      "Mission-critical radio, secure networks and standby power for public agencies.",
+    transportation:
+      "Operational radio, corridor networks and passenger communications for transport.",
   } satisfies Record<NavChildKey, string>,
 
   actions: {
@@ -82,15 +82,15 @@ export const common = {
 
   ctaBand: {
     eyebrow: "Next step",
-    title: "Send us a scope, a drawing, or just the problem.",
-    body: "We will come back with an approach, the standards we would work to, and a priced proposal — usually within two business days.",
+    title: "Let’s build a connected tomorrow.",
+    body: "Contact our engineering team to design, upgrade or manage your critical telecom infrastructure. Send a scope, a drawing or just the problem — we usually come back with a priced proposal within two business days.",
     primary: "Request a Quote",
     secondary: "Email us",
   },
 
   footer: {
     blurb:
-      "A United States engineering company delivering telecom and critical infrastructure — design, installation, commissioning and long-term support.",
+      "Your trusted partner in telecom and critical infrastructure — end-to-end telecommunications, industrial power and mission-critical communications from a United States engineering company.",
     columns: {
       services: "Services",
       industries: "Industries",
@@ -117,7 +117,7 @@ export const common = {
 
   meta: {
     defaultDescription:
-      "NextLink USA is a United States engineering company delivering telecom and critical infrastructure: networks, mission-critical communications, DC power, fiber optics and off-shore submarine fiber.",
+      "NextLink USA engineers resilient voice, data, power and submarine optic networks for zero-downtime mission environments: telecom services, mission-critical communication, networks, IP telephony, DC systems, fiber optics, off-shore comms and submarine fiber.",
   },
 
   notFound: {

@@ -3,12 +3,12 @@ import type { IndustrySlug } from "@/lib/catalog";
 export const services = {
   index: {
     meta: {
-      title: "Services — telecom, networks, communications, DC power and fiber",
+      title: "Services — telecom, mission-critical, networks, DC systems, fiber and subsea",
       description:
-        "Survey, design, installation, commissioning and support for telecom infrastructure, mission-critical communications, networks, IP telephony, DC power, fiber optics and off-shore submarine fiber.",
+        "Eight core service verticals: telecom services, mission-critical communication, networks, IP telephony, DC systems, fiber optics, off-shore comms and submarine fiber — designed, installed, commissioned and supported.",
     },
-    eyebrow: "Service lines",
-    title: "Seven capabilities, held under one contract",
+    eyebrow: "Services overview",
+    title: "Our core service verticals, held under one contract",
     lede: "Each of these stands on its own, but they rarely arrive alone. A control room needs radio, networks, telephony and DC power before it needs anything else, and the interfaces between them are where projects usually come apart. Holding them together is the point.",
     note: "Figures on these pages describe what we routinely deliver. Anything specific to your site is confirmed from a survey before it is priced.",
   },
@@ -100,17 +100,17 @@ export const services = {
     "telecom-services": {
       name: "Telecom services",
       meta: {
-        title: "Telecom infrastructure services — survey, build and commissioning",
+        title: "Telecom services — RF deployment, site acquisition and 24/7 NOC operations",
         description:
-          "Site surveys, mast and tower works, transmission links, telecom power and grounding, installation and commissioning for carrier and enterprise telecom infrastructure.",
+          "Full RF deployment, site acquisition and 24/7 NOC operations, with site surveys, tower works, transmission links, telecom power and grounding for carrier and enterprise networks.",
       },
       tagline: "The physical layer everything else depends on.",
       summary:
-        "Site surveys, tower and mast works, transmission links, telecom power and earthing — built and commissioned to the standards the rest of the network assumes are already met.",
+        "Full RF deployment, site acquisition and 24/7 NOC operations — with the surveys, tower works, transmission and earthing underneath, built and commissioned to standard.",
       imageAlt: "Telecommunications tower with microwave and panel antennas against a clear sky",
       intro: [
         "Almost every network fault that takes days to find turns out to be physical: a corroded connector, an earth that was never bonded, a mast that moved, a feeder with water in it. The physical layer is the cheapest thing to get right at build and the most expensive to fix later.",
-        "We survey, build and commission telecom infrastructure — towers and masts, antenna systems, transmission links, telecom power and earthing — and we hand over the sweep traces, torque records and earth readings that prove it was done properly.",
+        "We acquire, build, commission and operate telecom infrastructure — site acquisition, RF deployment, towers and masts, transmission links, telecom power and earthing — hand over the sweep traces and earth readings that prove it was done properly, and keep it running from a 24/7 network operations centre.",
       ],
       highlights: [
         {
@@ -126,11 +126,19 @@ export const services = {
           body: "Return loss and distance-to-fault sweeps on every feeder at handover, filed as the baseline that future fault-finding gets compared against.",
         },
         {
-          title: "Built for the environment it sits in",
-          body: "Coastal salt, blown sand and 50 °C ambient decide material and ingress choices. Enclosures, connectors and weatherproofing are specified per location rather than uniformly to keep a quotation tidy.",
+          title: "Operated around the clock",
+          body: "24/7 NOC monitoring of the sites we build and the networks we take over, with alarms triaged and faults dispatched before they turn into outages.",
         },
       ],
       scopeGroups: [
+        {
+          title: "RF deployment and operations",
+          rows: [
+            { label: "Site acquisition", value: "Candidate site search, lease and permitting support through to a buildable site" },
+            { label: "RF deployment", value: "RF design, installation, integration, drive testing and optimisation from first site to full rollout" },
+            { label: "NOC operations", value: "24/7 network operations centre monitoring, alarm handling and fault dispatch" },
+          ],
+        },
         {
           title: "Survey and assessment",
           rows: [
@@ -179,6 +187,8 @@ export const services = {
         { code: "IEC 62305", title: "Protection against lightning" },
       ],
       applications: [
+        "Full RF deployment, from site acquisition to optimisation",
+        "24/7 NOC monitoring and fault management",
         "Greenfield and co-location cell site build",
         "Microwave backhaul links and ring closure",
         "Rooftop and in-building telecom infrastructure",
@@ -195,7 +205,7 @@ export const services = {
         "Commissioning and site acceptance test records, countersigned",
         "As-built documentation and recommended spares list",
       ],
-      relatedIndustries: ["utilities-and-substations", "oil-and-gas", "government-buildings"] as IndustrySlug[],
+      relatedIndustries: ["utilities-and-substations", "oil-and-gas", "government-buildings", "transportation"] as IndustrySlug[],
       faq: [
         {
           q: "Can you work on a live site?",
@@ -215,17 +225,17 @@ export const services = {
     "mission-critical-communication": {
       name: "Mission-critical communication",
       meta: {
-        title: "Mission-critical communication systems — radio, PA/GA and mass notification",
+        title: "Mission-critical communication — TETRA, P25 and PA/GA systems",
         description:
-          "Land mobile radio, public address and general alarm, voice evacuation and mass notification designed to NFPA 72, UL 2572 and IEC 60268-16, including ATEX and IECEx hazardous-area devices.",
+          "Zero-downtime TETRA and P25 secure voice and data, public address and general alarm, voice evacuation and mass notification, including ATEX and IECEx hazardous-area devices.",
       },
       tagline: "Messages people can act on, in places that are loud, large or on fire.",
       summary:
-        "Land mobile radio, PA/GA, voice evacuation, dispatch and mass notification — including the hazardous-area field devices the rest of the market treats as an afterthought.",
+        "Zero-downtime TETRA and P25 secure voice and data systems, plus PA/GA, voice evacuation, dispatch and mass notification — including hazardous-area field devices.",
       imageAlt: "Modern towers and a telecommunications mast, representing the facilities served by mission-critical communications",
       intro: [
         "A communication system is only worth what people understand when it is running. Intelligibility, not loudness, moves people to a muster point — which is why the specification that matters is IEC 60268-16, and why coverage is modelled and then measured rather than assumed.",
-        "We design, install and commission radio and voice systems for sites where the message has consequences: plants, terminals, hospitals, campuses and control rooms.",
+        "We design, install and commission TETRA and P25 radio, secure voice and data, and voice alarm systems for sites where the message has consequences: plants, terminals, utilities, transport networks and control rooms.",
       ],
       highlights: [
         {
@@ -249,7 +259,8 @@ export const services = {
         {
           title: "Radio systems",
           rows: [
-            { label: "Technologies", value: "P25, DMR, TETRA and conventional analogue, as the site standard requires" },
+            { label: "Technologies", value: "TETRA and P25 as standard; DMR and conventional analogue where the site requires" },
+            { label: "Secure voice and data", value: "Encryption, authentication and short-data services for field teams" },
             { label: "Coverage", value: "Prediction modelling, drive and walk testing, in-building DAS and bi-directional amplifiers" },
             { label: "Dispatch", value: "Console positions, talkgroup design, recording and interoperability gateways" },
             { label: "Infrastructure", value: "Repeaters, combiners, antenna systems and link planning" },
@@ -301,7 +312,7 @@ export const services = {
         "Evacuation, shelter-in-place and all-clear messaging",
         "Control room to field talk-back",
         "Site-wide radio coverage and in-building DAS",
-        "Hospital code announcement and campus lockdown",
+        "Station, terminal and campus emergency announcement",
         "Terminal, car park and marine berth communications",
         "Control room dispatch and interoperability gateways",
       ],
@@ -314,7 +325,7 @@ export const services = {
         "Measured intelligibility results recorded at commissioning",
         "Message schedule with approved scripts, and operator training",
       ],
-      relatedIndustries: ["oil-and-gas", "hospitals-and-schools", "government-buildings", "data-centers"] as IndustrySlug[],
+      relatedIndustries: ["oil-and-gas", "utilities-and-substations", "government-buildings", "transportation"] as IndustrySlug[],
       faq: [
         {
           q: "How do you prove the system will be intelligible?",
@@ -334,37 +345,45 @@ export const services = {
     networks: {
       name: "Networks",
       meta: {
-        title: "Enterprise and industrial network design, build and support",
+        title: "Transmission and IP networks — DWDM, IP/MPLS, LAN/WAN and SD-WAN",
         description:
-          "Routing, switching, segmentation, industrial Ethernet and wireless for IT and OT environments, designed to TIA-942 and IEC 62443 and supported after handover.",
+          "Long-haul DWDM, optical amplification, IP/MPLS backbones, scalable LAN/WAN, SD-WAN and zero-trust cybersecurity for carrier, utility and enterprise networks.",
       },
       tagline: "The network the control system is allowed to depend on.",
       summary:
-        "Enterprise and industrial networks — routing, switching, segmentation, wireless and OT convergence — designed for availability first and documented well enough to troubleshoot at 3 a.m.",
+        "Long-haul DWDM, IP/MPLS backbones, scalable LAN/WAN and SD-WAN, secured with zero-trust cybersecurity — designed for availability first and documented well enough to troubleshoot at 3 a.m.",
       imageAlt: "Fibre-optic strands carrying light, representing network backbone infrastructure",
       intro: [
         "An office network that drops for thirty seconds is an annoyance. The same thirty seconds on a network carrying protection signalling, a DCS or a nurse-call system is an incident report. The difference is not equipment — it is topology, segmentation and whether anyone wrote down how it works.",
-        "We design, build and support networks where availability is the requirement rather than the aspiration, and where IT and OT have to share infrastructure without sharing a failure domain.",
+        "We design, build and support the whole stack — long-haul optical transport, IP/MPLS backbone and aggregation, and the LAN, WAN and SD-WAN at the edge — where availability is the requirement rather than the aspiration.",
       ],
       highlights: [
         {
-          title: "Designed around the failure, not the diagram",
-          body: "Redundant paths that actually reconverge in the time the application tolerates, tested by pulling links during commissioning rather than by trusting the protocol timer in the datasheet.",
+          title: "Long-haul DWDM",
+          body: "High-capacity optical transport with multi-wavelength systems over long distances, with the wavelength plan and optical budget issued at design.",
         },
         {
-          title: "IT and OT separated properly",
-          body: "Segmentation to IEC 62443 zones and conduits, with the boundary enforced and documented, so a compromise on the business network does not reach the control system.",
+          title: "Boosters and amplifiers",
+          body: "Optical boosters, pre-amplifiers and inline EDFA amplifiers to extend span reach, placed from a calculated power budget rather than a rule of thumb.",
         },
         {
-          title: "Industrial where industrial is needed",
-          body: "DIN-rail switches with the right temperature range, redundant DC feeds and conformal coating in plant areas; enterprise hardware where the environment allows it. The two are not interchangeable.",
+          title: "IP networks",
+          body: "Scalable IP/MPLS backbone and aggregation networks for resilient service delivery, with redundant paths tested by pulling links at commissioning.",
         },
         {
-          title: "Documented to be maintainable",
-          body: "Port maps, VLAN and address plans, cable schedules and configuration backups handed over and kept current — the things that turn a four-hour outage into a twenty-minute one.",
+          title: "Zero-trust security, IT and OT separated",
+          body: "Every user, device and flow authenticated and authorised, with segmentation to IEC 62443 zones and conduits so a compromise on the business network does not reach the control system.",
         },
       ],
       scopeGroups: [
+        {
+          title: "Transmission",
+          rows: [
+            { label: "Long-haul DWDM", value: "Multi-wavelength optical transport, wavelength planning and channel commissioning" },
+            { label: "Amplification", value: "Optical boosters, pre-amplifiers and inline EDFA amplifiers to extend span reach" },
+            { label: "IP/MPLS", value: "Backbone and aggregation design with traffic engineering and fast reroute" },
+          ],
+        },
         {
           title: "Design",
           rows: [
@@ -377,7 +396,8 @@ export const services = {
         {
           title: "Infrastructure",
           rows: [
-            { label: "Switching and routing", value: "Layer 2 and Layer 3 campus and industrial deployments, vendor-independent" },
+            { label: "LAN/WAN", value: "Layer 2 and Layer 3 campus, enterprise and industrial deployments, vendor-independent" },
+            { label: "SD-WAN", value: "Multi-site SD-WAN with application-aware routing and centralised policy" },
             { label: "Industrial Ethernet", value: "DIN-rail switches, ring redundancy, −40 to +75 °C ranges, redundant DC feeds" },
             { label: "Wireless", value: "Site-survey-based Wi-Fi design, deployment and validation survey" },
             { label: "Structured cabling", value: "Copper and fiber to ANSI/TIA-568, tested and certified" },
@@ -389,6 +409,7 @@ export const services = {
           rows: [
             { label: "Redundancy", value: "Ring, mesh and dual-homed designs, with reconvergence verified by test" },
             { label: "Boundary control", value: "Firewalls, DMZ and unidirectional paths where the risk assessment requires" },
+            { label: "Zero trust", value: "Identity-based access, micro-segmentation and continuous verification" },
             { label: "Access control", value: "Port security, authentication and role-based management access" },
             { label: "Time", value: "NTP or PTP distribution where event correlation depends on it" },
           ],
@@ -412,12 +433,16 @@ export const services = {
         { code: "IEC 62443", title: "Industrial communication networks — security for IACS" },
         { code: "IEC 61850", title: "Substation communication networks and systems" },
         { code: "IEEE 1588 (PTP)", title: "Precision time protocol" },
+        { code: "ITU-T G.694 / G.698", title: "WDM spectral grids and multichannel optical interfaces" },
+        { code: "IETF RFC 3031", title: "Multiprotocol label switching architecture" },
       ],
       applications: [
+        "Long-haul DWDM transport and capacity upgrades",
+        "IP/MPLS backbone and aggregation networks",
+        "Multi-site LAN/WAN and SD-WAN rollouts",
         "Plant and campus network build and refresh",
         "IT and OT segmentation programmes",
         "Substation station bus and process bus networks",
-        "Data centre structured cabling and switching",
         "Industrial wireless and site-wide Wi-Fi",
         "Network documentation and remediation after acquisition",
       ],
@@ -430,7 +455,7 @@ export const services = {
         "Monitoring point list delivered before handover",
         "As-built documentation and operator training",
       ],
-      relatedIndustries: ["data-centers", "utilities-and-substations", "oil-and-gas", "government-buildings"] as IndustrySlug[],
+      relatedIndustries: ["utilities-and-substations", "oil-and-gas", "government-buildings", "transportation"] as IndustrySlug[],
       faq: [
         {
           q: "Are you tied to a particular vendor?",
@@ -450,13 +475,13 @@ export const services = {
     "ip-telephony": {
       name: "IP telephony",
       meta: {
-        title: "IP telephony and unified communications — SIP, DECT and integration",
+        title: "IP telephony — cloud VoIP, UCaaS, SIP trunking and managed voice",
         description:
-          "SIP and VoIP platforms, unified communications, contact centre, DECT, session border control and paging integration, designed with QoS and survivability for critical sites.",
+          "Enterprise cloud VoIP and UCaaS, SIP trunking migration from legacy PBX and ISDN, and managed voice operations with 24/7 support, designed with QoS and survivability.",
       },
       tagline: "Voice that still works when the internet does not.",
       summary:
-        "SIP and unified communications platforms, contact centre, DECT and session border control — integrated with paging, radio and the systems people actually call in an emergency.",
+        "Enterprise cloud VoIP, UCaaS and SIP trunking migration, with managed voice operations and 24/7 support — integrated with paging, radio and emergency systems.",
       imageAlt: "Telecommunications tower with microwave and panel antennas, representing the networks that carry IP telephony",
       intro: [
         "Telephony gets treated as a commodity until the day a site loses its uplink and discovers that the control room phone, the gatehouse and the emergency number all lived in someone else's cloud.",
@@ -468,24 +493,24 @@ export const services = {
           body: "Local call processing or a survivable branch gateway so internal and emergency calling continue through a WAN failure, tested by disconnecting the link at commissioning.",
         },
         {
-          title: "Quality of service that is configured, not hoped for",
-          body: "Voice VLAN, DSCP marking and queuing applied end to end across the switches and WAN, then verified with measured jitter, latency and loss rather than a vendor dashboard.",
+          title: "Cloud VoIP and UCaaS",
+          body: "Enterprise voice, messaging and meetings on one unified cloud platform, with survivable local options for the sites that cannot depend on the WAN.",
         },
         {
-          title: "Integrated with paging and radio",
-          body: "Dial a zone from a handset, patch a radio talkgroup into a conference, route an alarm to a call group. The value is in the interfaces, and they are designed in rather than bolted on.",
+          title: "SIP trunking migration",
+          body: "Move from legacy PBX and ISDN lines to resilient, cost-efficient SIP, with number porting, dial plan and failover routing planned before cutover.",
         },
         {
-          title: "Emergency calling handled deliberately",
-          body: "Location information, on-site notification and routing policy agreed in writing at design stage — the part most deployments leave until an audit asks about it.",
+          title: "Managed voice operations",
+          body: "Call quality monitoring, security and 24/7 support for your IP telephony, from engineers who already have your configuration on file.",
         },
       ],
       scopeGroups: [
         {
           title: "Platform",
           rows: [
-            { label: "Call control", value: "On-premise, hybrid or cloud SIP platforms, vendor-independent" },
-            { label: "Trunking", value: "SIP trunk provisioning, failover routing and least-cost policy" },
+            { label: "Call control", value: "Cloud VoIP and UCaaS, or hybrid and on-premise SIP platforms, vendor-independent" },
+            { label: "Trunking", value: "SIP trunking migration from legacy PBX and ISDN, failover routing and least-cost policy" },
             { label: "Session border control", value: "SBC deployment for topology hiding, media handling and trunk security" },
             { label: "Survivability", value: "Local survivable gateways with defined behaviour during WAN loss" },
           ],
@@ -518,6 +543,14 @@ export const services = {
             { label: "Recording", value: "Call recording and retention where the operation or regulator requires it" },
           ],
         },
+        {
+          title: "Managed voice operations",
+          rows: [
+            { label: "Monitoring", value: "Call quality monitoring with jitter, latency and loss alerting" },
+            { label: "Security", value: "Toll-fraud protection, SBC policy and platform patching" },
+            { label: "Support", value: "24/7 support with defined response times" },
+          ],
+        },
       ],
       standards: [
         { code: "RFC 3261 (SIP)", title: "Session Initiation Protocol" },
@@ -529,6 +562,9 @@ export const services = {
         { code: "ANSI/TIA-568", title: "Structured cabling supporting the endpoints" },
       ],
       applications: [
+        "Cloud VoIP and UCaaS rollout",
+        "Legacy PBX and ISDN to SIP trunking migration",
+        "Managed voice with 24/7 support",
         "Plant and campus telephony replacement",
         "Control room and dispatch voice",
         "Hazardous-area and weatherproof plant telephones",
@@ -545,11 +581,11 @@ export const services = {
         "Emergency calling and notification policy, agreed in writing",
         "User and administrator training, and as-built configuration",
       ],
-      relatedIndustries: ["government-buildings", "hospitals-and-schools", "oil-and-gas", "data-centers"] as IndustrySlug[],
+      relatedIndustries: ["government-buildings", "transportation", "oil-and-gas", "utilities-and-substations"] as IndustrySlug[],
       faq: [
         {
           q: "Cloud or on-premise?",
-          a: "It depends on what happens when the link drops. For an office, cloud is usually the right answer. For a control room, a plant or a hospital, we would want local call processing or a survivable gateway so internal and emergency calling continue regardless. Hybrid covers most sites, and we will show you the failure modes of each before you choose.",
+          a: "It depends on what happens when the link drops. For an office, cloud is usually the right answer. For a control room, a plant or a transport operations centre, we would want local call processing or a survivable gateway so internal and emergency calling continue regardless. Hybrid covers most sites, and we will show you the failure modes of each before you choose.",
         },
         {
           q: "Can it talk to our paging and radio systems?",
@@ -563,32 +599,32 @@ export const services = {
     },
 
     "dc-chargers": {
-      name: "DC chargers",
+      name: "DC systems",
       meta: {
-        title: "Substation DC chargers and battery systems — sizing, install and maintain",
+        title: "DC power systems for telecom — rectifiers, chargers, battery backup and EMS",
         description:
-          "Battery charger and DC distribution design, sizing to IEEE 485, installation, commissioning and maintenance to IEEE 450 and IEEE 1188 for substations, plants and telecom rooms.",
+          "Industrial AC/DC chargers and rectifiers, lithium-ion and VRLA battery backup, modular UPS and smart energy management for central offices, tower shelters, substations and off-grid sites.",
       },
-      tagline: "The supply that holds the protection system up when the AC goes away.",
+      tagline: "The supply that keeps the network up when the AC goes away.",
       summary:
-        "Battery chargers, DC distribution and station batteries — sized to IEEE 485, installed and commissioned properly, and maintained on a schedule that catches degradation early.",
+        "Industrial AC/DC rectifiers and chargers, lithium-ion and VRLA battery backup, modular UPS and smart energy management — sized, installed and maintained to IEEE standards.",
       imageAlt: "Telecommunications tower against a clear sky, typical of the assets served by DC power systems",
       intro: [
-        "When the incoming AC supply fails, the protection relays, trip coils, SCADA gateways and emergency lighting on a substation all run from one place: the station battery. The charger that keeps it there is the least visible item in the switchroom and the one with the least tolerance for being wrong.",
-        "We size, install, commission and maintain DC systems against the standards your specification already references — IEEE 485 for the battery, IEEE 946 for the architecture, IEEE 1375 for DC protection — and we issue the calculation rather than asking you to take the rating on trust.",
+        "When the incoming AC supply fails, the radios, transmission equipment, protection relays and SCADA gateways all run from one place: the DC plant and its battery. The rectifiers and chargers that keep it there are the least visible items in the room and the ones with the least tolerance for being wrong.",
+        "We supply, size, install and maintain DC power for central offices, tower shelters, substations and off-grid sites — industrial AC/DC chargers and rectifiers, lithium-ion and VRLA battery backup, modular UPS and smart energy management — against the standards your specification already references, and we issue the calculation rather than asking you to take the rating on trust.",
       ],
       highlights: [
         {
-          title: "Sized from your duty cycle, not a catalogue",
-          body: "IEEE 485 calculation using your continuous and momentary loads, the autonomy you need, the acceptable end-of-discharge voltage and the real ambient inside the room — with the ageing factor and design margin stated so the assumptions can be challenged.",
+          title: "Industrial AC/DC chargers and rectifiers",
+          body: "High-efficiency power conversion units for central offices and tower shelters, with N+1 modular redundancy and hot-swappable rectifiers.",
         },
         {
-          title: "Earth-fault detection that finds the fault",
-          body: "Detection on both polarities as a minimum, with branch-circuit location where the site justifies it, so a technician can isolate the faulted feeder without taking the station DC bus down to find it.",
+          title: "Battery backup and modular UPS",
+          body: "Lithium-ion and VRLA power systems providing continuous operation during outages, with autonomy sized from your duty cycle to IEEE 485 rather than taken from a catalogue.",
         },
         {
-          title: "Commissioned, not just energised",
-          body: "Output regulation, ripple, current limit, charge-mode transition and every alarm verified through to the receiving system, plus a commissioning charge with individual cell or block voltages recorded as the baseline.",
+          title: "Smart energy management (EMS)",
+          body: "Remote telemetry integration and hybrid solar/grid management for off-grid sites, so rectifier, battery, generator and fuel status are visible from the NOC.",
         },
         {
           title: "Maintained before it fails",
@@ -614,6 +650,15 @@ export const services = {
             { label: "AC input", value: "Three-phase or single-phase, matched to the site supply and frequency" },
             { label: "Regulation", value: "± 0.5 % no load to full load; ripple < 1 % RMS with the battery connected" },
             { label: "Charge control", value: "Float, boost/equalise and commissioning charge, temperature compensated at the battery" },
+            { label: "Battery chemistry", value: "Lithium-ion and VRLA; nickel-cadmium where specified" },
+          ],
+        },
+        {
+          title: "Backup and energy management",
+          rows: [
+            { label: "Modular UPS", value: "Modular, hot-swappable UPS for AC-critical loads" },
+            { label: "EMS telemetry", value: "Remote monitoring of rectifiers, batteries, generators and fuel into the NOC" },
+            { label: "Hybrid power", value: "Solar, grid and generator hybrid control for off-grid and weak-grid sites" },
           ],
         },
         {
@@ -646,8 +691,12 @@ export const services = {
         { code: "IEC 61439-1/-2", title: "Low-voltage switchgear and controlgear assemblies" },
         { code: "UL 1012", title: "Power units other than Class 2" },
         { code: "NFPA 70 Art. 480", title: "Storage batteries — installation requirements" },
+        { code: "IEEE 1679.1", title: "Lithium-based batteries in stationary applications" },
+        { code: "UL 9540", title: "Energy storage systems and equipment" },
       ],
       applications: [
+        "Telecom central offices and tower shelters",
+        "Off-grid and hybrid solar/grid sites",
         "Substation protection and control — trip, close and relay supply",
         "Switchgear spring-charging motors and motorised isolators",
         "SCADA gateways, RTUs and IEDs",
@@ -665,7 +714,7 @@ export const services = {
         "Operation and maintenance documentation and operator training",
         "Recommended two-year spares holding, priced at order stage",
       ],
-      relatedIndustries: ["utilities-and-substations", "oil-and-gas", "data-centers"] as IndustrySlug[],
+      relatedIndustries: ["utilities-and-substations", "oil-and-gas", "transportation"] as IndustrySlug[],
       faq: [
         {
           q: "Switchmode or SCR?",
@@ -685,13 +734,13 @@ export const services = {
     "fiber-optics": {
       name: "Fiber optics",
       meta: {
-        title: "Fiber optic design, installation, splicing and testing",
+        title: "Fiber optics — FTTx deployment, precision splicing and OTDR testing",
         description:
-          "Outside and inside plant fiber design, ducting, blowing and pulling, fusion splicing, OTDR and loss testing, DWDM and restoration, certified to TIA and IEC test standards.",
+          "FTTx deployments, outside and inside plant fiber, precision fusion splicing, OTDR and loss testing, DWDM and restoration, certified to TIA and IEC test standards.",
       },
       tagline: "Light in, light out, and a trace that proves it.",
       summary:
-        "Outside and inside plant fiber — route design, installation, fusion splicing, OTDR certification, DWDM and emergency restoration, with test records that stand up years later.",
+        "FTTx deployments, precision splicing and OTDR testing — plus route design, outside and inside plant and emergency restoration, with test records that stand up years later.",
       imageAlt: "Illuminated fibre-optic strands fanning out against a dark background",
       intro: [
         "A fiber route is cheap to test and expensive to guess at. Most of the cost of a fault is not the splice — it is the hours spent working out where the fault is, on a route nobody documented and nobody baselined.",
@@ -723,12 +772,14 @@ export const services = {
             { label: "Optical budget", value: "End-to-end loss calculation with splice, connector and margin allowances" },
             { label: "Fiber selection", value: "G.652.D, G.655 and bend-insensitive types matched to span and application" },
             { label: "Capacity planning", value: "Fiber count and spare capacity sized against stated growth" },
+            { label: "FTTx design", value: "FTTH, FTTB and FTTP — PON architecture, splitter placement and drop design" },
           ],
         },
         {
           title: "Outside plant",
           rows: [
             { label: "Installation", value: "Duct installation, cable blowing, pulling, direct burial and aerial" },
+            { label: "FTTx build", value: "Feeder, distribution and drop installation through to the customer premises" },
             { label: "Construction types", value: "Armoured, rodent-resistant, UV-stable and figure-8 aerial as the route requires" },
             { label: "Jointing", value: "Fusion splicing in sealed enclosures with documented slack and loop placement" },
             { label: "Termination", value: "Street cabinets, joint chambers, building entry and fire-stopping" },
@@ -765,6 +816,7 @@ export const services = {
         { code: "IEC 60794", title: "Optical fibre cables" },
       ],
       applications: [
+        "FTTx rollout — FTTH, FTTB and FTTP",
         "Campus and plant backbone fiber",
         "Substation and control-system fiber links",
         "Data centre structured fiber and MPO trunking",
@@ -781,7 +833,7 @@ export const services = {
         "Labelling schedule and as-built documentation",
         "Restoration procedure and recommended spares",
       ],
-      relatedIndustries: ["data-centers", "utilities-and-substations", "oil-and-gas", "government-buildings"] as IndustrySlug[],
+      relatedIndustries: ["utilities-and-substations", "transportation", "oil-and-gas", "government-buildings"] as IndustrySlug[],
       faq: [
         {
           q: "Do you test every fiber or a sample?",
@@ -798,20 +850,123 @@ export const services = {
       ],
     },
 
-    "submarine-fiber-networks": {
-      name: "Off-shore & submarine fiber",
+    "offshore-communications": {
+      name: "Off-shore comms",
       meta: {
-        title: "Off-shore mission-critical networks via submarine fiber",
+        title: "Off-shore communications — maritime VSAT, LTE and rig safety PAGA",
         description:
-          "Connectivity for offshore platforms, FPSOs and marine terminals via submarine fiber: route survey support, landing stations, subsea installation support, redundancy design and offshore communications.",
+          "ATEX and IECEx certified offshore communications: maritime and rig VSAT and LTE, microwave links, explosion-proof PAGA, CCTV and safety systems for platforms, rigs, FPSOs and vessels.",
+      },
+      tagline: "Safety and connectivity where the nearest road is a helicopter ride away.",
+      summary:
+        "ATEX-certified maritime VSAT, LTE and rig safety PAGA — with the explosion-proof CCTV and emergency systems an offshore installation is certified against.",
+      imageAlt: "Offshore vessel at sea at sunset",
+      intro: [
+        "An offshore installation depends on its communications for two things that cannot wait: running the operation and getting people to safety. Both have to work in a classified area, in salt and vibration, on a link that weather and distance try to take away.",
+        "We deliver the communications an offshore operator owns — high-throughput VSAT, LTE and microwave links to shore, and the ATEX and IECEx certified PAGA, CCTV and safety systems on board — installed and inspected to the hazardous-area codes.",
+      ],
+      highlights: [
+        {
+          title: "Maritime and rig VSAT / LTE",
+          body: "High-throughput satellite and microwave links for offshore platforms, with offshore LTE where coverage allows, and failover between them defined rather than improvised.",
+        },
+        {
+          title: "Explosion-proof hardware",
+          body: "ATEX and IECEx certified safety systems, CCTV and emergency PAGA, with protection concept, gas group and temperature class recorded per device.",
+        },
+        {
+          title: "PAGA that is heard over the plant",
+          body: "Speaker layouts modelled against measured machinery noise and verified for speech intelligibility at commissioning, so an alarm is understood, not just loud.",
+        },
+        {
+          title: "Built for the marine environment",
+          body: "316 stainless, GRP and marine-grade materials, ingress protection and vibration-tolerant mounting chosen for the deck, not the datasheet.",
+        },
+      ],
+      scopeGroups: [
+        {
+          title: "Connectivity",
+          rows: [
+            { label: "VSAT", value: "Stabilised maritime and fixed rig terminals, high-throughput satellite service integration" },
+            { label: "LTE", value: "Offshore LTE and private LTE where coverage and licensing allow" },
+            { label: "Microwave", value: "Platform-to-platform and platform-to-shore links with path and availability analysis" },
+            { label: "Failover", value: "Defined priority and failover between fiber, microwave, LTE and satellite paths" },
+          ],
+        },
+        {
+          title: "Safety systems",
+          rows: [
+            { label: "PAGA", value: "Public address and general alarm with redundant A/B amplification and supervision" },
+            { label: "CCTV", value: "Explosion-proof cameras for process, deck and perimeter monitoring" },
+            { label: "Emergency communications", value: "Alarm tones, muster messaging and interfaces to fire and gas and ESD" },
+            { label: "Radio", value: "Onboard UHF/VHF and marine radio integration" },
+          ],
+        },
+        {
+          title: "Hazardous area",
+          rows: [
+            { label: "Certification", value: "ATEX and IECEx certified equipment for Zone 1 and Zone 2" },
+            { label: "Installation", value: "Installation and inspection to IEC 60079-14 by competent personnel" },
+            { label: "Materials", value: "316 stainless, GRP and copper-free aluminium; IP66 and above" },
+          ],
+        },
+      ],
+      standards: [
+        { code: "IEC 60079 series", title: "Explosive atmospheres — equipment and installation" },
+        { code: "ATEX 2014/34/EU", title: "Equipment for potentially explosive atmospheres" },
+        { code: "IECEx", title: "Certification scheme for equipment in explosive atmospheres" },
+        { code: "IEC 61892", title: "Mobile and fixed offshore units — electrical installations" },
+        { code: "IEC 60268-16", title: "Objective rating of speech intelligibility by speech transmission index" },
+        { code: "IEC 60945", title: "Maritime navigation and radiocommunication equipment — environmental requirements" },
+      ],
+      applications: [
+        "Fixed platform and rig communications",
+        "FPSO and vessel VSAT connectivity",
+        "Platform PAGA and emergency alarm systems",
+        "Explosion-proof CCTV for process and deck areas",
+        "Offshore LTE and microwave links to shore",
+        "Communications upgrades during planned shutdowns",
+      ],
+      deliverables: [
+        "Link budget and availability calculation for each path",
+        "PAGA speaker layout and intelligibility calculation",
+        "Hazardous-area certificate pack, per device type",
+        "Installation drawings and cable schedules",
+        "Commissioning records, including measured intelligibility",
+        "Failover test records across connectivity paths",
+        "Operations documentation and operator training",
+      ],
+      relatedIndustries: ["oil-and-gas", "utilities-and-substations", "transportation"] as IndustrySlug[],
+      faq: [
+        {
+          q: "Satellite, LTE or fiber?",
+          a: "Usually more than one. Fiber where a submarine cable is available, microwave or LTE where the distance allows, and VSAT as the path that always reaches. We design the priority and failover between them so the operation knows which services keep running when a path drops.",
+        },
+        {
+          q: "Is your equipment certified for the zone?",
+          a: "Yes. Field equipment is ATEX and IECEx certified for the area classification it is installed in, and the submittal records protection concept, gas group, temperature class and certificate number per device type.",
+        },
+        {
+          q: "Can the work be done during a shutdown window?",
+          a: "Yes, and for most PAGA and safety-system work it has to be. We plan pre-fabrication, testing and spares around the shutdown so the time offshore is spent installing, not waiting.",
+        },
+      ],
+    },
+
+    "submarine-fiber-networks": {
+      name: "Submarine fiber",
+      meta: {
+        title: "Submarine fiber — subsea cable landing stations, PFE and seabed surveying",
+        description:
+          "Subsea cable landing stations, power feed equipment (PFE), terrestrial backhaul and seabed surveying for submarine fiber systems serving offshore platforms, FPSOs and coastal facilities.",
       },
       tagline: "Connectivity for the places a truck cannot reach.",
       summary:
-        "Offshore platform, FPSO and marine terminal connectivity over submarine fiber — route and landing design, installation support, redundancy, and the communications that ride on it.",
+        "Subsea cable landing stations, power feed equipment and seabed surveying — with the terrestrial backhaul and resilience design that make a submarine link dependable.",
       imageAlt: "Offshore vessel laying submarine cable at sunset",
       intro: [
         "An offshore facility on a satellite link is a facility that runs its operations at the mercy of weather and latency. Submarine fiber changes what is possible: real-time control data, remote expert support, condition monitoring and crew welfare on a link that behaves like a terrestrial one.",
-        "We work on the parts of that chain a platform operator actually has to own — the landing station, the platform termination, the redundancy design, and the communications riding on top — alongside the marine contractors who lay the cable.",
+        "We work on the parts of that chain an operator actually has to own — the seabed survey, the landing station and its power feed equipment, the terrestrial backhaul, the platform termination and the redundancy design — alongside the marine contractors who lay the cable.",
       ],
       highlights: [
         {
@@ -819,8 +974,8 @@ export const services = {
           body: "A subsea break is a vessel mobilisation, not a van. Topology, diverse landings, protection paths and satellite fallback are decided against that reality and the operator's real tolerance for downtime.",
         },
         {
-          title: "Landing stations built for the environment",
-          body: "Beach manhole, landing chamber and terminal equipment specified for salt, humidity and power quality, with the earthing and surge coordination a shore landing actually needs.",
+          title: "Subsea cable landing systems",
+          body: "Power feed equipment (PFE) and terrestrial backhaul interconnectivity, specified for salt, humidity and power quality, with the earthing and surge coordination a shore landing actually needs.",
         },
         {
           title: "Platform termination done once",
@@ -836,7 +991,8 @@ export const services = {
           title: "Planning and design",
           rows: [
             { label: "Requirements", value: "Capacity, latency and availability targets set against the actual operation" },
-            { label: "Route support", value: "Desktop study support, permitting input and liaison with marine survey contractors" },
+            { label: "Seabed surveying", value: "Seabed and route survey to plan the cable path, burial and protection" },
+            { label: "Route support", value: "Desktop study, permitting input and liaison with marine installation contractors" },
             { label: "Topology", value: "Point-to-point, festoon and branched designs with diverse landing assessment" },
             { label: "Resilience", value: "Protection paths, satellite or microwave fallback and defined failover behaviour" },
           ],
@@ -845,7 +1001,8 @@ export const services = {
           title: "Landing and terminal",
           rows: [
             { label: "Landing station", value: "Beach manhole, landing chamber, terminal building fit-out" },
-            { label: "Terminal equipment", value: "Line terminal, DWDM, power feed equipment and monitoring" },
+            { label: "Power feed equipment", value: "PFE installation, earthing and commissioning at the landing station" },
+            { label: "Terminal equipment", value: "Line terminal, DWDM and monitoring" },
             { label: "Power and earthing", value: "DC plant, standby supply, earthing and coordinated surge protection" },
             { label: "Backhaul", value: "Terrestrial onward connectivity and interconnect to the operator's core" },
           ],
@@ -887,6 +1044,7 @@ export const services = {
         "Landing station build and terminal equipment upgrade",
       ],
       deliverables: [
+        "Seabed route survey report",
         "Requirements and availability study with stated assumptions",
         "Topology and resilience design, including failover behaviour",
         "Landing station and platform termination design packages",
@@ -895,11 +1053,11 @@ export const services = {
         "Commissioning and acceptance test records",
         "Operations documentation and fault escalation procedure",
       ],
-      relatedIndustries: ["oil-and-gas", "data-centers", "government-buildings"] as IndustrySlug[],
+      relatedIndustries: ["oil-and-gas", "utilities-and-substations", "government-buildings"] as IndustrySlug[],
       faq: [
         {
           q: "Do you lay the cable yourselves?",
-          a: "No, and anyone who tells you they do all of it should be asked which vessel. Marine survey and cable-lay are specialist contractor work with their own vessels and permits. We design and deliver the parts the operator owns — landing station, platform termination, terminal equipment, resilience and the services carried — and we coordinate the interfaces with the marine contractor so nothing falls between the two scopes.",
+          a: "No, and anyone who tells you they do all of it should be asked which vessel. Cable-lay is specialist marine contractor work with its own vessels and permits. We survey the seabed route and deliver the parts the operator owns — landing station, power feed equipment, backhaul, platform termination, resilience and the services carried — and we coordinate the interfaces with the lay contractor so nothing falls between the two scopes.",
         },
         {
           q: "Is submarine fiber realistic for a single platform?",

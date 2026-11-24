@@ -4,23 +4,23 @@ type WhyItem = { id: string; icon: IconName; title: string; body: string };
 
 export const home = {
   meta: {
-    title: "American engineering for telecom and critical infrastructure",
+    title: "Your trusted partner in telecom & critical infrastructure",
     description:
-      "NextLink USA designs, installs, commissions and supports telecom and critical infrastructure: networks, mission-critical communications, DC power, fiber optics and off-shore submarine fiber.",
+      "NextLink USA engineers resilient voice, data, power and submarine optic networks for extreme, zero-downtime mission environments: telecom, mission-critical communication, networks, IP telephony, DC systems, fiber optics, off-shore comms and submarine fiber.",
   },
 
   hero: {
-    eyebrow: "American engineering company",
-    title: "American engineering for telecom and critical infrastructure.",
+    eyebrow: "Land · Sea · Cloud",
+    title: "Your trusted partner in telecom & critical infrastructure.",
     subtitle:
-      "Networks, mission-critical communications, DC power and submarine fiber — designed, installed, commissioned and supported by one accountable contractor.",
+      "Engineering resilient voice, data, power and submarine optic networks for extreme, zero-downtime mission environments worldwide.",
     primary: "Request a Quote",
     imageAlt:
       "A telecommunications tower, city towers and fibre-optic strands, representing the critical infrastructure NextLink USA builds and supports",
     highlights: [
-      { value: "7", label: "Service lines under one contract" },
-      { value: "2 days", label: "Typical turnaround on a scoped proposal" },
-      { value: "24/7", label: "Support options after handover" },
+      { value: "99.999%", label: "Availability-focused architectures" },
+      { value: "8", label: "Core service verticals, one contractor" },
+      { value: "24/7", label: "NOC operations and support" },
     ],
   },
 
@@ -69,47 +69,47 @@ export const home = {
   },
 
   services: {
-    eyebrow: "Service lines",
-    title: "Seven capabilities, one contractor",
-    body: "Most of our work spans two or three of these at once — a control room needs radio, networks and DC power before it needs anything else. Holding them under one contract is what keeps the interfaces from becoming someone else's problem.",
+    eyebrow: "Services overview",
+    title: "Our core service verticals",
+    body: "End-to-end telecommunications, industrial power and mission-critical communications, integrated across cellular towers, submarine cables and cloud platforms. Holding them under one contract is what keeps the interfaces from becoming someone else's problem.",
     cta: "All services",
   },
 
   why: {
-    eyebrow: "Why NextLink USA",
-    title: "American engineering practice, applied on site",
+    eyebrow: "Strategic advantage",
+    title: "Why choose NextLink USA?",
     items: [
+      {
+        id: "stack",
+        icon: "layers",
+        title: "End-to-end stack",
+        body: "From subsea optical fiber to enterprise cloud VoIP, we manage the full turnkey infrastructure. Under one contract the interfaces are ours to solve, and there is one number to call when something does not work.",
+      },
+      {
+        id: "uptime",
+        icon: "gauge",
+        title: "Zero-downtime focus",
+        body: "Architected for 99.999% availability in harsh industrial and emergency environments, with redundancy tested at commissioning rather than assumed from a datasheet.",
+      },
+      {
+        id: "innovation",
+        icon: "sparkle",
+        title: "Smart innovation",
+        body: "Integrating hybrid renewable power management and real-time smart telemetry, so site health, fuel and battery state are visible before they become an outage.",
+      },
       {
         id: "standards",
         icon: "shieldCheck",
         title: "We work to a named standard",
         body: "IEEE 485 for battery sizing, IEC 60268-16 for intelligibility, TIA-568 for cabling, NFPA 72 for emergency communications. Every proposal states which standard governs which part of the work, so there is something to hold us to at handover.",
       },
-      {
-        id: "measure",
-        icon: "gauge",
-        title: "We measure before we quote",
-        body: "Coverage modelled against real ambient noise. Harmonics sized from a logged spectrum rather than a nameplate. OTDR traces before and after. A proposal built on a guess costs more than the survey would have.",
-      },
-      {
-        id: "single",
-        icon: "network",
-        title: "One accountable contractor",
-        body: "Radio, network, telephony and DC power usually arrive as four subcontractors and four sets of excuses. Under one contract the interfaces are ours to solve, and there is one number to call when something does not work.",
-      },
-      {
-        id: "after",
-        icon: "support",
-        title: "We stay after handover",
-        body: "Project records live with the account, so the engineer who answers already has the design, the commissioning results and the as-builts in front of them. Maintenance and spares are agreed before the warranty starts, not after it lapses.",
-      },
     ] satisfies WhyItem[],
   },
 
   industries: {
-    eyebrow: "Industries",
-    title: "Specified by consultants, operated by maintenance teams",
-    body: "The same system is read very differently by the engineer writing the specification and the technician diagnosing it at 2 a.m. We design for both.",
+    eyebrow: "Verticals we work in",
+    title: "Offering vertical-specific solutions",
+    body: "We deliver turnkey and customized solutions across power and utilities, oil and gas, government authorities and transportation — aligning technology with your core operational demands to keep critical assets connected and secure.",
     cta: "All industries",
   },
 

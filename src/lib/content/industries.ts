@@ -3,20 +3,20 @@ import type { ServiceSlug } from "@/lib/catalog";
 export const industries = {
   index: {
     meta: {
-      title: "Industries — utilities, oil & gas, data centers, healthcare, government",
+      title: "Industries — power & utilities, oil & gas, government and transportation",
       description:
-        "Telecom, communications, network and DC power engineering delivered to substations, oil and gas facilities, data centers, hospitals, schools and government buildings.",
+        "Turnkey and customized telecom, communications, network and DC power solutions for power and utilities, oil and gas, government authorities and transportation.",
     },
-    eyebrow: "Industries",
-    title: "The same engineering, five different sets of constraints",
-    lede: "A radio system in a refinery and a radio system in a hospital use much the same equipment and almost nothing of the same approach. What changes is the area classification, the maintenance window, the people receiving the message and who has to sign it off.",
+    eyebrow: "Verticals we work in",
+    title: "Offering vertical-specific solutions",
+    lede: "We deliver turnkey and customized solutions across power and utilities, oil and gas, government authorities and transportation. Leveraging decades of domain experience, we align technology with your core operational demands to keep critical assets connected and secure.",
   },
 
   items: {
     "utilities-and-substations": {
-      name: "Utilities & substations",
+      name: "Power & utilities",
       meta: {
-        title: "Substation communications and DC power engineering",
+        title: "Telecom, communications and DC power for power and utilities",
         description:
           "Station DC systems, protection and control communications, IEC 61850 station networks and substation telecom for 13.8 kV to 380 kV installations.",
       },
@@ -141,9 +141,9 @@ export const industries = {
           href: "/services/dc-chargers",
         },
         {
-          title: "Offshore connectivity",
-          body: "Platform and terminal links over submarine fiber, with the resilience design and fallback arrangements a facility that cannot be reached by road actually needs.",
-          href: "/services/submarine-fiber-networks",
+          title: "Offshore communications",
+          body: "Maritime and rig VSAT and LTE, ATEX-certified PAGA and CCTV, and submarine fiber links for platforms and terminals that cannot be reached by road.",
+          href: "/services/offshore-communications",
         },
       ],
       notes: {
@@ -161,6 +161,7 @@ export const industries = {
         "mission-critical-communication",
         "networks",
         "dc-chargers",
+        "offshore-communications",
         "submarine-fiber-networks",
       ] as ServiceSlug[],
       faq: [
@@ -179,188 +180,20 @@ export const industries = {
       ],
     },
 
-    "data-centers": {
-      name: "Data centers",
-      meta: {
-        title: "Data center cabling, DC power and notification engineering",
-        description:
-          "Structured fiber and copper to TIA-942, −48 VDC telecom plant, switchgear control DC and evacuation messaging for concurrently maintainable facilities.",
-      },
-      tagline: "Work done on a building that never has a maintenance window.",
-      summary:
-        "Structured cabling, network build, −48 VDC plant and evacuation messaging for colocation, hyperscale and enterprise facilities — delivered under live load.",
-      imageAlt: "Fibre-optic strands carrying light, representing data center network infrastructure",
-      intro: [
-        "Data centers are judged on what can be taken out of service without affecting the load. A DC system that cannot be maintained while energised quietly breaks concurrent maintainability, however the UPS topology is drawn.",
-        "We build and support the parts around the white space: structured cabling, network infrastructure, telecom DC plant, switchgear control power and the notification systems that have to be intelligible in a hall full of fans.",
-      ],
-      challenges: [
-        {
-          title: "Concurrent maintainability has to reach every system",
-          body: "Modular rectifiers replaceable live, dual feeds, and distribution arranged so a branch can be isolated without dropping the bus. The single-line has to survive the same scrutiny as the AC side.",
-        },
-        {
-          title: "Growth arrives rack by rack",
-          body: "Load comes in increments, not halls. Systems get specified with spare rectifier positions, spare fiber strands and distribution headroom so the next step is a module, not a replacement.",
-        },
-        {
-          title: "Evacuation messaging competes with noise",
-          body: "A data hall at 85 dBA with hard surfaces is an intelligibility problem. Speaker density and placement have to be modelled against operating noise, not an empty commissioning-day hall.",
-        },
-        {
-          title: "Everything must land in the existing platform",
-          body: "Another standalone monitoring panel helps nobody. Alarm points are exposed over SNMP and Modbus TCP with a published point list issued before equipment ships.",
-        },
-      ],
-      work: [
-        {
-          title: "Structured cabling and fiber",
-          body: "Backbone and horizontal copper and fiber to TIA-568 and TIA-942, MPO trunking, high-density distribution, containment, and certification on every strand and pair.",
-          href: "/services/fiber-optics",
-        },
-        {
-          title: "Network infrastructure",
-          body: "Core, distribution and access build, segmentation, out-of-band management, and failover verified by pulling links rather than reading timers.",
-          href: "/services/networks",
-        },
-        {
-          title: "DC power plant",
-          body: "−48 VDC modular rectifier plant with hot-swap modules and low-voltage disconnect, plus 125 VDC switchgear and generator control power with dual feeds.",
-          href: "/services/dc-chargers",
-        },
-        {
-          title: "Evacuation and notification",
-          body: "IP notification over the facility network with PoE amplified speakers, supervised zones, and interfaces to the fire alarm and very-early-smoke-detection systems.",
-          href: "/services/mission-critical-communication",
-        },
-      ],
-      notes: {
-        title: "How we work here",
-        items: [
-          "DC architecture and redundancy documented to IEEE 946, sized to IEEE 485.",
-          "Rectifier modules hot-swappable without interrupting the DC bus.",
-          "Cabling certified to TIA-568 with full test results, every strand and pair.",
-          "Alarm and telemetry exposed over SNMP v2c/v3 and Modbus TCP, with a published point list.",
-          "Emergency communications designed to NFPA 72 Chapter 24 and UL 2572 where referenced.",
-          "Intelligibility modelled to IEC 60268-16 against as-operating noise, not an empty hall.",
-          "All work on live floors under change control with a written rollback plan.",
-        ],
-      },
-      relatedServices: ["fiber-optics", "networks", "dc-chargers", "mission-critical-communication"] as ServiceSlug[],
-      faq: [
-        {
-          q: "Can you work on a live floor?",
-          a: "That is most of what we do here. Work proceeds under your change control, with method statements, a rollback plan and agreed abort criteria. Where a task genuinely cannot be done under load we say so at design stage rather than at 2 a.m.",
-        },
-        {
-          q: "Can the DC plant be expanded without downtime?",
-          a: "That is the point of specifying modular rectifiers with spare shelf positions — adding capacity becomes inserting a module. We size the initial frame against your stated growth plan and tell you explicitly where the expansion limit sits, so it is a decision rather than a surprise.",
-        },
-        {
-          q: "How do alarms reach our DCIM?",
-          a: "SNMP for trap-based platforms and Modbus TCP for building management systems, with potential-free contacts for the few points that justify a hardwired path. The point list is issued before delivery so integration work can start in parallel.",
-        },
-      ],
-    },
-
-    "hospitals-and-schools": {
-      name: "Hospitals & schools",
-      meta: {
-        title: "Voice evacuation and communications for hospitals and schools",
-        description:
-          "Intelligible voice evacuation, lockdown messaging, nurse-call integration, campus networks and essential-system DC power for healthcare and education facilities.",
-      },
-      tagline: "Systems for people who are not trained for the emergency.",
-      summary:
-        "Voice evacuation, lockdown messaging, day-to-day paging, campus networks and essential-system DC power for healthcare and education buildings.",
-      imageAlt: "Modern towers and a telecommunications mast, representing the institutional buildings served by these systems",
-      intro: [
-        "In a hospital or a school, the people receiving the message are patients, visitors and children. They are not trained, some cannot move without help, and nobody is going to interpret an ambiguous tone correctly under stress. Intelligibility and specific instructions do more than volume ever will.",
-        "We design and install voice evacuation, lockdown and paging systems for exactly that audience, along with the campus networks and essential-system power behind them.",
-      ],
-      challenges: [
-        {
-          title: "Reverberant spaces destroy intelligibility",
-          body: "Atria, corridors and sports halls have long reverberation times — where a system that passes a sound-pressure check still fails a speech transmission index measurement. Density and placement have to be modelled against the real surfaces.",
-        },
-        {
-          title: "Not everyone evacuates",
-          body: "Healthcare buildings rely on defend-in-place and horizontal evacuation. The system has to address individual compartments with different instructions simultaneously, not broadcast one message to the whole building.",
-        },
-        {
-          title: "Lockdown is a different message to evacuation",
-          body: "Schools need a message set covering lockdown and shelter-in-place, initiated quickly from more than one place, with a clearly distinct all-clear.",
-        },
-        {
-          title: "The system has to work on an ordinary Tuesday",
-          body: "A life-safety system used only in drills is a system nobody trusts. Lesson bells, routine paging and code announcements on the same infrastructure keep it exercised and familiar.",
-        },
-      ],
-      work: [
-        {
-          title: "Voice evacuation and mass notification",
-          body: "Zoned voice alarm with supervised circuits, pre-recorded message sets, priority handling between fire, lockdown and routine paging, and microphone stations at reception and security.",
-          href: "/services/mission-critical-communication",
-        },
-        {
-          title: "Campus networks and wireless",
-          body: "Network build across separated buildings with local autonomy, wireless designed from a survey rather than a floor plan, and segmentation between clinical, administrative and guest traffic.",
-          href: "/services/networks",
-        },
-        {
-          title: "Telephony and nurse call integration",
-          body: "IP telephony with DECT for staff mobility, integration to nurse-call and alarm escalation, and emergency calling handled deliberately rather than by default.",
-          href: "/services/ip-telephony",
-        },
-        {
-          title: "Essential-system DC power",
-          body: "Battery chargers and DC distribution supporting switchgear control, generator starting and fire alarm panels on the essential electrical system.",
-          href: "/services/dc-chargers",
-        },
-      ],
-      notes: {
-        title: "How we work here",
-        items: [
-          "Emergency communications designed to NFPA 72 Chapter 24; mass notification equipment listed to UL 2572.",
-          "Loudspeakers and amplifiers listed to UL 1480 and UL 1711, or certified to EN 54-24 and EN 54-16 where the project is written to European standards.",
-          "Speech intelligibility target of STI ≥ 0.50 modelled per IEC 60268-16 and verified at commissioning.",
-          "Zoning aligned to the fire compartmentation strategy, including horizontal evacuation where applicable.",
-          "Message scripts agreed with the operator and the fire consultant before recording.",
-          "Final acceptance of the architecture rests with the authority having jurisdiction; assumptions are stated in the design.",
-          "Work in occupied clinical areas planned around infection control and departmental access.",
-        ],
-      },
-      relatedServices: ["mission-critical-communication", "networks", "ip-telephony", "dc-chargers"] as ServiceSlug[],
-      faq: [
-        {
-          q: "Can one system handle fire evacuation and routine paging?",
-          a: "Usually it should — a system used daily is a system known to work. Routine paging runs at the lowest priority and is pre-empted instantly by fire or lockdown messaging. Where the authority having jurisdiction requires physical separation of the life-safety path, we design that arrangement instead and explain why.",
-        },
-        {
-          q: "Can you work in an occupied hospital?",
-          a: "Yes. Work in clinical areas is planned with the estates and infection control teams, with containment, out-of-hours access and staged isolation agreed before mobilisation. Life-safety systems are never left unsupervised without a documented interim arrangement.",
-        },
-        {
-          q: "How do you prove the system is intelligible?",
-          a: "Modelled to a speech transmission index target at design using the real room surfaces and occupied noise levels, then measured at commissioning at defined positions in each area, with results recorded. The measurement is the deliverable — the model is just how we get there.",
-        },
-      ],
-    },
-
     "government-buildings": {
-      name: "Government buildings",
+      name: "Government authorities",
       meta: {
-        title: "Mass notification, secure networks and standby power for government facilities",
+        title: "Mission-critical communications, secure networks and standby power for government authorities",
         description:
-          "Campus-wide mass notification, secure network infrastructure, communications and DC standby power for ministries, administrative campuses and secure facilities.",
+          "Mission-critical radio, mass notification, secure network infrastructure and DC standby power for government authorities, agencies, administrative campuses and secure facilities.",
       },
       tagline: "Delivered with the documentation a public tender actually requires.",
       summary:
-        "Mass notification, secure network infrastructure, communications and DC standby power for ministries, administrative campuses and secure facilities.",
+        "Mission-critical radio, mass notification, secure network infrastructure and DC standby power for government authorities, agencies and secure facilities.",
       imageAlt: "Modern towers and a telecommunications mast, representing government and institutional buildings",
       intro: [
         "Public-sector work is won and lost on documentation as much as on engineering. Prequalification files, method statements, personnel clearances and a handover pack that survives audit are part of the deliverable, not an afterthought.",
-        "We deliver mass notification, network infrastructure and standby power to ministries, campuses and secure facilities, and we keep the prequalification pack current so it can be issued the day it is asked for.",
+        "We deliver mission-critical radio, mass notification, network infrastructure and standby power to government authorities, agencies and secure facilities, and we keep the prequalification pack current so it can be issued the day it is asked for.",
       ],
       challenges: [
         {
@@ -426,6 +259,89 @@ export const industries = {
         {
           q: "Can systems run with no internet connection at all?",
           a: "Yes, and for secure facilities that is usually the requirement. Monitoring, message distribution, configuration management and support are designed to work entirely on the internal network. Where a vendor platform assumes cloud connectivity, we will tell you at design stage rather than after installation.",
+        },
+      ],
+    },
+
+    transportation: {
+      name: "Transportation",
+      meta: {
+        title: "Communications, networks and power for transportation",
+        description:
+          "Mission-critical radio, corridor fiber and IP networks, passenger and emergency communications, and DC power for rail, metro, airports, ports and highways.",
+      },
+      tagline: "Keeping people and assets moving, connected and safe.",
+      summary:
+        "Operational radio, corridor fiber and IP networks, passenger and emergency communications, and DC power for rail, metro, airports, ports and highways.",
+      imageAlt: "Modern towers and a telecommunications mast, representing the transport networks these systems serve",
+      intro: [
+        "A transport network runs on communications: drivers and controllers talking, signalling and SCADA data moving along the corridor, and passengers hearing the right message in a station when something goes wrong. When any of it fails, services stop.",
+        "We design, build and maintain the communications, networks and power behind rail, metro, airports, ports and highways, and we plan the work around possessions, traffic windows and live operations.",
+      ],
+      challenges: [
+        {
+          title: "Access is measured in possessions",
+          body: "Trackside and airside work happens in short, pre-booked windows. Pre-fabrication, testing off site and a programme built around possessions are what keep a project on schedule.",
+        },
+        {
+          title: "Linear assets, long distances",
+          body: "A corridor network spans tens or hundreds of kilometres. Fiber routes, DWDM, amplifier placement and power at remote equipment rooms have to be designed for the distance, not a single site.",
+        },
+        {
+          title: "Radio has to work everywhere",
+          body: "Tunnels, cuttings, terminals and depots each defeat coverage differently. TETRA or P25 coverage is designed per location, with in-building and tunnel systems where the open network cannot reach.",
+        },
+        {
+          title: "Passengers need messages they understand",
+          body: "Stations and terminals are loud and reverberant. Voice evacuation and passenger announcements are designed for intelligibility and verified at commissioning.",
+        },
+      ],
+      work: [
+        {
+          title: "Operational radio",
+          body: "TETRA and P25 secure voice and data for controllers, drivers and maintenance teams, with tunnel and in-building coverage and dispatch positions.",
+          href: "/services/mission-critical-communication",
+        },
+        {
+          title: "Corridor networks",
+          body: "Fiber along the route, DWDM transport and IP/MPLS backbones carrying signalling, SCADA, CCTV and passenger systems on one resilient network.",
+          href: "/services/networks",
+        },
+        {
+          title: "Passenger and emergency communications",
+          body: "PA and voice evacuation for stations, terminals and depots, integrated with fire alarm and operations control.",
+          href: "/services/mission-critical-communication",
+        },
+        {
+          title: "Trackside and equipment-room power",
+          body: "Rectifiers, chargers and battery backup for trackside cabinets and telecom rooms, with remote monitoring into the operations centre.",
+          href: "/services/dc-chargers",
+        },
+      ],
+      notes: {
+        title: "How we work here",
+        items: [
+          "Programmes built around possessions, traffic management and airside access windows.",
+          "TETRA and P25 coverage designed per tunnel, station and depot, then verified by measurement.",
+          "Corridor fiber and DWDM designed against calculated optical budgets.",
+          "Emergency communications designed to NFPA 72 and verified for intelligibility to IEC 60268-16.",
+          "DC power sized to IEEE 485, with alarms mapped into the operations control centre.",
+          "Method statements and safety documentation agreed with the operator before mobilisation.",
+        ],
+      },
+      relatedServices: ["mission-critical-communication", "networks", "fiber-optics", "dc-chargers"] as ServiceSlug[],
+      faq: [
+        {
+          q: "Can you work within possessions and live operations?",
+          a: "Yes. We plan work around booked possessions and access windows, pre-test equipment off site, and carry a rollback plan so the network is back in service when the window closes.",
+        },
+        {
+          q: "Do you cover tunnels and underground stations?",
+          a: "Yes. Radio coverage in tunnels and underground stations is designed with radiating cable, DAS and bi-directional amplifiers as needed, and measured at commissioning.",
+        },
+        {
+          q: "Can one network carry signalling, CCTV and passenger systems?",
+          a: "Often, with proper segmentation and quality of service. Where the signalling authority requires physical separation, we design that instead and say why.",
         },
       ],
     },

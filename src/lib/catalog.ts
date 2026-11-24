@@ -6,7 +6,7 @@ import type { IconName } from "@/components/ui/icon";
  * the two ever drift apart.
  */
 
-/** The seven capabilities from the company profile, in presentation order. */
+/** The eight core service verticals from the company profile, in presentation order. */
 export const serviceSlugs = [
   "telecom-services",
   "mission-critical-communication",
@@ -14,6 +14,7 @@ export const serviceSlugs = [
   "ip-telephony",
   "dc-chargers",
   "fiber-optics",
+  "offshore-communications",
   "submarine-fiber-networks",
 ] as const;
 
@@ -56,6 +57,11 @@ export const services: Record<ServiceSlug, ServiceMeta> = {
     icon: "fiber",
     image: "/images/fiber-optics.jpg",
   },
+  "offshore-communications": {
+    slug: "offshore-communications",
+    icon: "globe",
+    image: "/images/offshore-cable-ship.jpg",
+  },
   "submarine-fiber-networks": {
     slug: "submarine-fiber-networks",
     icon: "submarine",
@@ -68,9 +74,8 @@ export const serviceList = serviceSlugs.map((slug) => services[slug]);
 export const industrySlugs = [
   "utilities-and-substations",
   "oil-and-gas",
-  "data-centers",
-  "hospitals-and-schools",
   "government-buildings",
+  "transportation",
 ] as const;
 
 export type IndustrySlug = (typeof industrySlugs)[number];
@@ -92,19 +97,14 @@ export const industries: Record<IndustrySlug, IndustryMeta> = {
     icon: "oilGas",
     image: "/images/offshore-cable-ship.jpg",
   },
-  "data-centers": {
-    slug: "data-centers",
-    icon: "dataCenter",
-    image: "/images/fiber-optics.jpg",
-  },
-  "hospitals-and-schools": {
-    slug: "hospitals-and-schools",
-    icon: "health",
-    image: "/images/skyline-wide.jpg",
-  },
   "government-buildings": {
     slug: "government-buildings",
     icon: "government",
+    image: "/images/skyline-wide.jpg",
+  },
+  transportation: {
+    slug: "transportation",
+    icon: "truck",
     image: "/images/skyline-wide.jpg",
   },
 };

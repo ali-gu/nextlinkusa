@@ -90,8 +90,8 @@ export function IndustryGrid({
   return (
     <ul
       className={cn(
-        "grid gap-5 sm:grid-cols-2 lg:grid-cols-3",
-        compact && "lg:grid-cols-5 lg:gap-4",
+        "grid gap-5 sm:grid-cols-2 lg:grid-cols-4",
+        compact && "lg:gap-4",
         className,
       )}
     >

@@ -2,11 +2,11 @@ export const about = {
   meta: {
     title: "About NextLink USA — a US telecom and infrastructure engineering company",
     description:
-      "NextLink USA is a United States engineering company delivering telecom and critical infrastructure: survey, design, installation, commissioning and long-term support.",
+      "NextLink USA delivers end-to-end telecommunications, industrial power and mission-critical communications: survey, design, installation, commissioning and long-term support.",
   },
-  eyebrow: "About us",
+  eyebrow: "Who we are",
   title: "A United States engineering company, working where the networks are",
-  lede: "We design, build, commission and support telecom and critical infrastructure. American engineering practice, applied on site, by people who are still reachable a year after handover.",
+  lede: "NextLink USA delivers end-to-end telecommunications, industrial power and mission-critical communications — designed, built, commissioned and supported by people who are still reachable a year after handover.",
 
   story: {
     title: "Why this company exists",
@@ -73,16 +73,16 @@ export const about = {
   },
 
   coverage: {
-    title: "Where we work",
-    body: "An American company serving utilities, oil and gas, data centers, healthcare, education and government.",
+    title: "Land, sea and cloud",
+    body: "Turnkey and customized solutions for power and utilities, oil and gas, government authorities and transportation.",
     points: [
       {
-        title: "Engineering",
-        body: "Design authority, manufacturer relationships and commercial contracting.",
+        title: "Multi-domain connectivity",
+        body: "Seamless integration across cellular towers, submarine cables and cloud platforms.",
       },
       {
-        title: "On site",
-        body: "Survey, installation, commissioning supervision, maintenance and support.",
+        title: "Mission-critical standard",
+        body: "Fail-safe architectures designed for energy, defense and public safety sectors.",
       },
       {
         title: "Offshore",

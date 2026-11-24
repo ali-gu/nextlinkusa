@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 import { PageHero } from "@/components/sections/common";
 import { JsonLd } from "@/components/seo/json-ld";
-import { KeyValueTable } from "@/components/ui/blocks";
 import { Icon, type IconName } from "@/components/ui/icon";
 import {
   ButtonLink,
   Card,
+  CheckList,
   Container,
   IconTile,
   Section,
@@ -99,7 +99,7 @@ export default function ContactPage() {
           <div className="grid gap-14 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-20">
             <div>
               <SectionHeading title={c.hours.title} />
-              <KeyValueTable rows={c.hours.rows} className="mt-8" />
+              <CheckList items={c.hours.items} className="mt-8" />
               <p className="mt-5 text-sm leading-relaxed text-navy-700">{c.hours.note}</p>
 
               <div className="mt-12">

@@ -90,7 +90,7 @@ export const common = {
 
   footer: {
     blurb:
-      "A United States engineering company delivering telecom and critical infrastructure across the Gulf — design, installation, commissioning and long-term support.",
+      "A United States engineering company delivering telecom and critical infrastructure — design, installation, commissioning and long-term support.",
     columns: {
       services: "Services",
       industries: "Industries",
@@ -117,7 +117,7 @@ export const common = {
 
   meta: {
     defaultDescription:
-      "NextLink USA is a United States engineering company delivering telecom and critical infrastructure across the Gulf: networks, mission-critical communications, DC power, fiber optics and off-shore submarine fiber.",
+      "NextLink USA is a United States engineering company delivering telecom and critical infrastructure: networks, mission-critical communications, DC power, fiber optics and off-shore submarine fiber.",
   },
 
   notFound: {

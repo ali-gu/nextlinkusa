@@ -44,7 +44,7 @@ export const services: Record<ServiceSlug, ServiceMeta> = {
   "ip-telephony": {
     slug: "ip-telephony",
     icon: "phone",
-    image: "/images/riyadh-skyline.jpg",
+    image: "/images/telecom-tower.jpg",
   },
   "dc-chargers": {
     slug: "dc-chargers",
@@ -100,7 +100,7 @@ export const industries: Record<IndustrySlug, IndustryMeta> = {
   "hospitals-and-schools": {
     slug: "hospitals-and-schools",
     icon: "health",
-    image: "/images/riyadh-skyline.jpg",
+    image: "/images/skyline-wide.jpg",
   },
   "government-buildings": {
     slug: "government-buildings",

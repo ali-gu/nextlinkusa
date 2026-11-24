@@ -1,7 +1,7 @@
 # NextLink USA — marketing site
 
 Static marketing site for NextLink USA, a United States engineering company
-delivering telecom and critical infrastructure across the Gulf.
+delivering telecom and critical infrastructure.
 
 Next.js 16 (App Router, static export) · React 19 · TypeScript · Tailwind CSS v4.
 Deployed to GitHub Pages at **https://www.nextlinkusa.com**.

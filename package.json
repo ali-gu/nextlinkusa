@@ -2,7 +2,7 @@
   "name": "nextlink-usa-site",
   "version": "0.1.0",
   "private": true,
-  "description": "Marketing site for NextLink USA \u2014 power and safety communication equipment supplied to Saudi Arabia.",
+  "description": "Marketing site for NextLink USA \u2014 a United States engineering company for telecom and critical infrastructure.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -58,11 +58,21 @@ export const site = {
 
 export const hasAddress = Boolean(site.address.street && site.address.locality);
 
+/**
+ * Builds a mailto: link per RFC 6068. URLSearchParams is deliberately not
+ * used: it form-encodes spaces as "+" and leaves bare LF line breaks, which
+ * mail clients show literally or drop, leaving the body blank. Spaces must be
+ * %20 and line breaks CRLF (%0D%0A).
+ */
 export function mailtoLink(subject?: string, body?: string) {
-  const params = new URLSearchParams();
-  if (subject) params.set("subject", subject);
-  if (body) params.set("body", body);
-  const query = params.toString();
+  const encode = (value: string) =>
+    encodeURIComponent(value.replace(/\r?\n/g, "\r\n"));
+  const query = [
+    subject ? `subject=${encode(subject)}` : "",
+    body ? `body=${encode(body)}` : "",
+  ]
+    .filter(Boolean)
+    .join("&");
   return `mailto:${site.email}${query ? `?${query}` : ""}`;
 }
 

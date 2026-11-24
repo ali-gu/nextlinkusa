@@ -153,12 +153,13 @@ async function buildIcons() {
 /* ----------------------------------------------------------------- photos */
 
 async function buildPhotos() {
-  await tile({ left: 672, top: 0, width: 864, height: 700 }, 1296, 1050, "hero-collage.jpg", 80);
-  await tile({ left: 700, top: 60, width: 390, height: 470 }, 780, 940, "riyadh-skyline.jpg");
+  // Crops stay right of the cover's central skyline, which is an identifiable
+  // non-US landmark; the right-hand panels are generic infrastructure.
+  await tile({ left: 1000, top: 0, width: 536, height: 429 }, 1072, 858, "hero-collage.jpg", 80);
   await tile({ left: 1245, top: 15, width: 280, height: 300 }, 840, 900, "telecom-tower.jpg");
   await tile({ left: 1215, top: 400, width: 310, height: 190 }, 930, 570, "fiber-optics.jpg");
   await tile({ left: 1200, top: 625, width: 330, height: 150 }, 990, 450, "offshore-cable-ship.jpg");
-  await tile({ left: 672, top: 0, width: 864, height: 460 }, 1728, 920, "skyline-wide.jpg", 78);
+  await tile({ left: 1040, top: 120, width: 496, height: 268 }, 1488, 804, "skyline-wide.jpg", 78);
 }
 
 /* -------------------------------------------------------- social previews */
@@ -168,7 +169,7 @@ async function buildSocial() {
   const H = 630;
 
   const backdrop = await sharp(COVER)
-    .extract({ left: 672, top: 0, width: 864, height: 560 })
+    .extract({ left: 1000, top: 0, width: 536, height: 560 })
     .resize(W, H, { fit: "cover", position: "right top" })
     .toBuffer();
 
@@ -200,7 +201,7 @@ async function buildSocial() {
   <text class="kick" x="72" y="252">TELECOM · NETWORKS · CRITICAL INFRASTRUCTURE</text>
   <text class="head" x="72" y="326">American engineering for telecom</text>
   <text class="head" x="72" y="388">and critical infrastructure</text>
-  <text class="sub" x="72" y="444">Design, installation, commissioning and support across the Gulf.</text>
+  <text class="sub" x="72" y="444">Design, installation, commissioning and long-term support.</text>
 </svg>`);
 
   await sharp(backdrop)
@@ -221,7 +222,6 @@ async function buildResponsiveVariants() {
     [path.join(BRAND, "nextlink-logo.png"), "/brand/nextlink-logo.png"],
     ...[
       "hero-collage.jpg",
-      "riyadh-skyline.jpg",
       "telecom-tower.jpg",
       "fiber-optics.jpg",
       "offshore-cable-ship.jpg",

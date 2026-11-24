@@ -28,7 +28,7 @@ export const contact = {
       { label: "Technical contact assigned", value: "Same working day" },
       { label: "Scoped proposal", value: "Typically 2–5 working days after survey" },
       { label: "Support response", value: "Within 4 working hours" },
-      { label: "Working week", value: "Sunday to Thursday in the Gulf; Monday to Friday US" },
+      { label: "Working week", value: "Monday to Friday" },
     ],
     note: "Emergency response outside these hours is available to clients under a maintenance agreement.",
   },
@@ -44,7 +44,7 @@ export const contact = {
     legalLabel: "Registered entity",
     addressLabel: "Address",
     coverageLabel: "Coverage",
-    coverageValue: "United States company, delivering across the Gulf region",
+    coverageValue: "United States",
     prequalNote: "Prequalification pack available on request.",
   },
 

@@ -164,8 +164,8 @@ export default function HomePage() {
               <SectionHeading eyebrow={home.why.eyebrow} title={home.why.title} />
               <div className="relative mt-10 hidden aspect-4/5 overflow-hidden rounded-2xl lg:block">
                 <Image
-                  src="/images/riyadh-skyline.jpg"
-                  alt={t.industries.items["government-buildings"].imageAlt}
+                  src="/images/telecom-tower.jpg"
+                  alt={t.services.items["telecom-services"].imageAlt}
                   fill
                   sizes="352px"
                   loading="lazy"

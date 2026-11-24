@@ -166,7 +166,7 @@ export const industries = {
       faq: [
         {
           q: "Can you work to a client's own engineering standards?",
-          a: "Yes. Major operators in the region work to their own engineering standards and material specifications on top of the international codes. Send the applicable documents with the enquiry and we return a compliance statement against them, flagging anything that cannot be met rather than discovering it at inspection.",
+          a: "Yes. Major operators work to their own engineering standards and material specifications on top of the international codes. Send the applicable documents with the enquiry and we return a compliance statement against them, flagging anything that cannot be met rather than discovering it at inspection.",
         },
         {
           q: "What environmental ratings do you work to as standard?",
@@ -273,7 +273,7 @@ export const industries = {
       tagline: "Systems for people who are not trained for the emergency.",
       summary:
         "Voice evacuation, lockdown messaging, day-to-day paging, campus networks and essential-system DC power for healthcare and education buildings.",
-      imageAlt: "City skyline at dusk, representing the institutional buildings served by these systems",
+      imageAlt: "Modern towers and a telecommunications mast, representing the institutional buildings served by these systems",
       intro: [
         "In a hospital or a school, the people receiving the message are patients, visitors and children. They are not trained, some cannot move without help, and nobody is going to interpret an ambiguous tone correctly under stress. Intelligibility and specific instructions do more than volume ever will.",
         "We design and install voice evacuation, lockdown and paging systems for exactly that audience, along with the campus networks and essential-system power behind them.",
@@ -357,7 +357,7 @@ export const industries = {
       tagline: "Delivered with the documentation a public tender actually requires.",
       summary:
         "Mass notification, secure network infrastructure, communications and DC standby power for ministries, administrative campuses and secure facilities.",
-      imageAlt: "Modern city skyline representing government and institutional buildings",
+      imageAlt: "Modern towers and a telecommunications mast, representing government and institutional buildings",
       intro: [
         "Public-sector work is won and lost on documentation as much as on engineering. Prequalification files, method statements, personnel clearances and a handover pack that survives audit are part of the deliverable, not an afterthought.",
         "We deliver mass notification, network infrastructure and standby power to ministries, campuses and secure facilities, and we keep the prequalification pack current so it can be issued the day it is asked for.",

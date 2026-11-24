@@ -119,14 +119,7 @@ export function organizationSchema() {
         : {}),
       addressCountry: site.address.country,
     },
-    areaServed: [
-      { "@type": "Country", name: "Saudi Arabia" },
-      { "@type": "Country", name: "United Arab Emirates" },
-      { "@type": "Country", name: "Kuwait" },
-      { "@type": "Country", name: "Qatar" },
-      { "@type": "Country", name: "Bahrain" },
-      { "@type": "Country", name: "Oman" },
-    ],
+    areaServed: { "@type": "Country", name: "United States" },
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -212,14 +205,7 @@ export function serviceSchema({
     url: absoluteUrl(url),
     serviceType: name,
     provider: { "@id": ORG_ID },
-    areaServed: [
-      { "@type": "Country", name: "Saudi Arabia" },
-      { "@type": "Country", name: "United Arab Emirates" },
-      { "@type": "Country", name: "Qatar" },
-      { "@type": "Country", name: "Kuwait" },
-      { "@type": "Country", name: "Bahrain" },
-      { "@type": "Country", name: "Oman" },
-    ],
+    areaServed: { "@type": "Country", name: "United States" },
   };
 }
 

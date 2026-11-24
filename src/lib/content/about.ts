@@ -2,7 +2,7 @@ export const about = {
   meta: {
     title: "About NextLink USA — a US telecom and infrastructure engineering company",
     description:
-      "NextLink USA is a United States engineering company delivering telecom and critical infrastructure across the Gulf: survey, design, installation, commissioning and long-term support.",
+      "NextLink USA is a United States engineering company delivering telecom and critical infrastructure: survey, design, installation, commissioning and long-term support.",
   },
   eyebrow: "About us",
   title: "A United States engineering company, working where the networks are",
@@ -74,15 +74,15 @@ export const about = {
 
   coverage: {
     title: "Where we work",
-    body: "A United States company delivering across the Gulf — Saudi Arabia, the UAE, Qatar, Kuwait, Bahrain and Oman — in utilities, oil and gas, data centers, healthcare, education and government.",
+    body: "An American company serving utilities, oil and gas, data centers, healthcare, education and government.",
     points: [
       {
-        title: "United States",
-        body: "Engineering, design authority, manufacturer relationships and commercial contracting.",
+        title: "Engineering",
+        body: "Design authority, manufacturer relationships and commercial contracting.",
       },
       {
-        title: "Gulf region",
-        body: "Survey, installation, commissioning supervision, maintenance and support on site.",
+        title: "On site",
+        body: "Survey, installation, commissioning supervision, maintenance and support.",
       },
       {
         title: "Offshore",

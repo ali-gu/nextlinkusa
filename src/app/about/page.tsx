@@ -39,8 +39,8 @@ export default function AboutPage() {
         lede={about.lede}
         crumbs={crumbs}
         crumbLabel={t.common.labels.breadcrumb}
-        image="/images/riyadh-skyline.jpg"
-        imageAlt={t.industries.items["government-buildings"].imageAlt}
+        image="/images/telecom-tower.jpg"
+        imageAlt={t.services.items["telecom-services"].imageAlt}
       />
 
       {/* ----------------------------------------------------------- story */}

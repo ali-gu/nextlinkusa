@@ -6,17 +6,17 @@ export const home = {
   meta: {
     title: "American engineering for telecom and critical infrastructure",
     description:
-      "NextLink USA designs, installs, commissions and supports telecom and critical infrastructure across the Gulf: networks, mission-critical communications, DC power, fiber optics and off-shore submarine fiber.",
+      "NextLink USA designs, installs, commissions and supports telecom and critical infrastructure: networks, mission-critical communications, DC power, fiber optics and off-shore submarine fiber.",
   },
 
   hero: {
-    eyebrow: "United States engineering · Gulf delivery",
+    eyebrow: "American engineering company",
     title: "American engineering for telecom and critical infrastructure.",
     subtitle:
       "Networks, mission-critical communications, DC power and submarine fiber — designed, installed, commissioned and supported by one accountable contractor.",
     primary: "Request a Quote",
     imageAlt:
-      "City skyline, a telecommunications tower and fibre-optic strands, representing the critical infrastructure NextLink USA builds and supports",
+      "A telecommunications tower, city towers and fibre-optic strands, representing the critical infrastructure NextLink USA builds and supports",
     highlights: [
       { value: "7", label: "Service lines under one contract" },
       { value: "2 days", label: "Typical turnaround on a scoped proposal" },
@@ -197,7 +197,7 @@ export const home = {
       },
       {
         q: "Can you work to our own engineering standards?",
-        a: "Yes, and we prefer to. Major operators in the region work to their own engineering standards and material specifications on top of the international codes. Send them with the enquiry and we will return a compliance statement marking each clause complied, complied with comment, or not complied.",
+        a: "Yes, and we prefer to. Major operators work to their own engineering standards and material specifications on top of the international codes. Send them with the enquiry and we will return a compliance statement marking each clause complied, complied with comment, or not complied.",
       },
       {
         q: "Do you work in hazardous areas?",

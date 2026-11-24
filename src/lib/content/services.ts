@@ -222,7 +222,7 @@ export const services = {
       tagline: "Messages people can act on, in places that are loud, large or on fire.",
       summary:
         "Land mobile radio, PA/GA, voice evacuation, dispatch and mass notification — including the hazardous-area field devices the rest of the market treats as an afterthought.",
-      imageAlt: "Illuminated city skyline at dusk, representing the facilities served by mission-critical communications",
+      imageAlt: "Modern towers and a telecommunications mast, representing the facilities served by mission-critical communications",
       intro: [
         "A communication system is only worth what people understand when it is running. Intelligibility, not loudness, moves people to a muster point — which is why the specification that matters is IEC 60268-16, and why coverage is modelled and then measured rather than assumed.",
         "We design, install and commission radio and voice systems for sites where the message has consequences: plants, terminals, hospitals, campuses and control rooms.",
@@ -457,7 +457,7 @@ export const services = {
       tagline: "Voice that still works when the internet does not.",
       summary:
         "SIP and unified communications platforms, contact centre, DECT and session border control — integrated with paging, radio and the systems people actually call in an emergency.",
-      imageAlt: "City skyline at dusk, representing the corporate and institutional sites served by IP telephony",
+      imageAlt: "Telecommunications tower with microwave and panel antennas, representing the networks that carry IP telephony",
       intro: [
         "Telephony gets treated as a commodity until the day a site loses its uplink and discovers that the control room phone, the gatehouse and the emergency number all lived in someone else's cloud.",
         "We design and deliver IP telephony for sites where voice is operational rather than administrative: survivable, prioritised on the network, and wired into paging, radio and alarm systems instead of sitting beside them.",

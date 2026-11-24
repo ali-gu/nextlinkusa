@@ -85,13 +85,13 @@ export const services = {
 
   commitments: {
     eyebrow: "What we commit to",
-    title: "The things you can hold us to",
-    rows: [
-      { label: "Acknowledgement of a new enquiry", value: "Same working day" },
-      { label: "Budget estimate", value: "1–2 working days" },
-      { label: "Scoped proposal with calculations", value: "2–5 working days after survey" },
-      { label: "Support response", value: "Within 4 working hours" },
-      { label: "Emergency response under contract", value: "By agreement, 24/7 available" },
+    title: "Things you can rely on us for",
+    items: [
+      "Prompt acknowledgement of every new enquiry",
+      "Budget estimates when you need a number early",
+      "Scoped proposals with the calculations behind them",
+      "Responsive technical support",
+      "Emergency response under contract",
     ],
     note: "Programme and mobilisation dates are confirmed per project and depend on scope, access and permit lead times.",
   },

@@ -126,7 +126,6 @@ export function TrustStrip() {
     { icon: "government", label: trust.usCompany },
     { icon: "shieldCheck", label: trust.standards },
     { icon: "network", label: trust.singlePoint },
-    { icon: "alert", label: trust.hazardous },
     { icon: "support", label: trust.support },
   ];
 

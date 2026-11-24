@@ -110,9 +110,14 @@ async function buildLogo() {
 /* ------------------------------------------------------------------ icons */
 
 async function buildIcons() {
-  // The ribbon "N" device holds up at 16px; the globe lockup turns to mush.
-  const mark = await (await keyOutWhite(COVER, { low: 198, high: 226 }))
-    .extract({ left: 168, top: 28, width: 352, height: 214 })
+  // The orbiting "N" device holds up at 16px; the full lockup with the
+  // wordmark turns to mush, so keep only the rows above the wordmark. The crop
+  // is materialised first because sharp runs trim() before extract().
+  const markRows = await (await keyOutWhite(LOGO))
+    .extract({ left: 0, top: 100, width: 1536, height: 530 })
+    .png()
+    .toBuffer();
+  const mark = await sharp(markRows)
     .trim({ threshold: 8 })
     .png()
     .toBuffer();

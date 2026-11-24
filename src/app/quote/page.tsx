@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { PageHero } from "@/components/sections/common";
 import { JsonLd } from "@/components/seo/json-ld";
-import { KeyValueTable } from "@/components/ui/blocks";
 import { Icon } from "@/components/ui/icon";
 import {
   ButtonLink,
@@ -93,7 +92,7 @@ export default function QuotePage() {
                 <h2 className="text-base font-semibold text-navy-950">
                   {q.response.title}
                 </h2>
-                <KeyValueTable rows={q.response.rows} className="mt-4" />
+                <CheckList items={q.response.items} className="mt-4" />
                 <p className="mt-4 text-xs leading-relaxed text-navy-600">
                   {q.response.note}
                 </p>

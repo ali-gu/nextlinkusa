@@ -22,13 +22,13 @@ export const contact = {
   },
 
   hours: {
-    title: "Hours and response times",
-    rows: [
-      { label: "New enquiry acknowledged", value: "Same working day" },
-      { label: "Technical contact assigned", value: "Same working day" },
-      { label: "Scoped proposal", value: "Typically 2–5 working days after survey" },
-      { label: "Support response", value: "Within 4 working hours" },
-      { label: "Working week", value: "Monday to Friday" },
+    title: "What to expect",
+    items: [
+      "Prompt acknowledgement of every new enquiry",
+      "A named technical contact for your project",
+      "A scoped proposal once the site has been surveyed",
+      "Responsive technical support",
+      "Office hours Monday to Friday",
     ],
     note: "Emergency response outside these hours is available to clients under a maintenance agreement.",
   },

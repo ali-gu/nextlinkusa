@@ -121,7 +121,7 @@ export const home = {
       {
         id: "enquiry",
         title: "Enquiry",
-        body: "You send a scope, a drawing, or simply describe the problem. A technical contact is assigned the same working day.",
+        body: "You send a scope, a drawing, or simply describe the problem. A technical contact is assigned promptly.",
       },
       {
         id: "survey",

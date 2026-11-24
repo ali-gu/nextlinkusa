@@ -11,7 +11,7 @@ export const quote = {
   channels: {
     email: {
       title: "Email the request",
-      body: "Send a specification, a single-line diagram, a load schedule or a battery data sheet — or simply describe the load you need to hold up. A technical contact is assigned the same working day.",
+      body: "Send a specification, a single-line diagram, a load schedule or a battery data sheet — or simply describe the load you need to hold up. A technical contact is assigned promptly.",
       cta: "Open a pre-filled email",
       note: "Opens your mail client with a template already filled in. Add your details, attach what you have, and send.",
       subject: "Quotation request",
@@ -101,11 +101,11 @@ Attachments: scope / drawings / specification / photographs
 
   response: {
     title: "What happens next",
-    rows: [
-      { label: "Enquiry acknowledged", value: "Same working day" },
-      { label: "Technical contact assigned", value: "Same working day" },
-      { label: "Budgetary quotation", value: "1–2 working days" },
-      { label: "Scoped proposal with calculations", value: "2–5 working days after survey" },
+    items: [
+      "Your enquiry is acknowledged promptly",
+      "A technical contact is assigned to your project",
+      "A budgetary quotation, if you need a number early",
+      "A scoped proposal with the calculations behind it",
     ],
     note: "Programme and mobilisation dates are confirmed per project and depend on scope, site access and permit lead times.",
   },

@@ -250,7 +250,7 @@ export const industries = {
       faq: [
         {
           q: "What is in the prequalification pack?",
-          a: "Entity registration and tax identification, insurance certificates, personnel qualifications, quality and safety documentation, banking details and a past-performance summary. It is issued as a single PDF on request — email us and it comes back the same working day.",
+          a: "Entity registration and tax identification, insurance certificates, personnel qualifications, quality and safety documentation, banking details and a past-performance summary. It is issued as a single PDF on request — email us and we will send it promptly.",
         },
         {
           q: "Can you work as a subcontractor to a local main contractor?",
